@@ -1,0 +1,37 @@
+$bottom-spacing: 4rem;
+
+// Generic
+.app {
+  text-align: center;
+  background-color: #222;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+// Layout
+header,
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+}
+footer {
+  background-color: #111;
+  padding: $bottom-spacing/2 0;
+}
+.content {
+  max-width: 1280;
+  padding-bottom: $bottom-spacing;
+}
+
+// Typography
+.link {
+  color: #61dafb;
+}
+
+// Helpers
+.hidden {
+  display: none;
+}
