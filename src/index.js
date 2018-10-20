@@ -5,9 +5,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // Import utils
 import * as serviceWorker from './serviceWorker';
 // Import styles
-import './index.scss';
+import './styles/main.scss';
 // Import components
-import App from './App';
+import App from './components/App';
 import Home from './pages/Home';
 import Api from './pages/Api';
 import About from './pages/About';

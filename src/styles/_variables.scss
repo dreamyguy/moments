@@ -1,0 +1,20 @@
+@import "variables-colors";
+
+// defaults
+$rem-base: 20px;
+$gutter-size: $rem-base;
+$bottom-spacing: 4rem;
+
+// fonts
+$path-fonts: "../fonts";
+$font-fallback: arial, sans-serif;
+$xsmall-font-size: 10px;
+$small-font-size: 12px;
+$medium-font-size: 14px;
+$normal-font-size: 16px;
+$large-font-size: 20px;
+$xlarge-font-size: 24px;
+$xxlarge-font-size: 32px;
+
+// padding and margin values for content
+$padding-default: $rem-base;
