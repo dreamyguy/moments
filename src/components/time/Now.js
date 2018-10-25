@@ -1,15 +1,24 @@
+// Import dependencies
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
+// Import actions
+import {
+  setMomentNowDateAction,
+  setMomentNowYearAction,
+  setMomentNowMonthAction,
+  setMomentNowDayAction,
+  setMomentNowHourAction,
+  setMomentNowMinuteAction,
+  setMomentNowSecondAction
+} from './../../store/duck/ducks';
+
 class Now extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      now: null
-    }
-  }
-  componentWillUnmount () {
+  componentWillMount () {
     clearInterval(this.timerID);
+    this.updateNow();
   }
   componentDidMount () {
     this.timerID = setInterval(
@@ -17,18 +26,49 @@ class Now extends Component {
       1000
     );
   }
+  updateNow () {
+    this.props.setMomentNowDateAction(moment().format('MMMM Do YYYY, HH:mm:ss'));
+    this.props.setMomentNowYearAction(moment().format('YYYY'));
+    this.props.setMomentNowMonthAction(moment().format('MMMM'));
+    this.props.setMomentNowDayAction(moment().format('D'));
+    this.props.setMomentNowHourAction(moment().format('H'));
+    this.props.setMomentNowMinuteAction(moment().format('mm'));
+    this.props.setMomentNowSecondAction(moment().format('ss'));
+  }
   tick () {
-    this.setState({
-      now: moment().format('MMMM Do YYYY, h:mm:ss a')
-    });
+    this.updateNow();
   }
   render () {
+    const {nowDate} = this.props;
     return (
       <React.Fragment>
-        {this.state.now}
+        {nowDate}
       </React.Fragment>
     )
   }
 };
 
-export default Now;
+const mapStateToProps = ({main}) => {
+  return {
+    nowDate: main.nowDate
+  }
+}
+const mapDispatchToProps = {
+  setMomentNowDateAction,
+  setMomentNowYearAction,
+  setMomentNowMonthAction,
+  setMomentNowDayAction,
+  setMomentNowHourAction,
+  setMomentNowMinuteAction,
+  setMomentNowSecondAction
+}
+const NowConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Now);
+
+Now.propTypes = {
+  nowDate: PropTypes.string
+};
+
+export default NowConnect;
