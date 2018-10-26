@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import DateNow from './../components/time/DateNow';
+import Date from './../components/time/Date';
+import Now from './../components/time/Now';
 import DateInitial from './../components/time/DateInitial';
 import TimeSince from './../components/time/TimeSince';
 import TimeUntil from './../components/time/TimeUntil';
@@ -8,7 +9,10 @@ class About extends Component {
   render() {
     return (
       <>
-        <DateNow/>
+        <Date
+          heading = 'Now'
+          date = {<Now/>}
+        />
         <DateInitial/>
         <TimeSince/>
         <TimeUntil/>
