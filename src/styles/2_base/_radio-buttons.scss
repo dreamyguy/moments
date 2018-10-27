@@ -1,0 +1,52 @@
+@import "./../1_tools/variables";
+
+// Based on Hedwig:
+// https://github.com/bring/hedwig/blob/1f0fb337201902c0d19e6bf0cc7d0b6288fe16cf/src/shared/components/radio-buttons/radio-button.css
+
+// Block
+.radio-button {
+  display: inline-block;
+  margin: 0.1rem 0.5rem 0 0;
+  cursor: pointer;
+  position: relative;
+  line-height: 1.5;
+  // Elements
+  &__indicator {
+    display: inline-block;
+    float: left; // lint complains, but it's still important
+    position: relative;
+    top: 4px; // (the only difference from Hedwig)
+    margin-top: 0;
+    margin-right: 0.4rem;
+    border: 2px solid $cl-fav-blue; // unselected color (ring)
+    border-radius: 50%;
+    background: $cl-white;
+    width: 22px;
+    height: 22px;
+    transition: border-color 0.3s ease, max-height 0.3s ease, transform 0.3s ease;
+  }
+  & > input {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    vertical-align: middle;
+    &:checked ~ .radio-button__indicator,
+    &:focus ~ .radio-button__indicator,
+    &:hover ~ .radio-button__indicator {
+      border-color: $cl-fav-blue; // selected color (ring)
+    }
+    &:checked ~ .radio-button__indicator,
+    &:focus ~ .radio-button__indicator {
+      &::after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        background: $cl-fav-blue; // selected color (center dot)
+      }
+    }
+  }
+}

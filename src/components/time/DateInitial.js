@@ -125,7 +125,7 @@ class DateInitial extends Component {
     } = this.props;
     return (
       <>
-        <div style={{fontSize: '0'}}>
+        <div>
         <Dropdown
           tabIndex = '1'
           options = {this.getTimeUnit('year')}

@@ -1,0 +1,22 @@
+.video {
+  // Without background
+  max-width: 100%; // without this it will not honour its parent's width
+  margin: 0 auto;
+  // With background
+  &--background {
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto;
+    z-index: -100;
+    background: gray;
+    background-attachment: fixed;
+    background-size: cover;
+    &__wrapper {
+      overflow: hidden;
+    }
+  }
+}
+video.video--background {
+  object-fit: fill;
+}

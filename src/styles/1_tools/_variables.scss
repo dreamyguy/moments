@@ -4,6 +4,10 @@
 $rem-base: 20px;
 $gutter-size: $rem-base;
 $bottom-spacing: 4rem;
+$responsive-spacing-top: $rem-base * 2;
+$transition-time: .2s;
+$default-border-size: 1px;
+$base-font-size: $rem-base;
 
 // fonts
 $path-fonts: "../fonts";

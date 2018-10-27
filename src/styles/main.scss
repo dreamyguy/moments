@@ -2,15 +2,42 @@
 @charset"utf-8";
 
 /* --------------------------------------------
-::::::: resets and fixes ::::::::::::::::::::::
+::: Resets. tools, variables and settings :::::
 ----------------------------------------------- */
-// @import "reset";
-@import "helpers";
 
-// to avoid warnings, variables should be imported into every file that needs it
+// Normalize browser defaults
+@import '../../node_modules/modern-normalize/modern-normalize.css';
+// Import styles
+@import "1_tools/colors";
+@import '1_tools/variables';
+@import '1_tools/mixins';
+@import '1_tools/helpers';
+@import '1_tools/bootstrap-grid-settings';
 
 /* --------------------------------------------
-::::::: main styles :::::::::::::::::::::::::::
+::: Base ::::::::::::::::::::::::::::::::::::::
 ----------------------------------------------- */
-@import "colors";
-@import "layout";
+
+html {
+  height: 100%;
+  font-size: $base-font-size;
+}
+@import '2_base/fonts';
+@import '2_base/images';
+@import "2_base/layout";
+@import '2_base/radio-buttons';
+@import '2_base/typography';
+@import '2_base/video';
+
+/* --------------------------------------------
+::: Blocks ::::::::::::::::::::::::::::::::::::
+----------------------------------------------- */
+
+// @TODO
+
+/* --------------------------------------------
+::: Grid ::::::::::::::::::::::::::::::::::::::
+----------------------------------------------- */
+
+// Default bootstrap grid. This can be configured under 'tools'
+@import '../../node_modules/bootstrap-4-grid/scss/grid';

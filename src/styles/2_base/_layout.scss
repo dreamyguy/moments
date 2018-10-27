@@ -1,4 +1,4 @@
-@import "variables";
+@import "./1_tools/variables";
 
 // generic
 
@@ -20,9 +20,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
+
 header,
 footer {
   display: flex;
@@ -40,16 +38,6 @@ content {
   margin: 0 auto;
   padding: $rem-base $rem-base $bottom-spacing $rem-base;
   position: relative;
-}
-
-// typography
-
-p a {
-  color: $cl-fav-blue;
-  text-decoration: none;
-}
-.link {
-  color: $cl-sb-blue;
 }
 
 // colorful bar

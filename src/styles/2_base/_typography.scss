@@ -1,0 +1,14 @@
+@import "./1_tools/variables";
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+p a {
+  color: $cl-fav-blue;
+  text-decoration: none;
+}
+
+.link {
+  color: $cl-sb-blue;
+}

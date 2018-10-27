@@ -1,0 +1,94 @@
+@import "variables";
+
+.align-center {
+  text-align: center;
+}
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.centered {
+  margin: 0 auto;
+}
+.clickable {cursor: pointer;
+}
+.heading-two {
+  line-height: 28px;
+  margin-bottom: 15px;
+  font-size: 28px;
+  @media (max-width: 767px) { font-size: 24px; }
+}
+.heading-three {
+  margin-bottom: 10px;
+  font-size: 24px;
+  @media (max-width: 767px) { font-size: 20px; }
+}
+.heading-four {
+  margin-bottom: 8px;
+  font-size: 20px;
+  @media (max-width: 767px) { font-size: 18px; }
+}
+.heading-five {
+  margin-bottom: 8px;
+  font-size: 18px;
+  @media (max-width: 767px) { font-size: 16px; }
+}
+.heading-six {
+  margin-bottom: 6px;
+  font-size: 16px;
+  @media (max-width: 767px) { font-size: 14px; }
+}
+.hidden {
+  display: none;
+}
+.last-bottom {
+  margin-bottom: 0 !important;
+}
+.last-left {
+  margin-left: 0 !important;
+}
+.last-right {
+  margin-right: 0 !important;
+}
+.monospace {
+  font-family: "Courier New", courier, sans-serif;
+  font-weight: lighter;
+  background-color: $cl-silver;
+  padding: 2px 4px;
+}
+.no-decor {
+  text-decoration: none;
+}
+.no-margins {
+  margin: 0;
+}
+.pos-absolute {
+  position: absolute;
+}
+.pos-bottom {
+  position: fixed;
+  bottom: 0;
+}
+.pos-bottom-block { // for tricky elements like 'ul'
+  position: fixed;
+  bottom: 0;
+  display: block;
+  width: 100%;
+}
+.pos-relative {
+  position: relative;
+}
+.rounded {
+  border-radius: 100%;
+}
+.text-shadow-dark {
+  text-shadow: 0 1px 1px $cl-black;
+}
+.text-shadow-light {
+  text-shadow: 0 1px 1px $cl-white;
+}
+.uppercase {
+  text-transform: uppercase;
+}
