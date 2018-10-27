@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './layout/Header';
-import Footer from './layout/Footer';
+// import Footer from './layout/Footer';
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
         <div className="content">
           {this.props.children}
         </div>
-        <Footer/>
+        {/* <Footer/> */}
       </div>
     );
   }
