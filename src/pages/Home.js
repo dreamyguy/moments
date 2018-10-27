@@ -8,13 +8,23 @@ import DateInitial from './../components/time/DateInitial';
 class Home extends Component {
   render() {
     return (
-      <>
-        <Date
-          heading = 'Now'
-          date = {<Now/>}
-        />
-        <DateInitial/>
-      </>
+      <section className="section section--alt">
+        <div className="container m-t-20 m-b-20">
+          <div className="row">
+            <div className="col-12">
+              <Date
+                heading = 'Now'
+                date = {<Now/>}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <DateInitial/>
+            </div>
+          </div>
+        </div>
+      </section>
     );
   }
 }

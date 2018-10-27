@@ -125,60 +125,62 @@ class DateInitial extends Component {
     } = this.props;
     return (
       <>
-        <div>
-        <Dropdown
-          tabIndex = '1'
-          options = {this.getTimeUnit('year')}
-          value = {baseYear}
-          type = 'year'
-        />
-        <Dropdown
-          tabIndex = '1'
-          options = {this.getTimeUnit('month')}
-          value = {baseMonth}
-          type = 'month'
-          disabled={!baseYearDefined}
-          classes = {!baseYearDefined ? 'hidden' : ''}
-        />
-        <Dropdown
-          tabIndex = '1'
-          options = {this.getTimeUnit('day')}
-          value = {baseDay}
-          type = 'day'
-          disabled={!baseMonthDefined}
-          classes = {!baseMonthDefined ? 'hidden' : ''}
-        />
-        {baseDayDefined &&
-          <>
-            <Dropdown
-              tabIndex = '1'
-              options = {this.getTimeUnit('hour')}
-              value = {baseHour}
-              type = 'hour'
-            />
-            <Dropdown
-              tabIndex = '1'
-              options = {this.getTimeUnit('minute')}
-              value = {baseMinute}
-              type = 'minute'
-            />
-            <Dropdown
-              tabIndex = '1'
-              options = {this.getTimeUnit('second')}
-              value = {baseSecond}
-              type = 'second'
-            />
-          </>
-        }
+        <div className="container-flex m-t-20">
+          <Dropdown
+            tabIndex = '1'
+            options = {this.getTimeUnit('year')}
+            value = {baseYear}
+            type = 'year'
+          />
+          <Dropdown
+            tabIndex = '1'
+            options = {this.getTimeUnit('month')}
+            value = {baseMonth}
+            type = 'month'
+            disabled={!baseYearDefined}
+            classes = {!baseYearDefined ? 'hidden' : ''}
+          />
+          <Dropdown
+            tabIndex = '1'
+            options = {this.getTimeUnit('day')}
+            value = {baseDay}
+            type = 'day'
+            disabled={!baseMonthDefined}
+            classes = {!baseMonthDefined ? 'hidden' : ''}
+          />
+          {baseDayDefined &&
+            <>
+              <Dropdown
+                tabIndex = '1'
+                options = {this.getTimeUnit('hour')}
+                value = {baseHour}
+                type = 'hour'
+              />
+              <Dropdown
+                tabIndex = '1'
+                options = {this.getTimeUnit('minute')}
+                value = {baseMinute}
+                type = 'minute'
+              />
+              <Dropdown
+                tabIndex = '1'
+                options = {this.getTimeUnit('second')}
+                value = {baseSecond}
+                type = 'second'
+              />
+            </>
+          }
         </div>
-        {this.renderBaseDate()}
-        {baseDateIsInThePast &&
-          <h3>Time since</h3>
-        }
-        {baseDateIsInTheFuture &&
-          <h3>Time until</h3>
-        }
-        {this.renderAddToBase()}
+        <div>
+          {this.renderBaseDate()}
+          {baseDateIsInThePast &&
+            <h3>Time since</h3>
+          }
+          {baseDateIsInTheFuture &&
+            <h3>Time until</h3>
+          }
+          {this.renderAddToBase()}
+        </div>
       </>
     );
   }

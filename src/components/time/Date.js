@@ -11,11 +11,11 @@ class Date extends Component {
       date = <Now/>
     } = this.props;
     return (
-      <div className="date m-b-small" style={{backgroundColor: '#111', width: '30%', padding: '1rem', margin: '20px auto'}}>
-        <div className="m-b-medium" style={{marginBottom: '1rem'}}>
-          <em>{heading}</em>
-        </div>
-        <div>
+      <div className="date">
+        <h3 className="date__heading m-b-20">
+          {heading}
+        </h3>
+        <div className="date__moment">
           {date}
         </div>
       </div>

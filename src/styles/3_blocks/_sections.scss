@@ -1,0 +1,17 @@
+@import "./../1_tools/variables";
+@import "./../2_base/fonts";
+
+.date {
+  padding: $gutter-size;
+  background-color: $cl-dark-gray-light;
+  border-left: 5px solid $cl-fav-green-light;
+  &__heading {
+    @extend .font-montserrat-regular-italic;
+  }
+  &__moment {
+    @extend .font-montserrat-light;
+  }
+}
+
+
+

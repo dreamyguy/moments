@@ -36,7 +36,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns: 12 !default;
-$grid-gutter-width: 56px !default;
+$grid-gutter-width: 40px !default;
 
 // We don't want padding on our setup at this width
 // 1276 (xl) + 28 + 28 ('container' padding left + right)

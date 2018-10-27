@@ -3,29 +3,33 @@
 // generic
 
 .app {
-  text-align: center;
-  background-color: #222;
   min-height: 100vh;
-  color: $cl-white;
 }
 
 // layout
 
 body {
+  background-color: $cl-dark-gray-medium;
+  color: $cl-white;
   margin: 0;
   padding: 0;
   @extend .font-montserrat-regular;
 }
 
+header {
+  border-bottom: 3px solid $cl-maroon;
+  text-shadow: 1px 1px 0 $cl-black;
+}
+
 header,
 footer {
+  background-color: $cl-dark-gray-dark;
   display: flex;
   justify-content: center;
   padding: 1rem;
   width: 100%;
 }
 footer {
-  background-color: #111;
   padding: $bottom-spacing/2 0;
   margin-top: $bottom-spacing/2;
 }

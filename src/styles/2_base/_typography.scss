@@ -1,12 +1,42 @@
 @import "./1_tools/variables";
+@import "./fonts";
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+body {
+  line-height: 1.55;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: $cl-silver;
+  cursor: pointer;
 }
 
 p a {
   color: $cl-fav-blue;
   text-decoration: none;
+  border-bottom: 2px solid $cl-fav-blue;
+  transition: color $transition-time ease;
+  &:hover {
+    color: $cl-fav-blue;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+  line-height: 1.25;
+  color: $cl-silver;
+  margin: 0;
+  hyphens: auto;
+  @extend .font-montserrat-medium;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .link {

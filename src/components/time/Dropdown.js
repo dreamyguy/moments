@@ -77,7 +77,7 @@ class Dropdown extends Component {
           }}
           disabled = {disabled}
           style = {{textTransform: 'capitalize'}}
-          className = {classes}
+          className = {`m-b-20 ${classes}`}
         >
           <option key={uuidv4()} value="">{type}</option>
           {options}
