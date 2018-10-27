@@ -125,6 +125,7 @@ class DateInitial extends Component {
     } = this.props;
     return (
       <>
+        <div style={{fontSize: '0'}}>
         <Dropdown
           tabIndex = '1'
           options = {this.getTimeUnit('year')}
@@ -167,6 +168,7 @@ class DateInitial extends Component {
             />
           </>
         }
+        </div>
         {this.renderBaseDate()}
         {baseDateIsInThePast &&
           <h3>Time since</h3>
