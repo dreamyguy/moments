@@ -63,6 +63,7 @@ class Dropdown extends Component {
       value = '',
       type = '',
       disabled = false,
+      classes = ''
     } = this.props;
     return (
       <>
@@ -75,7 +76,8 @@ class Dropdown extends Component {
             this.setBaseDate(e.target.value, type);
           }}
           disabled = {disabled}
-          style={{textTransform: 'capitalize'}}
+          style = {{textTransform: 'capitalize'}}
+          className = {classes}
         >
           <option key={uuidv4()} value="">{type}</option>
           {options}
@@ -131,6 +133,7 @@ Dropdown.propTypes = {
   value: PropTypes.string,
   type: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
+  classes: PropTypes.string,
   // Props related to choices, passed from state
   baseYearDefined: PropTypes.bool,
   baseMonthDefined: PropTypes.bool,

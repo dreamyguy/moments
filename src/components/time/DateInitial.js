@@ -138,6 +138,7 @@ class DateInitial extends Component {
           value = {baseMonth}
           type = 'month'
           disabled={!baseYearDefined}
+          classes = {!baseYearDefined ? 'hidden' : ''}
         />
         <Dropdown
           tabIndex = '1'
@@ -145,6 +146,7 @@ class DateInitial extends Component {
           value = {baseDay}
           type = 'day'
           disabled={!baseMonthDefined}
+          classes = {!baseMonthDefined ? 'hidden' : ''}
         />
         {baseDayDefined &&
           <>
