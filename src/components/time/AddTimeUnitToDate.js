@@ -32,18 +32,32 @@ class AddTimeUnitToDate extends Component {
       return (
         <>
           {baseDateIsInThePast &&
-            <h3 className="m-t-40">Time since</h3>
+            <h3 className="m-t-20 m-b-20">Time since</h3>
           }
           {baseDateIsInTheFuture &&
-            <h3 className="m-t-40">Time until</h3>
+            <h3 className="m-t-20 m-b-20">Time until</h3>
           }
-          <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'years')}</p>
-          <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'months')}</p>
-          <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'weeks')}</p>
-          <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'days')}</p>
-          <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'hours')}</p>
-          <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'minutes')}</p>
-          <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'seconds')}</p>
+          <div className="time-unit-output bl-purple">
+            {timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'years')}
+          </div>
+          <div className="time-unit-output bl-fuchsia">
+            {timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'months')}
+          </div>
+          <div className="time-unit-output bl-red">
+            {timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'weeks')}
+          </div>
+          <div className="time-unit-output bl-orange">
+            {timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'days')}
+          </div>
+          <div className="time-unit-output bl-yellow">
+            {timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'hours')}
+          </div>
+          <div className="time-unit-output bl-fav-green-light">
+            {timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'minutes')}
+          </div>
+          <div className="time-unit-output bl-teal">
+            {timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'seconds')}
+          </div>
           {addToBaseDateMonths &&
             <>
               <h4>{localizeThousand(addToBaseDateMonths)} months from {this.renderBaseDateName()}</h4>
