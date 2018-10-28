@@ -16,6 +16,8 @@ const SET_MOMENT_NOW_SECOND = 'SET_MOMENT_NOW_SECOND';
 // ActionTypes - moment - base
 const SET_MOMENT_BASE_DATE = 'SET_MOMENT_BASE_DATE';
 const SET_MOMENT_BASE_NAME = 'SET_MOMENT_BASE_NAME';
+const SET_MOMENT_BASE_DATE_IS_IN_THE_PAST = 'SET_MOMENT_BASE_DATE_IS_IN_THE_PAST';
+const SET_MOMENT_BASE_DATE_IS_IN_THE_FUTURE = 'SET_MOMENT_BASE_DATE_IS_IN_THE_FUTURE';
 const SET_MOMENT_BASE_YEAR = 'SET_MOMENT_BASE_YEAR';
 const SET_MOMENT_BASE_MONTH = 'SET_MOMENT_BASE_MONTH';
 const SET_MOMENT_BASE_WEEK = 'SET_MOMENT_BASE_WEEK';
@@ -198,6 +200,18 @@ export function reducerMain (state = initialStateMain, action) {
         loading: false,
         baseName: action.payload
       }
+    case SET_MOMENT_BASE_DATE_IS_IN_THE_PAST:
+      return {
+        ...state,
+        loading: false,
+        baseDateIsInThePast: action.payload
+      }
+    case SET_MOMENT_BASE_DATE_IS_IN_THE_FUTURE:
+      return {
+        ...state,
+        loading: false,
+        baseDateIsInTheFuture: action.payload
+    }
     case SET_MOMENT_BASE_YEAR:
       return {
         ...state,
@@ -407,6 +421,8 @@ export const setMomentNowSecondAction = (action) => ({ type: SET_MOMENT_NOW_SECO
 // ActionTypes - moment - base
 export const setMomentBaseDateAction = (action) => ({ type: SET_MOMENT_BASE_DATE, payload: action });
 export const setMomentBaseNameAction = (action) => ({ type: SET_MOMENT_BASE_NAME, payload: action });
+export const setMomentBaseDateIsInThePastAction = (action) => ({ type: SET_MOMENT_BASE_DATE_IS_IN_THE_PAST, payload: action });
+export const setMomentBaseDateIsInTheFutureAction = (action) => ({ type: SET_MOMENT_BASE_DATE_IS_IN_THE_FUTURE, payload: action });
 export const setMomentBaseYearAction = (action) => ({ type: SET_MOMENT_BASE_YEAR, payload: action });
 export const setMomentBaseMonthAction = (action) => ({ type: SET_MOMENT_BASE_MONTH, payload: action });
 export const setMomentBaseWeekAction = (action) => ({ type: SET_MOMENT_BASE_WEEK, payload: action });

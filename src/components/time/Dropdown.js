@@ -5,10 +5,15 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import uuidv4 from 'uuid/v4';
 
+// Import helpers
+import { timePeriod } from './../../helpers/helpers';
+
 // Import actions
 import {
   setMomentBaseDateAction,
   setMomentBaseNameAction,
+  setMomentBaseDateIsInThePastAction,
+  setMomentBaseDateIsInTheFutureAction,
   setMomentBaseYearAction,
   setMomentBaseMonthAction,
   setMomentBaseWeekAction,
@@ -19,6 +24,23 @@ import {
 } from './../../store/duck/ducks';
 
 class Dropdown extends Component {
+  setTimePeriod (value) {
+    // Determine if date is in the 'past' or 'future'
+    const {
+      nowYear = '',
+      setMomentBaseDateIsInThePastAction,
+      setMomentBaseDateIsInTheFutureAction,
+    } = this.props;
+    if (nowYear) {
+      if (timePeriod(nowYear, value) === 'past') {
+        setMomentBaseDateIsInThePastAction(true);
+        setMomentBaseDateIsInTheFutureAction(false);
+      } else if (timePeriod(nowYear, value) === 'future') {
+        setMomentBaseDateIsInThePastAction(false);
+        setMomentBaseDateIsInTheFutureAction(true);
+      }
+    }
+  }
   setBaseDate (value, mode) {
     const {
       baseYear,
@@ -38,6 +60,7 @@ class Dropdown extends Component {
     if (mode === 'year') {
       theBaseDate = moment().year(value).format('MMMM Do YYYY, h:mm:ss a');
       setMomentBaseYearAction(value);
+      this.setTimePeriod(value);
     } else if (mode === 'month') {
       theBaseDate = moment().year(baseYear).month(value).format('MMMM Do YYYY, h:mm:ss a');
       setMomentBaseMonthAction(value);
@@ -102,6 +125,7 @@ const mapStateToProps = ({main}) => {
     baseDateIsInTheFuture: main.baseDateIsInTheFuture,
     baseDateName: main.baseDateName,
     baseDate: main.baseDate,
+    nowYear: main.nowYear,
     addToBaseDateMonths: main.addToBaseDateMonths,
     addToBaseDateWeeks: main.addToBaseDateWeeks,
     addToBaseDateDays: main.addToBaseDateDays,
@@ -113,6 +137,8 @@ const mapStateToProps = ({main}) => {
 const mapDispatchToProps = {
   setMomentBaseDateAction,
   setMomentBaseNameAction,
+  setMomentBaseDateIsInThePastAction,
+  setMomentBaseDateIsInTheFutureAction,
   setMomentBaseYearAction,
   setMomentBaseMonthAction,
   setMomentBaseWeekAction,
@@ -148,6 +174,7 @@ Dropdown.propTypes = {
   baseDateIsInTheFuture: PropTypes.bool,
   baseDateName: PropTypes.string,
   baseDate: PropTypes.string,
+  nowYear: PropTypes.string,
   addToBaseDateMonths: PropTypes.number,
   addToBaseDateWeeks: PropTypes.number,
   addToBaseDateDays: PropTypes.number,
