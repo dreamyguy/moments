@@ -10,8 +10,17 @@ import DatePicker from './../components/time/DatePicker';
 import AddTimeUnitToDate from './../components/time/AddTimeUnitToDate';
 
 class Home extends Component {
-  render() {
-    const {baseDate} = this.props;
+  render () {
+    const {
+      baseDate,
+      baseDateIsInThePast,
+    } = this.props;
+    let classesFrstRow = 'col-12 col-md-6';
+    let classesSecondRow = 'col-12 col-md-6';
+    if (baseDateIsInThePast) {
+      classesFrstRow = 'col-12 col-md-6 order-2';
+      classesSecondRow = 'col-12 col-md-6 order-1';
+    }
     return (
       <section className="section section--alt">
         <div className="container m-t-20 m-b-20">
@@ -21,14 +30,14 @@ class Home extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-12">
+            <div className={classesFrstRow}>
               <Date
                 heading = 'Now'
                 date = {<Now/>}
               />
             </div>
             {baseDate &&
-              <div className="col-12">
+              <div className={classesSecondRow}>
                 <Date
                   heading = "Base date"
                   date = {baseDate}
@@ -52,6 +61,8 @@ class Home extends Component {
 const mapStateToProps = ({main}) => {
   return {
     baseDate: main.baseDate,
+    baseDateIsInThePast: main.baseDateIsInThePast,
+    baseDateIsInTheFuture: main.baseDateIsInTheFuture,
   }
 }
 
@@ -61,6 +72,8 @@ const HomeConnect = connect(
 
 Home.propTypes = {
   baseDate: PropTypes.string,
+  baseDateIsInThePast: PropTypes.bool,
+  baseDateIsInTheFuture: PropTypes.bool,
 };
 
 export default HomeConnect;

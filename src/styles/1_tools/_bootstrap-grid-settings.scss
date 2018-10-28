@@ -76,6 +76,13 @@ $grid-gutter-width: 40px !default;
     &:first-child {
       margin-top: 0;
     }
+    // Special scenarios when re-ordering columns
+    &.order-1 {
+      margin-top: 0;
+    }
+    &.order-2:first-child {
+      margin-top: $responsive-spacing-top;
+    }
   }
 }
 // // Reset the above on certain sections

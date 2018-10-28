@@ -32,10 +32,10 @@ class AddTimeUnitToDate extends Component {
       return (
         <>
           {baseDateIsInThePast &&
-            <h3>Time since</h3>
+            <h3 className="m-t-40">Time since</h3>
           }
           {baseDateIsInTheFuture &&
-            <h3>Time until</h3>
+            <h3 className="m-t-40">Time until</h3>
           }
           <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'years')}</p>
           <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'months')}</p>
