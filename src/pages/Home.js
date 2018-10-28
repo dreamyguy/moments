@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Date from './../components/time/Date';
 import Now from './../components/time/Now';
 import DatePicker from './../components/time/DatePicker';
+import AddTimeUnitToDate from './../components/time/AddTimeUnitToDate';
 
 class Home extends Component {
   render() {
@@ -19,6 +20,11 @@ class Home extends Component {
                 heading = 'Now'
                 date = {<Now/>}
               />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <AddTimeUnitToDate />
             </div>
           </div>
         </div>

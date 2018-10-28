@@ -6,7 +6,7 @@ import moment from 'moment';
 import uuidv4 from 'uuid/v4';
 
 // Import helpers
-import { numberRange, timeDiff } from './../../helpers/helpers';
+import { numberRange } from './../../helpers/helpers';
 
 // Import components
 import Dropdown from './Dropdown';
@@ -15,7 +15,7 @@ import Date from './Date';
 class DatePicker extends Component {
   getTimeUnit (mode) {
     const options = [];
-    let units = []
+    let units = [];
     if (mode === 'year') {
       const thisYear = moment().year();
       units = numberRange(1900, thisYear);
@@ -43,68 +43,6 @@ class DatePicker extends Component {
           date = {baseDate}
           classes = "bl-fav-orange-dark"
         />
-      )
-    }
-    return null;
-  }
-  renderAddToBase () {
-    const {
-      baseDateName = '',
-      baseDate,
-      addToBaseDateMonths,
-      addToBaseDateWeeks,
-      addToBaseDateDays,
-      addToBaseDateHours,
-      addToBaseDateMinutes,
-      addToBaseDateSeconds,
-    } = this.props;
-    if (baseDate) {
-      return (
-        <>
-          <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'years')}</p>
-          <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'months')}</p>
-          <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'weeks')}</p>
-          <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'days')}</p>
-          <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'hours')}</p>
-          <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'minutes')}</p>
-          <p>{timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'seconds')}</p>
-          {addToBaseDateMonths &&
-            <>
-              <h4>{this.localizeThousand(addToBaseDateMonths)} months from {baseDateName}</h4>
-              <p>{moment(baseDate).add(addToBaseDateMonths, 'months').format('MMMM Do YYYY, h:mm:ss a')}</p>
-            </>
-          }
-          {addToBaseDateWeeks &&
-            <>
-              <h4>{this.localizeThousand(addToBaseDateWeeks)} weeks from {baseDateName}</h4>
-              <p>{moment(baseDate).add(addToBaseDateWeeks, 'weeks').format('MMMM Do YYYY, h:mm:ss a')}</p>
-            </>
-          }
-          {addToBaseDateDays &&
-            <>
-              <h4>{this.localizeThousand(addToBaseDateDays)} days from {baseDateName}</h4>
-              <p>{moment(baseDate).add(addToBaseDateDays, 'days').format('MMMM Do YYYY, h:mm:ss a')}</p>
-            </>
-          }
-          {addToBaseDateHours &&
-            <>
-              <h4>{this.localizeThousand(addToBaseDateHours)} hours from {baseDateName}</h4>
-              <p>{moment(baseDate).add(addToBaseDateHours, 'hours').format('MMMM Do YYYY, h:mm:ss a')}</p>
-            </>
-          }
-          {addToBaseDateMinutes &&
-            <>
-              <h4>{this.localizeThousand(addToBaseDateMinutes)} minutes from {baseDateName}</h4>
-              <p>{moment(baseDate).add(addToBaseDateMinutes, 'minutes').format('MMMM Do YYYY, h:mm:ss a')}</p>
-            </>
-          }
-          {addToBaseDateSeconds &&
-            <>
-              <h4>{this.localizeThousand(addToBaseDateSeconds)} seconds from {baseDateName}</h4>
-              <p>{moment(baseDate).add(addToBaseDateSeconds, 'seconds').format('MMMM Do YYYY, h:mm:ss a')}</p>
-            </>
-          }
-        </>
       )
     }
     return null;
@@ -137,8 +75,6 @@ class DatePicker extends Component {
       baseHour = '',
       baseMinute = '',
       baseSecond = '',
-      baseDateIsInThePast = false,
-      baseDateIsInTheFuture = false,
     } = this.props;
     return (
       <>
@@ -191,13 +127,6 @@ class DatePicker extends Component {
         </div>
         <div>
           {this.renderBaseDate()}
-          {baseDateIsInThePast &&
-            <h3>Time since</h3>
-          }
-          {baseDateIsInTheFuture &&
-            <h3>Time until</h3>
-          }
-          {this.renderAddToBase()}
         </div>
       </>
     );
