@@ -109,6 +109,23 @@ class DatePicker extends Component {
     }
     return null;
   }
+  renderInstructions () {
+    const {
+      baseYearDefined = false,
+    } = this.props;
+    let instructions = '';
+    const optional = <span className="optional">(optional)</span>;
+    if (!baseYearDefined) {
+      instructions = 'To get started, choose a year:'
+    } else {
+      instructions = 'Refine your date:';
+    }
+    return (
+      <div className="m-b-10 align-center">
+        {instructions} {!baseYearDefined ? '' : optional}
+      </div>
+    );
+  }
   render () {
     const {
       baseYearDefined = false,
@@ -125,6 +142,7 @@ class DatePicker extends Component {
     } = this.props;
     return (
       <>
+        {this.renderInstructions()}
         <div className="container-flex">
           <Dropdown
             tabIndex = '1'

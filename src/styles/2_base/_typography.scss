@@ -42,3 +42,8 @@ code {
 .link {
   color: $cl-sb-blue;
 }
+
+.optional {
+  color: $cl-dark-gray-lightest;
+  @extend .font-montserrat-regular-italic;
+}
