@@ -38,60 +38,60 @@ class AddTimeUnitToDate extends Component {
             <h3 className="m-t-20 m-b-20">Time until</h3>
           }
           <div className="time-unit-output bl-purple">
-            {timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'years')}
+            {timeDiff(baseDate, moment().format('MMMM Do YYYY, HH:mm:ss'), 'years')}
           </div>
           <div className="time-unit-output bl-fuchsia">
-            {timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'months')}
+            {timeDiff(baseDate, moment().format('MMMM Do YYYY, HH:mm:ss'), 'months')}
           </div>
           <div className="time-unit-output bl-red">
-            {timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'weeks')}
+            {timeDiff(baseDate, moment().format('MMMM Do YYYY, HH:mm:ss'), 'weeks')}
           </div>
           <div className="time-unit-output bl-orange">
-            {timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'days')}
+            {timeDiff(baseDate, moment().format('MMMM Do YYYY, HH:mm:ss'), 'days')}
           </div>
           <div className="time-unit-output bl-yellow">
-            {timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'hours')}
+            {timeDiff(baseDate, moment().format('MMMM Do YYYY, HH:mm:ss'), 'hours')}
           </div>
           <div className="time-unit-output bl-fav-green-light">
-            {timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'minutes')}
+            {timeDiff(baseDate, moment().format('MMMM Do YYYY, HH:mm:ss'), 'minutes')}
           </div>
           <div className="time-unit-output bl-teal">
-            {timeDiff(baseDate, moment().format('MMMM Do YYYY, h:mm:ss a'), 'seconds')}
+            {timeDiff(baseDate, moment().format('MMMM Do YYYY, HH:mm:ss'), 'seconds')}
           </div>
           {addToBaseDateMonths &&
             <>
               <h4>{localizeThousand(addToBaseDateMonths)} months from {this.renderBaseDateName()}</h4>
-              <p>{moment(baseDate).add(addToBaseDateMonths, 'months').format('MMMM Do YYYY, h:mm:ss a')}</p>
+              <p>{moment(baseDate).add(addToBaseDateMonths, 'months').format('MMMM Do YYYY, HH:mm:ss')}</p>
             </>
           }
           {addToBaseDateWeeks &&
             <>
               <h4>{localizeThousand(addToBaseDateWeeks)} weeks from {this.renderBaseDateName()}</h4>
-              <p>{moment(baseDate).add(addToBaseDateWeeks, 'weeks').format('MMMM Do YYYY, h:mm:ss a')}</p>
+              <p>{moment(baseDate).add(addToBaseDateWeeks, 'weeks').format('MMMM Do YYYY, HH:mm:ss')}</p>
             </>
           }
           {addToBaseDateDays &&
             <>
               <h4>{localizeThousand(addToBaseDateDays)} days from {this.renderBaseDateName()}</h4>
-              <p>{moment(baseDate).add(addToBaseDateDays, 'days').format('MMMM Do YYYY, h:mm:ss a')}</p>
+              <p>{moment(baseDate).add(addToBaseDateDays, 'days').format('MMMM Do YYYY, HH:mm:ss')}</p>
             </>
           }
           {addToBaseDateHours &&
             <>
               <h4>{localizeThousand(addToBaseDateHours)} hours from {this.renderBaseDateName()}</h4>
-              <p>{moment(baseDate).add(addToBaseDateHours, 'hours').format('MMMM Do YYYY, h:mm:ss a')}</p>
+              <p>{moment(baseDate).add(addToBaseDateHours, 'hours').format('MMMM Do YYYY, HH:mm:ss')}</p>
             </>
           }
           {addToBaseDateMinutes &&
             <>
               <h4>{localizeThousand(addToBaseDateMinutes)} minutes from {this.renderBaseDateName()}</h4>
-              <p>{moment(baseDate).add(addToBaseDateMinutes, 'minutes').format('MMMM Do YYYY, h:mm:ss a')}</p>
+              <p>{moment(baseDate).add(addToBaseDateMinutes, 'minutes').format('MMMM Do YYYY, HH:mm:ss')}</p>
             </>
           }
           {addToBaseDateSeconds &&
             <>
               <h4>{localizeThousand(addToBaseDateSeconds)} seconds from {this.renderBaseDateName()}</h4>
-              <p>{moment(baseDate).add(addToBaseDateSeconds, 'seconds').format('MMMM Do YYYY, h:mm:ss a')}</p>
+              <p>{moment(baseDate).add(addToBaseDateSeconds, 'seconds').format('MMMM Do YYYY, HH:mm:ss')}</p>
             </>
           }
         </>
