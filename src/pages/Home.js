@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Date from './../components/time/Date';
 import Now from './../components/time/Now';
-import DateInitial from './../components/time/DateInitial';
+import DatePicker from './../components/time/DatePicker';
 
 class Home extends Component {
   render() {
@@ -10,15 +10,15 @@ class Home extends Component {
         <div className="container m-t-20 m-b-20">
           <div className="row">
             <div className="col-12">
-              <Date
-                heading = 'Now'
-                date = {<Now/>}
-              />
+              <DatePicker/>
             </div>
           </div>
           <div className="row">
             <div className="col-12">
-              <DateInitial/>
+              <Date
+                heading = 'Now'
+                date = {<Now/>}
+              />
             </div>
           </div>
         </div>

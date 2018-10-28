@@ -12,7 +12,7 @@ import { numberRange, timeDiff } from './../../helpers/helpers';
 import Dropdown from './Dropdown';
 import Date from './Date';
 
-class DateInitial extends Component {
+class DatePicker extends Component {
   getTimeUnit (mode) {
     const options = [];
     let units = []
@@ -109,7 +109,6 @@ class DateInitial extends Component {
     }
     return null;
   }
-
   render () {
     const {
       baseYearDefined = false,
@@ -126,7 +125,7 @@ class DateInitial extends Component {
     } = this.props;
     return (
       <>
-        <div className="container-flex m-t-20">
+        <div className="container-flex">
           <Dropdown
             tabIndex = '1'
             options = {this.getTimeUnit('year')}
@@ -211,11 +210,11 @@ const mapStateToProps = ({main}) => {
   }
 }
 
-const DateInitialConnect = connect(
+const DatePickerConnect = connect(
   mapStateToProps
-)(DateInitial);
+)(DatePicker);
 
-DateInitial.propTypes = {
+DatePicker.propTypes = {
   baseYearDefined: PropTypes.bool,
   baseMonthDefined: PropTypes.bool,
   baseDayDefined: PropTypes.bool,
@@ -237,4 +236,4 @@ DateInitial.propTypes = {
   addToBaseDateSeconds: PropTypes.number,
 };
 
-export default DateInitialConnect;
+export default DatePickerConnect;
