@@ -10,20 +10,8 @@ import DatePicker from './../components/time/DatePicker';
 import AddTimeUnitToDate from './../components/time/AddTimeUnitToDate';
 
 class Home extends Component {
-  renderBaseDate () {
-    const {baseDate} = this.props;
-    if (baseDate) {
-      return (
-        <Date
-          heading = "Base date"
-          date = {baseDate}
-          classes = "bl-fav-orange-dark"
-        />
-      )
-    }
-    return null;
-  }
   render() {
+    const {baseDate} = this.props;
     return (
       <section className="section section--alt">
         <div className="container m-t-20 m-b-20">
@@ -39,9 +27,15 @@ class Home extends Component {
                 date = {<Now/>}
               />
             </div>
-            <div className="col-12">
-              {this.renderBaseDate()}
-            </div>
+            {baseDate &&
+              <div className="col-12">
+                <Date
+                  heading = "Base date"
+                  date = {baseDate}
+                  classes = "bl-fav-orange-dark"
+                />
+              </div>
+            }
           </div>
           <div className="row">
             <div className="col-12">
