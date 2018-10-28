@@ -127,15 +127,6 @@ const mapStateToProps = ({main}) => {
     baseHour: main.baseHour,
     baseMinute: main.baseMinute,
     baseSecond: main.baseSecond,
-    baseDateIsInThePast: main.baseDateIsInThePast,
-    baseDateIsInTheFuture: main.baseDateIsInTheFuture,
-    baseDateName: main.baseDateName,
-    addToBaseDateMonths: main.addToBaseDateMonths,
-    addToBaseDateWeeks: main.addToBaseDateWeeks,
-    addToBaseDateDays: main.addToBaseDateDays,
-    addToBaseDateHours: main.addToBaseDateHours,
-    addToBaseDateMinutes: main.addToBaseDateMinutes,
-    addToBaseDateSeconds: main.addToBaseDateSeconds,
   }
 }
 
@@ -153,15 +144,6 @@ DatePicker.propTypes = {
   baseHour: PropTypes.string,
   baseMinute: PropTypes.string,
   baseSecond: PropTypes.string,
-  baseDateIsInThePast: PropTypes.bool,
-  baseDateIsInTheFuture: PropTypes.bool,
-  baseDateName: PropTypes.string,
-  addToBaseDateMonths: PropTypes.number,
-  addToBaseDateWeeks: PropTypes.number,
-  addToBaseDateDays: PropTypes.number,
-  addToBaseDateHours: PropTypes.number,
-  addToBaseDateMinutes: PropTypes.number,
-  addToBaseDateSeconds: PropTypes.number,
 };
 
 export default DatePickerConnect;
