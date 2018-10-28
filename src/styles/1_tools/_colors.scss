@@ -48,11 +48,19 @@ $_colorList:  sb-slategray $cl-sb-slategray,
               fav-occre-dark $cl-fav-occre-dark,
               fav-coffee $cl-fav-coffee;
 
+// Foreground and background colors
 @each $_color in $_colorList {
   .bg-#{nth($_color, 1)} {
     background-color: #{nth($_color, 2)} !important;
   }
   .fg-#{nth($_color, 1)} {
     color: #{nth($_color, 2)} !important;
+  }
+}
+
+// Border left in all colors
+@each $_color in $_colorList {
+  .bl-#{nth($_color, 1)} {
+    border-left: 5px solid #{nth($_color, 2)} !important;
   }
 }

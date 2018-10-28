@@ -39,8 +39,9 @@ class DateInitial extends Component {
     if (baseDate) {
       return (
         <Date
-          heading = 'Base date'
+          heading = "Base date"
           date = {baseDate}
+          classes = "bl-fav-orange-dark"
         />
       )
     }

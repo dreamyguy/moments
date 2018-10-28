@@ -8,10 +8,11 @@ class Date extends Component {
   render () {
     const {
       heading = '',
-      date = <Now/>
+      date = <Now/>,
+      classes = ''
     } = this.props;
     return (
-      <div className="date">
+      <div className={`date ${classes}`}>
         <h3 className="date__heading m-b-20">
           {heading}
         </h3>
