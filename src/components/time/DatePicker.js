@@ -10,7 +10,6 @@ import { numberRange } from './../../helpers/helpers';
 
 // Import components
 import Dropdown from './Dropdown';
-import Date from './Date';
 
 class DatePicker extends Component {
   getTimeUnit (mode) {
@@ -33,19 +32,6 @@ class DatePicker extends Component {
       return options.reverse();
     }
     return options;
-  }
-  renderBaseDate () {
-    const {baseDate} = this.props;
-    if (baseDate) {
-      return (
-        <Date
-          heading = "Base date"
-          date = {baseDate}
-          classes = "bl-fav-orange-dark"
-        />
-      )
-    }
-    return null;
   }
   renderInstructions () {
     const {
@@ -125,9 +111,6 @@ class DatePicker extends Component {
             </>
           }
         </div>
-        <div>
-          {this.renderBaseDate()}
-        </div>
       </>
     );
   }
@@ -147,7 +130,6 @@ const mapStateToProps = ({main}) => {
     baseDateIsInThePast: main.baseDateIsInThePast,
     baseDateIsInTheFuture: main.baseDateIsInTheFuture,
     baseDateName: main.baseDateName,
-    baseDate: main.baseDate,
     addToBaseDateMonths: main.addToBaseDateMonths,
     addToBaseDateWeeks: main.addToBaseDateWeeks,
     addToBaseDateDays: main.addToBaseDateDays,
@@ -174,7 +156,6 @@ DatePicker.propTypes = {
   baseDateIsInThePast: PropTypes.bool,
   baseDateIsInTheFuture: PropTypes.bool,
   baseDateName: PropTypes.string,
-  baseDate: PropTypes.string,
   addToBaseDateMonths: PropTypes.number,
   addToBaseDateWeeks: PropTypes.number,
   addToBaseDateDays: PropTypes.number,
