@@ -1,0 +1,12 @@
+@import "./../1_tools/variables";
+
+.text-field {
+  width: 145px;
+  margin: 0 10px 0 0;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 15px; // because at 16px it triggers a zoom on iOS Safari
+  line-height: 1.15;
+  background-color: $cl-silver;
+  border: 1px solid $cl-gray;
+}

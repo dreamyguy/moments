@@ -12,8 +12,8 @@ export const alphabetRange = (start, end) => new Array(end.charCodeAt(0) - start
 export const localizeThousand = value => value.toLocaleString().replace('-', '');
 
 export const timeDiff = (before, after, type) => {
-  const a = moment(before, 'MMMM Do YYYY, h:mm:ss a');
-  const b = moment(after, 'MMMM Do YYYY, h:mm:ss a');
+  const a = moment(before, 'MMMM Do YYYY, HH:mm:ss');
+  const b = moment(after, 'MMMM Do YYYY, HH:mm:ss');
   const difference = a.diff(b, type); // 'diff' is a 'moment' method
   const differenceLocalized = localizeThousand(difference);
   return `${differenceLocalized} ${type}`;

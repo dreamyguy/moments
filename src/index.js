@@ -13,6 +13,7 @@ import App from './components/App';
 import Home from './pages/Home';
 import Api from './pages/Api';
 import About from './pages/About';
+import FromDate from './pages/FromDate';
 
 // Import store
 import initStore from './store/store';
@@ -27,6 +28,7 @@ ReactDom.render((
           <Route exact path="/" component={Home}/>
           <Route exact path="/api" component={Api}/>
           <Route exact path="/about" component={About}/>
+          <Route exact path="/from-date" component={FromDate}/>
         </Switch>
       </App>
     </BrowserRouter>

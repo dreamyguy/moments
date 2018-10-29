@@ -322,43 +322,43 @@ export function reducerMain (state = initialStateMain, action) {
       return {
         ...state,
         loading: false,
-        addToBaseDateYears: action.payload
+        addToBaseDateYears: parseInt(action.payload, 10)
       }
     case SET_ADD_TO_BASE_DATE_MONTHS:
       return {
         ...state,
         loading: false,
-        addToBaseDateMonths: action.payload
+        addToBaseDateMonths: parseInt(action.payload, 10)
       }
     case SET_ADD_TO_BASE_DATE_WEEKS:
       return {
         ...state,
         loading: false,
-        addToBaseDateWeeks: action.payload
+        addToBaseDateWeeks: parseInt(action.payload, 10)
       }
     case SET_ADD_TO_BASE_DATE_DAYS:
       return {
         ...state,
         loading: false,
-        addToBaseDateDays: action.payload
+        addToBaseDateDays: parseInt(action.payload, 10)
       }
     case SET_ADD_TO_BASE_DATE_HOURS:
       return {
         ...state,
         loading: false,
-        addToBaseDateHours: action.payload
+        addToBaseDateHours: parseInt(action.payload, 10)
       }
     case SET_ADD_TO_BASE_DATE_MINUTES:
       return {
         ...state,
         loading: false,
-        addToBaseDateMinutes: action.payload
+        addToBaseDateMinutes: parseInt(action.payload, 10)
       }
     case SET_ADD_TO_BASE_DATE_SECONDS:
       return {
         ...state,
         loading: false,
-        addToBaseDateSeconds: action.payload
+        addToBaseDateSeconds: parseInt(action.payload, 10)
       }
     // Frontend
     case SET_FRONTEND:

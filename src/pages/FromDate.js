@@ -5,22 +5,15 @@ import PropTypes from 'prop-types';
 
 // Import components
 import Date from './../components/time/Date';
-import Now from './../components/time/Now';
 import DatePicker from './../components/time/DatePicker';
-import AddTimeUnitToDate from './../components/time/AddTimeUnitToDate';
+// import AddTimeUnitToDate from './../components/time/AddTimeUnitToDate';
+import AddTimeUnitToDateFields from './../components/time/AddTimeUnitToDateFields';
 
-class Home extends Component {
+class FromDate extends Component {
   render () {
     const {
       baseDate,
-      baseDateIsInThePast,
     } = this.props;
-    let classesFrstRow = 'col-12 col-md-6';
-    let classesSecondRow = 'col-12 col-md-6';
-    if (baseDateIsInThePast) {
-      classesFrstRow = 'col-12 col-md-6 order-2';
-      classesSecondRow = 'col-12 col-md-6 order-1';
-    }
     return (
       <section className="section section--alt">
         <div className="container m-t-20 m-b-20">
@@ -29,26 +22,21 @@ class Home extends Component {
               <DatePicker/>
             </div>
           </div>
-          <div className="row">
-            <div className={classesFrstRow}>
-              <Date
-                heading = 'Now'
-                date = {<Now/>}
-              />
+          {baseDate &&
+            <div className="row">
+                <div className="col-12">
+                  <Date
+                    heading = "Base date"
+                    date = {baseDate}
+                    classes = "bl-fav-orange-dark"
+                  />
+                </div>
             </div>
-            {baseDate &&
-              <div className={classesSecondRow}>
-                <Date
-                  heading = "Base date"
-                  date = {baseDate}
-                  classes = "bl-fav-orange-dark"
-                />
-              </div>
-            }
-          </div>
+          }
           <div className="row">
             <div className="col-12">
-              <AddTimeUnitToDate />
+              <AddTimeUnitToDateFields />
+              {/* <AddTimeUnitToDate /> */}
             </div>
           </div>
         </div>
@@ -65,14 +53,14 @@ const mapStateToProps = ({main}) => {
   }
 }
 
-const HomeConnect = connect(
+const FromDateConnect = connect(
   mapStateToProps
-)(Home);
+)(FromDate);
 
-Home.propTypes = {
+FromDate.propTypes = {
   baseDate: PropTypes.string,
   baseDateIsInThePast: PropTypes.bool,
   baseDateIsInTheFuture: PropTypes.bool,
 };
 
-export default HomeConnect;
+export default FromDateConnect;
