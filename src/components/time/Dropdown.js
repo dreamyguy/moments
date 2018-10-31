@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import uuidv4 from 'uuid/v4';
 
+// Import constants
+import { MOMENT_TIME_FORMAT } from './../../config';
+
 // Import helpers
 import { timePeriod } from './../../helpers/helpers';
 
@@ -58,23 +61,23 @@ class Dropdown extends Component {
     } = this.props;
     let theBaseDate = '';
     if (mode === 'year') {
-      theBaseDate = moment().year(value).format('MMMM Do YYYY, HH:mm:ss');
+      theBaseDate = moment().year(value).format(MOMENT_TIME_FORMAT);
       setMomentBaseYearAction(value);
       this.setTimePeriod(value);
     } else if (mode === 'month') {
-      theBaseDate = moment().year(baseYear).month(value).format('MMMM Do YYYY, HH:mm:ss');
+      theBaseDate = moment().year(baseYear).month(value).format(MOMENT_TIME_FORMAT);
       setMomentBaseMonthAction(value);
     } else if (mode === 'day') {
-      theBaseDate = moment().year(baseYear).month(baseMonth).date(value).format('MMMM Do YYYY, HH:mm:ss');
+      theBaseDate = moment().year(baseYear).month(baseMonth).date(value).format(MOMENT_TIME_FORMAT);
       setMomentBaseDayAction(value);
     } else if (mode === 'hour') {
-      theBaseDate = moment().year(baseYear).month(baseMonth).date(baseDay).hour(value).format('MMMM Do YYYY, HH:mm:ss');
+      theBaseDate = moment().year(baseYear).month(baseMonth).date(baseDay).hour(value).format(MOMENT_TIME_FORMAT);
       setMomentBaseHourAction(value);
     } else if (mode === 'minute') {
-      theBaseDate = moment().year(baseYear).month(baseMonth).date(baseDay).hour(baseHour).minute(value).format('MMMM Do YYYY, HH:mm:ss');
+      theBaseDate = moment().year(baseYear).month(baseMonth).date(baseDay).hour(baseHour).minute(value).format(MOMENT_TIME_FORMAT);
       setMomentBaseMinuteAction(value);
     } else if (mode === 'second') {
-      theBaseDate = moment().year(baseYear).month(baseMonth).date(baseDay).hour(baseHour).minute(baseMinute).second(value).format('MMMM Do YYYY, HH:mm:ss');
+      theBaseDate = moment().year(baseYear).month(baseMonth).date(baseDay).hour(baseHour).minute(baseMinute).second(value).format(MOMENT_TIME_FORMAT);
       setMomentBaseSecondAction(value);
     }
     setMomentBaseDateAction(theBaseDate);

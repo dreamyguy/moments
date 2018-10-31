@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
+// Import constants
+import { MOMENT_TIME_FORMAT } from './../../config';
+
 // Import helpers
 import { localizeThousand } from './../../helpers/helpers';
 
@@ -64,19 +67,19 @@ class AddTimeUnitToDate extends Component {
     let theMoment = '';
     if (baseDate) {
       if (mode === 'year' && addToBaseDateYears) {
-        theMoment = moment(baseDate, 'MMMM Do YYYY, HH:mm:ss').add(addToBaseDateYears, 'years').format('MMMM Do YYYY, HH:mm:ss');
+        theMoment = moment(baseDate, MOMENT_TIME_FORMAT).add(addToBaseDateYears, 'years').format(MOMENT_TIME_FORMAT);
       } else if (mode === 'month' && addToBaseDateMonths) {
-        theMoment = moment(baseDate, 'MMMM Do YYYY, HH:mm:ss').add(addToBaseDateMonths, 'months').format('MMMM Do YYYY, HH:mm:ss');
+        theMoment = moment(baseDate, MOMENT_TIME_FORMAT).add(addToBaseDateMonths, 'months').format(MOMENT_TIME_FORMAT);
       } else if (mode === 'week' && addToBaseDateWeeks) {
-        theMoment = moment(baseDate, 'MMMM Do YYYY, HH:mm:ss').add(addToBaseDateWeeks, 'weeks').format('MMMM Do YYYY, HH:mm:ss');
+        theMoment = moment(baseDate, MOMENT_TIME_FORMAT).add(addToBaseDateWeeks, 'weeks').format(MOMENT_TIME_FORMAT);
       } else if (mode === 'day' && addToBaseDateDays) {
-        theMoment = moment(baseDate, 'MMMM Do YYYY, HH:mm:ss').add(addToBaseDateDays, 'days').format('MMMM Do YYYY, HH:mm:ss');
+        theMoment = moment(baseDate, MOMENT_TIME_FORMAT).add(addToBaseDateDays, 'days').format(MOMENT_TIME_FORMAT);
       } else if (mode === 'hour' && addToBaseDateHours) {
-        theMoment = moment(baseDate, 'MMMM Do YYYY, HH:mm:ss').add(addToBaseDateHours, 'hours').format('MMMM Do YYYY, HH:mm:ss');
+        theMoment = moment(baseDate, MOMENT_TIME_FORMAT).add(addToBaseDateHours, 'hours').format(MOMENT_TIME_FORMAT);
       } else if (mode === 'minute' && addToBaseDateMinutes) {
-        theMoment = moment(baseDate, 'MMMM Do YYYY, HH:mm:ss').add(addToBaseDateMinutes, 'minutes').format('MMMM Do YYYY, HH:mm:ss');
+        theMoment = moment(baseDate, MOMENT_TIME_FORMAT).add(addToBaseDateMinutes, 'minutes').format(MOMENT_TIME_FORMAT);
       } else if (mode === 'second' && addToBaseDateSeconds) {
-        theMoment = moment(baseDate, 'MMMM Do YYYY, HH:mm:ss').add(addToBaseDateSeconds, 'seconds').format('MMMM Do YYYY, HH:mm:ss');
+        theMoment = moment(baseDate, MOMENT_TIME_FORMAT).add(addToBaseDateSeconds, 'seconds').format(MOMENT_TIME_FORMAT);
       }
     }
     return theMoment;

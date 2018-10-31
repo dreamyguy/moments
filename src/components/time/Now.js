@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
+// Import constants
+import { MOMENT_TIME_FORMAT } from './../../config';
+
 // Import actions
 import {
   setMomentNowDateAction,
@@ -27,7 +30,7 @@ class Now extends Component {
     );
   }
   updateNow () {
-    this.props.setMomentNowDateAction(moment().format('MMMM Do YYYY, HH:mm:ss'));
+    this.props.setMomentNowDateAction(moment().format(MOMENT_TIME_FORMAT));
     this.props.setMomentNowYearAction(moment().format('YYYY'));
     this.props.setMomentNowMonthAction(moment().format('MMMM'));
     this.props.setMomentNowDayAction(moment().format('D'));

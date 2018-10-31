@@ -1,6 +1,9 @@
 // Import dependencies
 import moment from 'moment';
 
+// Import constants
+import { MOMENT_TIME_FORMAT } from './../config';
+
 export const numberRange = (start, end) => new Array(end - start + 1).fill().map((d, i) => i + start);
 
 export const alphabetRange = (start, end) => new Array(end.charCodeAt(0) - start.charCodeAt(0) + 1).fill().map((d, i) => String.fromCharCode(i + start.charCodeAt(0)));
@@ -12,8 +15,8 @@ export const alphabetRange = (start, end) => new Array(end.charCodeAt(0) - start
 export const localizeThousand = value => value.toLocaleString().replace('-', '');
 
 export const timeDiff = (before, after, type) => {
-  const a = moment(before, 'MMMM Do YYYY, HH:mm:ss');
-  const b = moment(after, 'MMMM Do YYYY, HH:mm:ss');
+  const a = moment(before, MOMENT_TIME_FORMAT);
+  const b = moment(after, MOMENT_TIME_FORMAT);
   const difference = a.diff(b, type); // 'diff' is a 'moment' method
   const differenceLocalized = localizeThousand(difference);
   return `${differenceLocalized} ${type}`;
