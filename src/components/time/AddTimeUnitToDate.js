@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 
 // Import helpers
 import { timeDiff } from './../../helpers/helpers';
@@ -11,6 +10,7 @@ class AddTimeUnitToDate extends Component {
   render () {
     const {
       baseDate,
+      nowDate,
       baseDateIsInThePast,
       baseDateIsInTheFuture,
     } = this.props;
@@ -24,25 +24,25 @@ class AddTimeUnitToDate extends Component {
             <h3 className="m-t-20 m-b-20">Time until</h3>
           }
           <div className="time-unit-output bl-purple">
-            {timeDiff(baseDate, moment().format('MMMM Do YYYY, HH:mm:ss'), 'years')}
+            {timeDiff(baseDate, nowDate, 'years')}
           </div>
           <div className="time-unit-output bl-fuchsia">
-            {timeDiff(baseDate, moment().format('MMMM Do YYYY, HH:mm:ss'), 'months')}
+            {timeDiff(baseDate, nowDate, 'months')}
           </div>
           <div className="time-unit-output bl-red">
-            {timeDiff(baseDate, moment().format('MMMM Do YYYY, HH:mm:ss'), 'weeks')}
+            {timeDiff(baseDate, nowDate, 'weeks')}
           </div>
           <div className="time-unit-output bl-orange">
-            {timeDiff(baseDate, moment().format('MMMM Do YYYY, HH:mm:ss'), 'days')}
+            {timeDiff(baseDate, nowDate, 'days')}
           </div>
           <div className="time-unit-output bl-yellow">
-            {timeDiff(baseDate, moment().format('MMMM Do YYYY, HH:mm:ss'), 'hours')}
+            {timeDiff(baseDate, nowDate, 'hours')}
           </div>
           <div className="time-unit-output bl-fav-green-light">
-            {timeDiff(baseDate, moment().format('MMMM Do YYYY, HH:mm:ss'), 'minutes')}
+            {timeDiff(baseDate, nowDate, 'minutes')}
           </div>
           <div className="time-unit-output bl-teal">
-            {timeDiff(baseDate, moment().format('MMMM Do YYYY, HH:mm:ss'), 'seconds')}
+            {timeDiff(baseDate, nowDate, 'seconds')}
           </div>
         </>
       )
@@ -56,6 +56,7 @@ const mapStateToProps = ({main}) => {
     baseDate: main.baseDate,
     baseDateIsInThePast: main.baseDateIsInThePast,
     baseDateIsInTheFuture: main.baseDateIsInTheFuture,
+    nowDate: main.nowDate,
   }
 }
 
@@ -67,6 +68,7 @@ AddTimeUnitToDate.propTypes = {
   baseDate: PropTypes.string,
   baseDateIsInThePast: PropTypes.bool,
   baseDateIsInTheFuture: PropTypes.bool,
+  nowDate: PropTypes.string,
 };
 
 export default AddTimeUnitToDateConnect;
