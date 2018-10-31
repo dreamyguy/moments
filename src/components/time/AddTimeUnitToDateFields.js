@@ -92,6 +92,13 @@ class AddTimeUnitToDate extends Component {
   renderInputFields () {
     const {
       baseDate,
+      addToBaseDateYears,
+      addToBaseDateMonths,
+      addToBaseDateWeeks,
+      addToBaseDateDays,
+      addToBaseDateHours,
+      addToBaseDateMinutes,
+      addToBaseDateSeconds,
       setAddToBaseYearsAction,
       setAddToBaseMonthsAction,
       setAddToBaseWeeksAction,
@@ -104,102 +111,83 @@ class AddTimeUnitToDate extends Component {
       return (
         <>
           <h3 className="m-t-20 m-b-20">Set time unit you'd like to know the output for</h3>
-          <div className="time-unit-output years bl-purple">
+          <div className={`time-unit-output years bl-purple${addToBaseDateYears ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
               setAddToBaseYearsAction(e.target.value);
             }}/> Years
+            {addToBaseDateYears &&
+              <>
+                <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('year')}</h4>
+                <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('year')}</p>
+              </>
+            }
           </div>
-          <div className="time-unit-output months bl-fuchsia">
+          <div className={`time-unit-output months bl-fuchsia${addToBaseDateMonths ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
               setAddToBaseMonthsAction(e.target.value);
             }}/> Months
+            {addToBaseDateMonths &&
+              <>
+                <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('month')}</h4>
+                <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('month')}</p>
+              </>
+            }
           </div>
-          <div className="time-unit-output weeks bl-red">
+          <div className={`time-unit-output weeks bl-red${addToBaseDateWeeks ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
               setAddToBaseWeeksAction(e.target.value);
             }}/> Weeks
+            {addToBaseDateWeeks &&
+              <>
+                <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('week')}</h4>
+                <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('week')}</p>
+              </>
+            }
           </div>
-          <div className="time-unit-output days bl-orange">
+          <div className={`time-unit-output days bl-orange${addToBaseDateDays ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
               setAddToBaseDaysAction(e.target.value);
             }}/> Days
+            {addToBaseDateDays &&
+              <>
+                <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('day')}</h4>
+                <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('day')}</p>
+              </>
+            }
           </div>
-          <div className="time-unit-output hours bl-yellow">
+          <div className={`time-unit-output hours bl-yellow${addToBaseDateHours ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
               setAddToBaseHoursAction(e.target.value);
             }}/> Hours
+            {addToBaseDateHours &&
+              <>
+                <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('hour')}</h4>
+                <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('hour')}</p>
+              </>
+            }
           </div>
-          <div className="time-unit-output minutes bl-fav-green-light">
+          <div className={`time-unit-output minutes bl-fav-green-light${addToBaseDateMinutes ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
               setAddToBaseMinutesAction(e.target.value);
             }}/> Minutes
+            {addToBaseDateMinutes &&
+              <>
+                <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('minute')}</h4>
+                <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('minute')}</p>
+              </>
+            }
           </div>
-          <div className="time-unit-output seconds bl-teal">
+          <div className={`time-unit-output seconds bl-teal${addToBaseDateSeconds ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
               setAddToBaseSecondsAction(e.target.value);
             }}/> Seconds
+            {addToBaseDateSeconds &&
+              <>
+                <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('second')}</h4>
+                <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('second')}</p>
+              </>
+            }
           </div>
-        </>
-      )
-    }
-    return null;
-  }
-  renderResults () {
-    const {
-      baseDate,
-      addToBaseDateYears,
-      addToBaseDateMonths,
-      addToBaseDateWeeks,
-      addToBaseDateDays,
-      addToBaseDateHours,
-      addToBaseDateMinutes,
-      addToBaseDateSeconds,
-    } = this.props;
-    if (baseDate) {
-      return (
-        <>
-          {addToBaseDateYears &&
-            <div className="time-unit-output years bl-purple">
-              <h4>{this.getAddTimeUnitToDateHeading('year')}</h4>
-              <p>{this.getAddTimeUnitToDateMoment('year')}</p>
-            </div>
-          }
-          {addToBaseDateMonths &&
-            <div className="time-unit-output months bl-fuchsia">
-              <h4>{this.getAddTimeUnitToDateHeading('month')}</h4>
-              <p>{this.getAddTimeUnitToDateMoment('month')}</p>
-            </div>
-          }
-          {addToBaseDateWeeks &&
-            <div className="time-unit-output weeks bl-red">
-              <h4>{this.getAddTimeUnitToDateHeading('week')}</h4>
-              <p>{this.getAddTimeUnitToDateMoment('week')}</p>
-            </div>
-          }
-          {addToBaseDateDays &&
-            <div className="time-unit-output days bl-orange">
-              <h4>{this.getAddTimeUnitToDateHeading('day')}</h4>
-              <p>{this.getAddTimeUnitToDateMoment('day')}</p>
-            </div>
-          }
-          {addToBaseDateHours &&
-            <div className="time-unit-output hours bl-yellow">
-              <h4>{this.getAddTimeUnitToDateHeading('hour')}</h4>
-              <p>{this.getAddTimeUnitToDateMoment('hour')}</p>
-            </div>
-          }
-          {addToBaseDateMinutes &&
-            <div className="time-unit-output minutes bl-fav-green-light">
-              <h4>{this.getAddTimeUnitToDateHeading('minute')}</h4>
-              <p>{this.getAddTimeUnitToDateMoment('minute')}</p>
-            </div>
-          }
-          {addToBaseDateSeconds &&
-            <div className="time-unit-output seconds bl-teal">
-              <h4>{this.getAddTimeUnitToDateHeading('second')}</h4>
-              <p>{this.getAddTimeUnitToDateMoment('second')}</p>
-            </div>
-          }
         </>
       )
     }
@@ -209,7 +197,6 @@ class AddTimeUnitToDate extends Component {
     return (
       <>
         {this.renderInputFields()}
-        {this.renderResults()}
       </>
     )
   }

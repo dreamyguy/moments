@@ -43,13 +43,13 @@ $space-values: (2, 5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100, 120);
   @for $i from 1 through length($space-values) {
 
     .m-#{str-slice($side, 0, 1)}-#{nth($space-values, $i)} {
-      margin-#{$side}: #{nth($space-values, $i)}px;
-      margin-#{$side}: rem-calc(nth($space-values, $i), $base-font-size);
+      margin-#{$side}: #{nth($space-values, $i)}px !important;
+      margin-#{$side}: rem-calc(nth($space-values, $i), $base-font-size) !important;
     }
 
     .p-#{str-slice($side, 0, 1)}-#{nth($space-values, $i)} {
-      padding-#{$side}: #{nth($space-values, $i)}px;
-      padding-#{$side}: rem-calc(nth($space-values, $i), $base-font-size);
+      padding-#{$side}: #{nth($space-values, $i)}px !important;
+      padding-#{$side}: rem-calc(nth($space-values, $i), $base-font-size) !important;
     }
   }
 }
