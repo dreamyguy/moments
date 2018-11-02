@@ -1,0 +1,23 @@
+{
+  "presets": [
+    "react-app",
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "loose": true
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-object-rest-spread"
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-transform-modules-commonjs"
+      ]
+    }
+  }
+}

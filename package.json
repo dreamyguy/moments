@@ -3,7 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "acorn": "^6.0.0",
+    "ajv": "^6.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.4.2",
     "bootstrap-4-grid": "^2.4.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest-css-modules": "^1.1.0",
+    "jest-transform-stub": "^1.0.0",
     "modern-normalize": "^0.5.0",
     "moment": "^2.22.2",
     "react": "^16.5.2",
@@ -11,7 +20,16 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
+    "react-test-renderer": "^16.4.0",
     "redux": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.0.0",
+    "babel-preset-react-app-babel-7": "^4.0.2-0",
+    "eslint": "^5.0.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "node-sass": "^4.9.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,8 +48,27 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {
-    "node-sass": "^4.9.4"
+  "jest": {
+    "modulePaths": [
+      "src",
+      "node_modules"
+    ],
+    "globals": {
+      "NODE_ENV": "test"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest",
+      ".[css,scss]": "./node_modules/jest-css-modules"
+    },
+    "testEnvironment": "node",
+    "setupFiles": [
+      "./src/test/setupTests.js"
+    ]
   },
   "engines": {
     "node": ">=10.12.0"
