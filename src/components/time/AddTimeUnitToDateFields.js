@@ -123,7 +123,8 @@ class AddTimeUnitToDate extends Component {
                 <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('year')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('year')}</p>
               </>
-            : null}
+              : null
+            }
           </div>
           <div className={`time-unit-output months bl-fuchsia${addToBaseDateMonths ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
@@ -134,7 +135,8 @@ class AddTimeUnitToDate extends Component {
                 <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('month')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('month')}</p>
               </>
-            : null}
+              : null
+            }
           </div>
           <div className={`time-unit-output weeks bl-red${addToBaseDateWeeks ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
@@ -145,7 +147,8 @@ class AddTimeUnitToDate extends Component {
                 <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('week')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('week')}</p>
               </>
-            : null}
+              : null
+            }
           </div>
           <div className={`time-unit-output days bl-orange${addToBaseDateDays ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
@@ -156,7 +159,8 @@ class AddTimeUnitToDate extends Component {
                 <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('day')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('day')}</p>
               </>
-            : null}
+              : null
+            }
           </div>
           <div className={`time-unit-output hours bl-yellow${addToBaseDateHours ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
@@ -167,7 +171,8 @@ class AddTimeUnitToDate extends Component {
                 <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('hour')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('hour')}</p>
               </>
-            : null}
+              : null
+            }
           </div>
           <div className={`time-unit-output minutes bl-fav-green-light${addToBaseDateMinutes ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
@@ -178,7 +183,8 @@ class AddTimeUnitToDate extends Component {
                 <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('minute')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('minute')}</p>
               </>
-            : null}
+              : null
+            }
           </div>
           <div className={`time-unit-output seconds bl-teal${addToBaseDateSeconds ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
@@ -189,7 +195,8 @@ class AddTimeUnitToDate extends Component {
                 <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('second')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('second')}</p>
               </>
-            : null}
+              : null
+            }
           </div>
         </>
       )
@@ -203,7 +210,7 @@ class AddTimeUnitToDate extends Component {
       </>
     )
   }
-};
+}
 
 const mapStateToProps = ({main}) => {
   return {

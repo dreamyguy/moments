@@ -67,46 +67,46 @@ class DatePicker extends Component {
         {this.renderInstructions()}
         <div className="container-flex">
           <Dropdown
-            tabIndex = '1'
+            tabIndex = "1"
             options = {this.getTimeUnit('year')}
             value = {baseYear}
-            type = 'year'
+            type = "year"
           />
           <Dropdown
-            tabIndex = '1'
+            tabIndex = "1"
             options = {this.getTimeUnit('month')}
             value = {baseMonth}
-            type = 'month'
+            type = "month"
             disabled={!baseYearDefined}
             classes = {!baseYearDefined ? 'hidden' : ''}
           />
           <Dropdown
-            tabIndex = '1'
+            tabIndex = "1"
             options = {this.getTimeUnit('day')}
             value = {baseDay}
-            type = 'day'
+            type = "day"
             disabled={!baseMonthDefined}
             classes = {!baseMonthDefined ? 'hidden' : ''}
           />
           {baseDayDefined &&
             <>
               <Dropdown
-                tabIndex = '1'
+                tabIndex = "1"
                 options = {this.getTimeUnit('hour')}
                 value = {baseHour}
-                type = 'hour'
+                type = "hour"
               />
               <Dropdown
-                tabIndex = '1'
+                tabIndex = "1"
                 options = {this.getTimeUnit('minute')}
                 value = {baseMinute}
-                type = 'minute'
+                type = "minute"
               />
               <Dropdown
-                tabIndex = '1'
+                tabIndex = "1"
                 options = {this.getTimeUnit('second')}
                 value = {baseSecond}
-                type = 'second'
+                type = "second"
               />
             </>
           }
@@ -114,7 +114,7 @@ class DatePicker extends Component {
       </>
     );
   }
-};
+}
 
 const mapStateToProps = ({main}) => {
   return {

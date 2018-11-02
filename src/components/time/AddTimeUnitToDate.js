@@ -49,7 +49,7 @@ class AddTimeUnitToDate extends Component {
     }
     return null;
   }
-};
+}
 
 const mapStateToProps = ({main}) => {
   return {
