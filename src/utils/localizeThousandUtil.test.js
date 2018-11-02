@@ -1,6 +1,6 @@
 import { localizeThousand } from './localizeThousandUtil';
 
-describe('localizeThousandUtil', () => {
+describe('localizeThousand', () => {
   describe('return correctly formatted thousands', () => {
     it('1234 => 1,234', () => {
       const tho = 1234;
