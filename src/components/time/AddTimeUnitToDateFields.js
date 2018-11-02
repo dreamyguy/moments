@@ -118,78 +118,78 @@ class AddTimeUnitToDate extends Component {
             <input className="text-field" onChange = {e => {
               setAddToBaseYearsAction(e.target.value);
             }}/> Years
-            {addToBaseDateYears &&
+            {addToBaseDateYears ?
               <>
                 <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('year')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('year')}</p>
               </>
-            }
+            : null}
           </div>
           <div className={`time-unit-output months bl-fuchsia${addToBaseDateMonths ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
               setAddToBaseMonthsAction(e.target.value);
             }}/> Months
-            {addToBaseDateMonths &&
+            {addToBaseDateMonths ?
               <>
                 <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('month')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('month')}</p>
               </>
-            }
+            : null}
           </div>
           <div className={`time-unit-output weeks bl-red${addToBaseDateWeeks ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
               setAddToBaseWeeksAction(e.target.value);
             }}/> Weeks
-            {addToBaseDateWeeks &&
+            {addToBaseDateWeeks ?
               <>
                 <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('week')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('week')}</p>
               </>
-            }
+            : null}
           </div>
           <div className={`time-unit-output days bl-orange${addToBaseDateDays ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
               setAddToBaseDaysAction(e.target.value);
             }}/> Days
-            {addToBaseDateDays &&
+            {addToBaseDateDays ?
               <>
                 <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('day')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('day')}</p>
               </>
-            }
+            : null}
           </div>
           <div className={`time-unit-output hours bl-yellow${addToBaseDateHours ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
               setAddToBaseHoursAction(e.target.value);
             }}/> Hours
-            {addToBaseDateHours &&
+            {addToBaseDateHours ?
               <>
                 <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('hour')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('hour')}</p>
               </>
-            }
+            : null}
           </div>
           <div className={`time-unit-output minutes bl-fav-green-light${addToBaseDateMinutes ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
               setAddToBaseMinutesAction(e.target.value);
             }}/> Minutes
-            {addToBaseDateMinutes &&
+            {addToBaseDateMinutes ?
               <>
                 <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('minute')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('minute')}</p>
               </>
-            }
+            : null}
           </div>
           <div className={`time-unit-output seconds bl-teal${addToBaseDateSeconds ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
               setAddToBaseSecondsAction(e.target.value);
             }}/> Seconds
-            {addToBaseDateSeconds &&
+            {addToBaseDateSeconds ?
               <>
                 <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('second')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('second')}</p>
               </>
-            }
+            : null}
           </div>
         </>
       )
