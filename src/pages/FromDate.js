@@ -27,7 +27,7 @@ class FromDate extends Component {
             <div className="row">
                 <div className="col-12">
                   <Date
-                    heading = "Base date"
+                    heading = "Set date"
                     date = {baseDate}
                     classes = "bl-fav-orange-dark"
                   />

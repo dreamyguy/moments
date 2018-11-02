@@ -36,19 +36,19 @@ class AddTimeUnitToDate extends Component {
     let heading = '';
     if (baseDate) {
       if (mode === 'year' && addToBaseDateYears) {
-        heading = `${localizeThousand(addToBaseDateYears)} years from ${this.renderBaseDateName()}`;
+        heading = <span>{localizeThousand(addToBaseDateYears)} years from {this.renderBaseDateName()}</span>;
       } else if (mode === 'month' && addToBaseDateMonths) {
-        heading = `${localizeThousand(addToBaseDateMonths)} months from ${this.renderBaseDateName()}`;
+        heading = <span>{localizeThousand(addToBaseDateMonths)} months from {this.renderBaseDateName()}</span>;
       } else if (mode === 'week' && addToBaseDateWeeks) {
-        heading = `${localizeThousand(addToBaseDateWeeks)} weeks from ${this.renderBaseDateName()}`;
+        heading = <span>{localizeThousand(addToBaseDateWeeks)} weeks from {this.renderBaseDateName()}</span>;
       } else if (mode === 'day' && addToBaseDateDays) {
-        heading = `${localizeThousand(addToBaseDateDays)} days from ${this.renderBaseDateName()}`;
+        heading = <span>{localizeThousand(addToBaseDateDays)} days from {this.renderBaseDateName()}</span>;
       } else if (mode === 'hour' && addToBaseDateHours) {
-        heading = `${localizeThousand(addToBaseDateHours)} hours from ${this.renderBaseDateName()}`;
+        heading = <span>{localizeThousand(addToBaseDateHours)} hours from {this.renderBaseDateName()}</span>;
       } else if (mode === 'minute' && addToBaseDateMinutes) {
-        heading = `${localizeThousand(addToBaseDateMinutes)} minutes from ${this.renderBaseDateName()}`;
+        heading = <span>{localizeThousand(addToBaseDateMinutes)} minutes from {this.renderBaseDateName()}</span>;
       } else if (mode === 'second' && addToBaseDateSeconds) {
-        heading = `${localizeThousand(addToBaseDateSeconds)} seconds from ${this.renderBaseDateName()}`;
+        heading = <span>{localizeThousand(addToBaseDateSeconds)} seconds from {this.renderBaseDateName()}</span>;
       }
     }
     return heading;
@@ -86,9 +86,9 @@ class AddTimeUnitToDate extends Component {
   }
   renderBaseDateName () {
     const {baseDateName} = this.props;
-    let name = 'the set date'
+    let name = <span className="font-montserrat-regular-italic">'set date'</span>;
     if (baseDateName) {
-      name = baseDateName 
+      name = <span className="font-montserrat-regular-italic">'{baseDateName}'</span>;
     }
     return name;
   }
@@ -113,7 +113,7 @@ class AddTimeUnitToDate extends Component {
     if (baseDate) {
       return (
         <>
-          <h3 className="m-t-20 m-b-20">Set time unit you'd like to know the output for</h3>
+          <h3 className="m-t-20 m-b-20">Discover a <span className="font-montserrat-regular-italic">Moment</span> relative to {this.renderBaseDateName()} by entering numbers below:</h3>
           <div className={`time-unit-output years bl-purple${addToBaseDateYears ? ' p-t-15 p-b-10' : ''}`}>
             <input className="text-field" onChange = {e => {
               setAddToBaseYearsAction(e.target.value);

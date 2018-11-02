@@ -39,7 +39,7 @@ class Home extends Component {
             {baseDate &&
               <div className={classesSecondRow}>
                 <Date
-                  heading = "Base date"
+                  heading = "Set date"
                   date = {baseDate}
                   classes = "bl-fav-orange-dark"
                 />
