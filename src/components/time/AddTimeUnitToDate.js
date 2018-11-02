@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-// Import helpers
-import { timeDiff } from './../../helpers/helpers';
+// Import utils
+import { timeDiff } from './../../utils/timeDiffUtil';
 
 class AddTimeUnitToDate extends Component {
   render () {

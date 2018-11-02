@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import uuidv4 from 'uuid/v4';
 
-// Import helpers
-import { numberRange } from './../../helpers/helpers';
+// Import utils
+import { numberRange } from './../../utils/rangeUtil';
 
 // Import components
 import Dropdown from './Dropdown';

@@ -8,8 +8,8 @@ import uuidv4 from 'uuid/v4';
 // Import constants
 import { MOMENT_TIME_FORMAT } from './../../config';
 
-// Import helpers
-import { timePeriod } from './../../helpers/helpers';
+// Import utils
+import { timePeriod } from './../../utils/timePeriodUtil';
 
 // Import actions
 import {

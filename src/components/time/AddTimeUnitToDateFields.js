@@ -7,8 +7,8 @@ import moment from 'moment';
 // Import constants
 import { MOMENT_TIME_FORMAT } from './../../config';
 
-// Import helpers
-import { localizeThousand } from './../../helpers/helpers';
+// Import utils
+import { localizeThousand } from './../../utils/localizeThousandUtil';
 
 // Import actions
 import {
