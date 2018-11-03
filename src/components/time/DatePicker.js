@@ -65,7 +65,7 @@ class DatePicker extends Component {
     return (
       <>
         {this.renderInstructions()}
-        <div className="container-flex">
+        <div className="container-flex date-picker">
           <Dropdown
             tabIndex = "1"
             options = {this.getTimeUnit('year')}

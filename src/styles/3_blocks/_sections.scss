@@ -11,6 +11,10 @@
   &__moment {
     @extend .font-montserrat-light;
   }
+  &-picker {
+    max-width: 365px;
+    margin: 0 auto;
+  }
 }
 
 .time-unit-output {
