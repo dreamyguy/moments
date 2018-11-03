@@ -1,16 +1,19 @@
+// Import dependencies
 import React, { Component } from 'react';
+
+// Import components
 import Header from './layout/Header';
-// import Footer from './layout/Footer';
+import NowTicker from './../components/time/NowTicker';
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <div className="app">
         <Header/>
         <div className="content">
           {this.props.children}
         </div>
-        {/* <Footer/> */}
+        <NowTicker/>
       </div>
     );
   }

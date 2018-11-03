@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 // Import components
 import Date from './../components/time/Date';
 import DatePicker from './../components/time/DatePicker';
-import NowBackground from './../components/time/NowBackground';
 import AddTimeUnitToDate from './../components/time/AddTimeUnitToDate';
 import AddTimeUnitToDateFields from './../components/time/AddTimeUnitToDateFields';
 
@@ -25,13 +24,13 @@ class FromDate extends Component {
           </div>
           {baseDate &&
             <div className="row">
-                <div className="col-12">
-                  <Date
-                    heading = "Set date"
-                    date = {baseDate}
-                    classes = "bl-fav-orange-dark"
-                  />
-                </div>
+              <div className="col-12">
+                <Date
+                  heading = "Set date"
+                  date = {baseDate}
+                  classes = "bl-fav-orange-dark"
+                />
+              </div>
             </div>
           }
           <div className="row">
@@ -41,7 +40,6 @@ class FromDate extends Component {
             </div>
           </div>
         </div>
-        <NowBackground />
       </section>
     );
   }

@@ -18,7 +18,7 @@ import {
   setMomentNowSecondAction
 } from './../../store/duck/ducks';
 
-class Now extends Component {
+class NowTicker extends Component {
   componentWillMount () {
     clearInterval(this.timerID);
     this.updateNow();
@@ -41,24 +41,11 @@ class Now extends Component {
   tick () {
     this.updateNow();
   }
-  // getTimePeriod () {
-  //   const {
-  //     baseDateIsInThePast,
-  //     baseDateIsInTheFuture,
-  //   } = this.props;
-  //   let period = '';
-  //   if (baseDateIsInThePast) {
-  //     period = ` since ${this.renderBaseDateName()}`;
-  //   } else if (baseDateIsInTheFuture) {
-  //     period = ` until ${this.renderBaseDateName()}`;
-  //   }
-  //   return period;
-  // }
   render () {
     // This component is just a 'now' time ticker, nothing to render
     return null;
   }
-};
+}
 
 const mapStateToProps = ({main}) => {
   return {
@@ -74,13 +61,13 @@ const mapDispatchToProps = {
   setMomentNowMinuteAction,
   setMomentNowSecondAction
 }
-const NowConnect = connect(
+const NowTickerConnect = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Now);
+)(NowTicker);
 
-Now.propTypes = {
+NowTicker.propTypes = {
   nowDate: PropTypes.string
 };
 
-export default NowConnect;
+export default NowTickerConnect;

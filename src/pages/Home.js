@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 // Import components
 import Date from './../components/time/Date';
-import Now from './../components/time/Now';
 import DatePicker from './../components/time/DatePicker';
 import AddTimeUnitToDate from './../components/time/AddTimeUnitToDate';
 
@@ -14,6 +13,7 @@ class Home extends Component {
     const {
       baseDate,
       baseDateIsInThePast,
+      nowDate
     } = this.props;
     let classesFrstRow = 'col-12 col-md-6';
     let classesSecondRow = 'col-12 col-md-6';
@@ -30,20 +30,22 @@ class Home extends Component {
             </div>
           </div>
           <div className="row">
-            <div className={classesFrstRow}>
-              <Date
-                heading = 'Now'
-                date = {<Now/>}
-              />
-            </div>
             {baseDate &&
-              <div className={classesSecondRow}>
-                <Date
-                  heading = "Set date"
-                  date = {baseDate}
-                  classes = "bl-fav-orange-dark"
-                />
-              </div>
+              <>
+                <div className={classesFrstRow}>
+                  <Date
+                    heading = "Now"
+                    date = {nowDate}
+                  />
+                </div>
+                <div className={classesSecondRow}>
+                  <Date
+                    heading = "Set date"
+                    date = {baseDate}
+                    classes = "bl-fav-orange-dark"
+                  />
+                </div>
+              </>
             }
           </div>
           <div className="row">
@@ -62,6 +64,7 @@ const mapStateToProps = ({main}) => {
     baseDate: main.baseDate,
     baseDateIsInThePast: main.baseDateIsInThePast,
     baseDateIsInTheFuture: main.baseDateIsInTheFuture,
+    nowDate: main.nowDate
   }
 }
 
@@ -73,6 +76,7 @@ Home.propTypes = {
   baseDate: PropTypes.string,
   baseDateIsInThePast: PropTypes.bool,
   baseDateIsInTheFuture: PropTypes.bool,
+  nowDate: PropTypes.string
 };
 
 export default HomeConnect;
