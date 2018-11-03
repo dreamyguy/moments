@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 // Import utils
 import { timeDiff } from './../../utils/timeDiffUtil';
 
-class AddTimeUnitToDate extends Component {
+class TimeDifference extends Component {
   render () {
     const {
       baseDate,
@@ -60,15 +60,15 @@ const mapStateToProps = ({main}) => {
   }
 }
 
-const AddTimeUnitToDateConnect = connect(
+const TimeDifferenceConnect = connect(
   mapStateToProps
-)(AddTimeUnitToDate);
+)(TimeDifference);
 
-AddTimeUnitToDate.propTypes = {
+TimeDifference.propTypes = {
   baseDate: PropTypes.string,
   baseDateIsInThePast: PropTypes.bool,
   baseDateIsInTheFuture: PropTypes.bool,
   nowDate: PropTypes.string,
 };
 
-export default AddTimeUnitToDateConnect;
+export default TimeDifferenceConnect;

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 // Import components
 import Date from './../components/time/Date';
 import DatePicker from './../components/time/DatePicker';
-import AddTimeUnitToDate from './../components/time/AddTimeUnitToDate';
+import TimeDifference from './../components/time/TimeDifference';
 
 class Home extends Component {
   render () {
@@ -50,7 +50,7 @@ class Home extends Component {
           </div>
           <div className="row">
             <div className="col-12">
-              <AddTimeUnitToDate />
+              <TimeDifference />
             </div>
           </div>
         </div>
