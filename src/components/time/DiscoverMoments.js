@@ -21,8 +21,8 @@ import {
   setAddToBaseSecondsAction,
 } from './../../store/duck/ducks';
 
-class AddTimeUnitToDate extends Component {
-  getAddTimeUnitToDateHeading (mode) {
+class DiscoverMoments extends Component {
+  getDiscoverMomentsHeading (mode) {
     const {
       baseDate,
       addToBaseDateYears,
@@ -53,7 +53,7 @@ class AddTimeUnitToDate extends Component {
     }
     return heading;
   }
-  getAddTimeUnitToDateMoment (mode) {
+  getDiscoverMomentsMoment (mode) {
     const {
       baseDate,
       addToBaseDateYears,
@@ -120,8 +120,8 @@ class AddTimeUnitToDate extends Component {
             }}/> Years
             {addToBaseDateYears ?
               <>
-                <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('year')}</h4>
-                <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('year')}</p>
+                <h4 className="m-t-15">{this.getDiscoverMomentsHeading('year')}</h4>
+                <p className="font-montserrat-light m-t-15">{this.getDiscoverMomentsMoment('year')}</p>
               </>
               : null
             }
@@ -132,8 +132,8 @@ class AddTimeUnitToDate extends Component {
             }}/> Months
             {addToBaseDateMonths ?
               <>
-                <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('month')}</h4>
-                <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('month')}</p>
+                <h4 className="m-t-15">{this.getDiscoverMomentsHeading('month')}</h4>
+                <p className="font-montserrat-light m-t-15">{this.getDiscoverMomentsMoment('month')}</p>
               </>
               : null
             }
@@ -144,8 +144,8 @@ class AddTimeUnitToDate extends Component {
             }}/> Weeks
             {addToBaseDateWeeks ?
               <>
-                <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('week')}</h4>
-                <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('week')}</p>
+                <h4 className="m-t-15">{this.getDiscoverMomentsHeading('week')}</h4>
+                <p className="font-montserrat-light m-t-15">{this.getDiscoverMomentsMoment('week')}</p>
               </>
               : null
             }
@@ -156,8 +156,8 @@ class AddTimeUnitToDate extends Component {
             }}/> Days
             {addToBaseDateDays ?
               <>
-                <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('day')}</h4>
-                <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('day')}</p>
+                <h4 className="m-t-15">{this.getDiscoverMomentsHeading('day')}</h4>
+                <p className="font-montserrat-light m-t-15">{this.getDiscoverMomentsMoment('day')}</p>
               </>
               : null
             }
@@ -168,8 +168,8 @@ class AddTimeUnitToDate extends Component {
             }}/> Hours
             {addToBaseDateHours ?
               <>
-                <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('hour')}</h4>
-                <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('hour')}</p>
+                <h4 className="m-t-15">{this.getDiscoverMomentsHeading('hour')}</h4>
+                <p className="font-montserrat-light m-t-15">{this.getDiscoverMomentsMoment('hour')}</p>
               </>
               : null
             }
@@ -180,8 +180,8 @@ class AddTimeUnitToDate extends Component {
             }}/> Minutes
             {addToBaseDateMinutes ?
               <>
-                <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('minute')}</h4>
-                <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('minute')}</p>
+                <h4 className="m-t-15">{this.getDiscoverMomentsHeading('minute')}</h4>
+                <p className="font-montserrat-light m-t-15">{this.getDiscoverMomentsMoment('minute')}</p>
               </>
               : null
             }
@@ -192,8 +192,8 @@ class AddTimeUnitToDate extends Component {
             }}/> Seconds
             {addToBaseDateSeconds ?
               <>
-                <h4 className="m-t-15">{this.getAddTimeUnitToDateHeading('second')}</h4>
-                <p className="font-montserrat-light m-t-15">{this.getAddTimeUnitToDateMoment('second')}</p>
+                <h4 className="m-t-15">{this.getDiscoverMomentsHeading('second')}</h4>
+                <p className="font-montserrat-light m-t-15">{this.getDiscoverMomentsMoment('second')}</p>
               </>
               : null
             }
@@ -234,12 +234,12 @@ const mapDispatchToProps = {
   setAddToBaseMinutesAction,
   setAddToBaseSecondsAction,
 }
-const AddTimeUnitToDateConnect = connect(
+const DiscoverMomentsConnect = connect(
   mapStateToProps,
   mapDispatchToProps
-)(AddTimeUnitToDate);
+)(DiscoverMoments);
 
-AddTimeUnitToDate.propTypes = {
+DiscoverMoments.propTypes = {
   baseDateName: PropTypes.string,
   baseDate: PropTypes.string,
   addToBaseDateYears: PropTypes.number,
@@ -258,4 +258,4 @@ AddTimeUnitToDate.propTypes = {
   setAddToBaseSecondsAction: PropTypes.func,
 };
 
-export default AddTimeUnitToDateConnect;
+export default DiscoverMomentsConnect;

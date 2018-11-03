@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import Date from './../components/time/Date';
 import DatePicker from './../components/time/DatePicker';
 import TimeDifference from './../components/time/TimeDifference';
-import AddTimeUnitToDateFields from './../components/time/AddTimeUnitToDateFields';
+import DiscoverMoments from './../components/time/DiscoverMoments';
 
 class FromDate extends Component {
   render () {
@@ -35,7 +35,7 @@ class FromDate extends Component {
           }
           <div className="row">
             <div className="col-12">
-              <AddTimeUnitToDateFields />
+              <DiscoverMoments />
               <TimeDifference />
             </div>
           </div>
