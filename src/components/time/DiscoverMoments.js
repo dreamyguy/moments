@@ -115,7 +115,7 @@ class DiscoverMoments extends Component {
         <>
           <h3 className="m-t-20 m-b-20">Discover a <span className="font-montserrat-regular-italic">Moment</span> relative to {this.renderBaseDateName()} by entering numbers below:</h3>
           <div className={`time-unit-output years bl-purple${addToBaseDateYears ? ' p-t-15 p-b-10' : ''}`}>
-            <input className="text-field" onChange = {e => {
+            <input className="text-field" maxLength="5" onChange = {e => {
               setAddToBaseYearsAction(e.target.value);
             }}/> Years
             {addToBaseDateYears ?
@@ -127,7 +127,7 @@ class DiscoverMoments extends Component {
             }
           </div>
           <div className={`time-unit-output months bl-fuchsia${addToBaseDateMonths ? ' p-t-15 p-b-10' : ''}`}>
-            <input className="text-field" onChange = {e => {
+            <input className="text-field" maxLength="6" onChange = {e => {
               setAddToBaseMonthsAction(e.target.value);
             }}/> Months
             {addToBaseDateMonths ?
@@ -139,7 +139,7 @@ class DiscoverMoments extends Component {
             }
           </div>
           <div className={`time-unit-output weeks bl-red${addToBaseDateWeeks ? ' p-t-15 p-b-10' : ''}`}>
-            <input className="text-field" onChange = {e => {
+            <input className="text-field" maxLength="7" onChange = {e => {
               setAddToBaseWeeksAction(e.target.value);
             }}/> Weeks
             {addToBaseDateWeeks ?
@@ -151,7 +151,7 @@ class DiscoverMoments extends Component {
             }
           </div>
           <div className={`time-unit-output days bl-orange${addToBaseDateDays ? ' p-t-15 p-b-10' : ''}`}>
-            <input className="text-field" onChange = {e => {
+            <input className="text-field" maxLength="7" onChange = {e => {
               setAddToBaseDaysAction(e.target.value);
             }}/> Days
             {addToBaseDateDays ?
@@ -163,7 +163,7 @@ class DiscoverMoments extends Component {
             }
           </div>
           <div className={`time-unit-output hours bl-yellow${addToBaseDateHours ? ' p-t-15 p-b-10' : ''}`}>
-            <input className="text-field" onChange = {e => {
+            <input className="text-field" maxLength="9" onChange = {e => {
               setAddToBaseHoursAction(e.target.value);
             }}/> Hours
             {addToBaseDateHours ?
@@ -175,7 +175,7 @@ class DiscoverMoments extends Component {
             }
           </div>
           <div className={`time-unit-output minutes bl-fav-green-light${addToBaseDateMinutes ? ' p-t-15 p-b-10' : ''}`}>
-            <input className="text-field" onChange = {e => {
+            <input className="text-field" maxLength="11" onChange = {e => {
               setAddToBaseMinutesAction(e.target.value);
             }}/> Minutes
             {addToBaseDateMinutes ?
@@ -187,7 +187,7 @@ class DiscoverMoments extends Component {
             }
           </div>
           <div className={`time-unit-output seconds bl-teal${addToBaseDateSeconds ? ' p-t-15 p-b-10' : ''}`}>
-            <input className="text-field" onChange = {e => {
+            <input className="text-field" maxLength="12" onChange = {e => {
               setAddToBaseSecondsAction(e.target.value);
             }}/> Seconds
             {addToBaseDateSeconds ?
