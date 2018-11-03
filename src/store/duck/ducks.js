@@ -136,15 +136,15 @@ export function reducerMain (state = initialStateMain, action) {
     case SET_MODE:
       return {
         ...state,
-          loading: false,
-          mode: action.payload
+        loading: false,
+        mode: action.payload
       }
     // Now moment
     case SET_MOMENT_NOW_DATE:
       return {
         ...state,
-          loading: false,
-          nowDate: action.payload
+        loading: false,
+        nowDate: action.payload
       }
     case SET_MOMENT_NOW_YEAR:
       return {
@@ -192,8 +192,8 @@ export function reducerMain (state = initialStateMain, action) {
     case SET_MOMENT_BASE_DATE:
       return {
         ...state,
-          loading: false,
-          baseDate: action.payload
+        loading: false,
+        baseDate: action.payload
       }
     case SET_MOMENT_BASE_NAME:
       return {
@@ -271,8 +271,8 @@ export function reducerMain (state = initialStateMain, action) {
     case SET_MOMENT_TARGET_DATE:
       return {
         ...state,
-          loading: false,
-          targetDate: action.payload
+        loading: false,
+        targetDate: action.payload
       }
     case SET_MOMENT_TARGET_NAME:
       return {
