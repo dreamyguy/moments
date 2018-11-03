@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Date extends Component {
+class DateCard extends Component {
   render () {
     const {
       heading = '',
@@ -22,10 +22,10 @@ class Date extends Component {
   }
 }
 
-Date.propTypes = {
+DateCard.propTypes = {
   heading: PropTypes.string,
   date: PropTypes.string,
   classes: PropTypes.string,
 };
 
-export default Date;
+export default DateCard;

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // Import components
-import Date from './../components/time/Date';
+import DateCard from './../components/time/DateCard';
 import DatePicker from './../components/time/DatePicker';
 import TimeDifference from './../components/time/TimeDifference';
 
@@ -33,13 +33,13 @@ class Home extends Component {
             {baseDate &&
               <>
                 <div className={classesFrstRow}>
-                  <Date
+                  <DateCard
                     heading = "Now"
                     date = {nowDate}
                   />
                 </div>
                 <div className={classesSecondRow}>
-                  <Date
+                  <DateCard
                     heading = "Set date"
                     date = {baseDate}
                     classes = "bl-fav-orange-dark"
