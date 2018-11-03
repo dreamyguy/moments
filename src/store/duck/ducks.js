@@ -47,8 +47,6 @@ const SET_ADD_TO_BASE_DATE_SECONDS = 'SET_ADD_TO_BASE_DATE_SECONDS';
 // ActionTypes - frontend
 const SET_FRONTEND = 'SET_FRONTEND';
 const SET_MOBILE_MENU_STATUS = 'SET_MOBILE_MENU_STATUS';
-const SET_BASE_YEAR_VALIDATION_STATUS = 'SET_BASE_YEAR_VALIDATION_STATUS';
-const SET_TARGET_YEAR_VALIDATION_STATUS = 'SET_TARGET_YEAR_VALIDATION_STATUS';
 
 // Initial state
 export const initialStateMain = {
@@ -105,10 +103,6 @@ export const initialStateMain = {
   // Frontend
   frontend: {
     mobileMenuStatus: false,
-    validation: {
-      baseYearIsValid: false,
-      targetYearIsValid: false
-    },
   }
 }
 
@@ -384,30 +378,6 @@ export function reducerMain (state = initialStateMain, action) {
           mobileMenuStatus: action.payload
         }
       }
-    case SET_BASE_YEAR_VALIDATION_STATUS:
-      return {
-        ...state,
-        loading: false,
-        frontend: {
-          ...state.frontend,
-          validation: {
-            ...state.frontend.validation,
-            baseYearIsValid: action.payload
-          }
-        }
-      }
-    case SET_TARGET_YEAR_VALIDATION_STATUS:
-      return {
-        ...state,
-        loading: false,
-        frontend: {
-          ...state.frontend,
-          validation: {
-            ...state.frontend.validation,
-            targetYearIsValid: action.payload
-          }
-        }
-      }
     default:
       return state
   }
@@ -460,5 +430,3 @@ export const setAddToBaseMinutesAction = (action) => ({ type: SET_ADD_TO_BASE_DA
 export const setAddToBaseSecondsAction = (action) => ({ type: SET_ADD_TO_BASE_DATE_SECONDS, payload: action });
 // ActionTypes - frontend
 export const setMobileMenuStatusAction = (action) => ({ type: SET_MOBILE_MENU_STATUS, payload: action });
-export const setBaseYearValidationStatusAction = (action) => ({ type: SET_BASE_YEAR_VALIDATION_STATUS, payload: action });
-export const setTargetYearValidationStatusAction = (action) => ({ type: SET_TARGET_YEAR_VALIDATION_STATUS, payload: action });

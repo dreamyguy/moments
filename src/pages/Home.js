@@ -63,7 +63,6 @@ const mapStateToProps = ({main}) => {
   return {
     baseDate: main.baseDate,
     baseDateIsInThePast: main.baseDateIsInThePast,
-    baseDateIsInTheFuture: main.baseDateIsInTheFuture,
     nowDate: main.nowDate
   }
 }
@@ -75,7 +74,6 @@ const HomeConnect = connect(
 Home.propTypes = {
   baseDate: PropTypes.string,
   baseDateIsInThePast: PropTypes.bool,
-  baseDateIsInTheFuture: PropTypes.bool,
   nowDate: PropTypes.string
 };
 

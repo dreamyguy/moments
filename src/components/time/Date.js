@@ -1,14 +1,12 @@
 // Import dependencies
 import React, { Component } from 'react';
-
-// Import components
-import Now from './Now';
+import PropTypes from 'prop-types';
 
 class Date extends Component {
   render () {
     const {
       heading = '',
-      date = <Now/>,
+      date = '',
       classes = ''
     } = this.props;
     return (
@@ -22,6 +20,12 @@ class Date extends Component {
       </div>
     )
   }
+}
+
+Date.propTypes = {
+  heading: PropTypes.string,
+  date: PropTypes.string,
+  classes: PropTypes.string,
 };
 
 export default Date;

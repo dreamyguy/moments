@@ -216,8 +216,6 @@ const mapStateToProps = ({main}) => {
   return {
     baseDateName: main.baseDateName,
     baseDate: main.baseDate,
-    baseDateIsInThePast: main.baseDateIsInThePast,
-    baseDateIsInTheFuture: main.baseDateIsInTheFuture,
     addToBaseDateYears: main.addToBaseDateYears,
     addToBaseDateMonths: main.addToBaseDateMonths,
     addToBaseDateWeeks: main.addToBaseDateWeeks,
@@ -244,8 +242,6 @@ const AddTimeUnitToDateConnect = connect(
 AddTimeUnitToDate.propTypes = {
   baseDateName: PropTypes.string,
   baseDate: PropTypes.string,
-  baseDateIsInThePast: PropTypes.bool,
-  baseDateIsInTheFuture: PropTypes.bool,
   addToBaseDateYears: PropTypes.number,
   addToBaseDateMonths: PropTypes.number,
   addToBaseDateWeeks: PropTypes.number,
