@@ -40,4 +40,16 @@ describe('timePeriod', () => {
       expect(timePeriod(yNow, yToCheck)).toEqual('future');
     })
   })
+  describe('returns empty string', () => {
+    it('if year passed is an empty string', () => {
+      const yNow = '2018';
+      const yToCheck = '';
+      expect(timePeriod(yNow, yToCheck)).toEqual('');
+    })
+    it('if year passed is undefined', () => {
+      const yNow = '2018';
+      const yToCheck = undefined;
+      expect(timePeriod(yNow, yToCheck)).toEqual('');
+    })
+  })
 })

@@ -18,6 +18,7 @@ const SET_MOMENT_BASE_DATE = 'SET_MOMENT_BASE_DATE';
 const SET_MOMENT_BASE_NAME = 'SET_MOMENT_BASE_NAME';
 const SET_MOMENT_BASE_DATE_IS_IN_THE_PAST = 'SET_MOMENT_BASE_DATE_IS_IN_THE_PAST';
 const SET_MOMENT_BASE_DATE_IS_IN_THE_FUTURE = 'SET_MOMENT_BASE_DATE_IS_IN_THE_FUTURE';
+const SET_MOMENT_BASE_YEAR_DEFINED = 'SET_MOMENT_BASE_YEAR_DEFINED';
 const SET_MOMENT_BASE_YEAR = 'SET_MOMENT_BASE_YEAR';
 const SET_MOMENT_BASE_MONTH = 'SET_MOMENT_BASE_MONTH';
 const SET_MOMENT_BASE_WEEK = 'SET_MOMENT_BASE_WEEK';
@@ -211,12 +212,20 @@ export function reducerMain (state = initialStateMain, action) {
         ...state,
         loading: false,
         baseDateIsInTheFuture: action.payload
-    }
+      }
+    case SET_MOMENT_BASE_YEAR_DEFINED:
+      return {
+        ...state,
+        loading: false,
+        baseYearDefined: action.payload,
+      }
     case SET_MOMENT_BASE_YEAR:
       return {
         ...state,
         loading: false,
-        baseYearDefined: true,
+        // Note that we can't set 'baseYearDefined: true' here,
+        // as this is an input field that needs to be validated. Because of that
+        // we should use 'SET_MOMENT_BASE_YEAR_DEFINED' instead
         baseYear: action.payload,
       }
     case SET_MOMENT_BASE_MONTH:
@@ -423,6 +432,7 @@ export const setMomentBaseDateAction = (action) => ({ type: SET_MOMENT_BASE_DATE
 export const setMomentBaseNameAction = (action) => ({ type: SET_MOMENT_BASE_NAME, payload: action });
 export const setMomentBaseDateIsInThePastAction = (action) => ({ type: SET_MOMENT_BASE_DATE_IS_IN_THE_PAST, payload: action });
 export const setMomentBaseDateIsInTheFutureAction = (action) => ({ type: SET_MOMENT_BASE_DATE_IS_IN_THE_FUTURE, payload: action });
+export const setMomentBaseYearDefinedAction = (action) => ({ type: SET_MOMENT_BASE_YEAR_DEFINED, payload: action });
 export const setMomentBaseYearAction = (action) => ({ type: SET_MOMENT_BASE_YEAR, payload: action });
 export const setMomentBaseMonthAction = (action) => ({ type: SET_MOMENT_BASE_MONTH, payload: action });
 export const setMomentBaseWeekAction = (action) => ({ type: SET_MOMENT_BASE_WEEK, payload: action });

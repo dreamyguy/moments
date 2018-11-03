@@ -17,6 +17,7 @@ import {
   setMomentBaseNameAction,
   setMomentBaseDateIsInThePastAction,
   setMomentBaseDateIsInTheFutureAction,
+  setMomentBaseYearDefinedAction,
   setMomentBaseYearAction,
   setMomentBaseMonthAction,
   setMomentBaseWeekAction,
@@ -41,6 +42,9 @@ class Dropdown extends Component {
       } else if (timePeriod(nowYear, value) === 'future') {
         setMomentBaseDateIsInThePastAction(false);
         setMomentBaseDateIsInTheFutureAction(true);
+      } else {
+        setMomentBaseDateIsInThePastAction(false);
+        setMomentBaseDateIsInTheFutureAction(false);
       }
     }
   }
@@ -58,10 +62,16 @@ class Dropdown extends Component {
       setMomentBaseHourAction,
       setMomentBaseMinuteAction,
       setMomentBaseSecondAction,
+      setMomentBaseYearDefinedAction
     } = this.props;
     let theBaseDate = '';
     if (mode === 'year') {
-      theBaseDate = moment().year(value).format(MOMENT_TIME_FORMAT);
+      if (value !== '' && value !== undefined) {
+        theBaseDate = moment().year(value).format(MOMENT_TIME_FORMAT);
+        setMomentBaseYearDefinedAction(true);
+      } else {
+        setMomentBaseYearDefinedAction(false);
+      }
       setMomentBaseYearAction(value);
       this.setTimePeriod(value);
     } else if (mode === 'month') {
@@ -115,26 +125,12 @@ class Dropdown extends Component {
 
 const mapStateToProps = ({main}) => {
   return {
-    baseYearDefined: main.baseYearDefined,
-    baseMonthDefined: main.baseMonthDefined,
-    baseDayDefined: main.baseDayDefined,
     baseYear: main.baseYear,
     baseMonth: main.baseMonth,
     baseDay: main.baseDay,
     baseHour: main.baseHour,
     baseMinute: main.baseMinute,
-    baseSecond: main.baseSecond,
-    baseDateIsInThePast: main.baseDateIsInThePast,
-    baseDateIsInTheFuture: main.baseDateIsInTheFuture,
-    baseDateName: main.baseDateName,
-    baseDate: main.baseDate,
     nowYear: main.nowYear,
-    addToBaseDateMonths: main.addToBaseDateMonths,
-    addToBaseDateWeeks: main.addToBaseDateWeeks,
-    addToBaseDateDays: main.addToBaseDateDays,
-    addToBaseDateHours: main.addToBaseDateHours,
-    addToBaseDateMinutes: main.addToBaseDateMinutes,
-    addToBaseDateSeconds: main.addToBaseDateSeconds,
   }
 }
 const mapDispatchToProps = {
@@ -142,6 +138,7 @@ const mapDispatchToProps = {
   setMomentBaseNameAction,
   setMomentBaseDateIsInThePastAction,
   setMomentBaseDateIsInTheFutureAction,
+  setMomentBaseYearDefinedAction,
   setMomentBaseYearAction,
   setMomentBaseMonthAction,
   setMomentBaseWeekAction,
@@ -164,26 +161,12 @@ Dropdown.propTypes = {
   disabled: PropTypes.bool,
   classes: PropTypes.string,
   // Props related to choices, passed from state
-  baseYearDefined: PropTypes.bool,
-  baseMonthDefined: PropTypes.bool,
-  baseDayDefined: PropTypes.bool,
   baseYear: PropTypes.string,
   baseMonth: PropTypes.string,
   baseDay: PropTypes.string,
   baseHour: PropTypes.string,
   baseMinute: PropTypes.string,
-  baseSecond: PropTypes.string,
-  baseDateIsInThePast: PropTypes.bool,
-  baseDateIsInTheFuture: PropTypes.bool,
-  baseDateName: PropTypes.string,
-  baseDate: PropTypes.string,
   nowYear: PropTypes.string,
-  addToBaseDateMonths: PropTypes.number,
-  addToBaseDateWeeks: PropTypes.number,
-  addToBaseDateDays: PropTypes.number,
-  addToBaseDateHours: PropTypes.number,
-  addToBaseDateMinutes: PropTypes.number,
-  addToBaseDateSeconds: PropTypes.number,
 };
 
 export default DropdownConnect;
