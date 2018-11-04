@@ -82,7 +82,7 @@ $button-mode-transition-type: cubic-bezier(
       outline-color: $cl-fav-green-light;
     }
   }
-  &.wowza {
+  &.not-selected {
     animation: button-mode-hide $button-mode-transition-time $button-mode-transition-type forwards;
     cursor: default;
   }

@@ -19,7 +19,7 @@ class SetMode extends Component {
     } = this.props;
     let classesButtonMode = `button button--mode${classes ? ' ' + classes : ''}`;
     if (mode) {
-      classesButtonMode = `button button--mode${mode === modeType ? ' selected' : ' wowza'}${classes ? ' ' + classes : ''}`;
+      classesButtonMode = `button button--mode${mode === modeType ? ' selected' : ' not-selected'}${classes ? ' ' + classes : ''}`;
     }
     return (
       <button
