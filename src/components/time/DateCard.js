@@ -10,7 +10,7 @@ class DateCard extends Component {
       classes = ''
     } = this.props;
     return (
-      <div className={`date ${classes}`}>
+      <div className={`date${classes ? ' ' + classes : ''}`}>
         <h3 className="date__heading m-b-20">
           {heading}
         </h3>

@@ -23,6 +23,18 @@
   background-color: $cl-dark-gray-light;
 }
 
+.button--mode {
+  padding: $gutter-size;
+  background-color: $cl-dark-gray-light;
+  color: $cl-white;
+  border-width: 0 0 0 5px;
+  border-left-style: solid;
+  border-left-color: $cl-sb-magenta;
+  &.selected {
+    border-left-color: $cl-fav-green-light;
+  }
+}
+
 .form {
   &__dropdown,
   &__input-field,
