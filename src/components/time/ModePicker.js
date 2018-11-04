@@ -1,5 +1,6 @@
 // Import dependencies
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // Import components
@@ -7,29 +8,39 @@ import SetMode from './SetMode';
 
 class ModePicker extends Component {
   render () {
+    const {
+      mode = ''
+    } = this.props;
+    let instruction = 'Choose a mode';
+    if (mode) {
+      instruction = 'Selected mode';
+    }
+    const optional = <span className="optional">(click to deselect)</span>;
     return (
       <section className="section--mode-picker">
         <div className="container m-t-20 m-b-20">
           <div className="row">
             <div className="col-12">
-              <div className="container-flex mode-picker">
-                <div className="mode-picker m-t-20 m-b-20">
-                  <SetMode
-                    modeType = "relativeToNow"
-                    modeName = "Relative to Now"
-                    classes = "m-b-20"
-                  />
-                  <SetMode
-                    modeType = "betweenTwoDates"
-                    modeName = "Between Two Dates"
-                    classes = "m-b-20"
-                  />
-                  <SetMode
-                    modeType = "discoverMoment"
-                    modeName = "Discover Moment"
-                    classes = "m-b-20"
-                  />
-                </div>
+              <div className="container-flex">
+                <p className="m-b-20">{instruction} {mode ? optional : ''}</p>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <div className={`${mode ? 'container-flex-center ' : 'container-flex '}mode-picker`}>
+                <SetMode
+                  modeType = "relativeToNow"
+                  modeName = "Relative to Now"
+                />
+                <SetMode
+                  modeType = "betweenTwoDates"
+                  modeName = "Between Two Dates"
+                />
+                <SetMode
+                  modeType = "discoverMoment"
+                  modeName = "Discover Moment"
+                />
               </div>
             </div>
           </div>
@@ -39,9 +50,18 @@ class ModePicker extends Component {
   }
 }
 
+const mapStateToProps = ({main}) => {
+  return {
+    mode: main.mode,
+  }
+}
+const ModePickerConnect = connect(
+  mapStateToProps,
+)(ModePicker);
+
 ModePicker.propTypes = {
   // Props coming from state
   mode: PropTypes.string
 };
 
-export default ModePicker;
+export default ModePickerConnect;

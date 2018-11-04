@@ -13,6 +13,7 @@ class Home extends Component {
     const {
       baseDate,
       baseDateIsInThePast,
+      mode,
       nowDate
     } = this.props;
     let classesFrstRow = 'col-12 col-md-6';
@@ -24,35 +25,39 @@ class Home extends Component {
     return (
       <section className="section section--alt">
         <div className="container m-t-20 m-b-20">
-          <div className="row">
-            <div className="col-12">
-              <DatePicker/>
-            </div>
-          </div>
-          <div className="row">
-            {baseDate &&
-              <>
-                <div className={classesFrstRow}>
-                  <DateCard
-                    heading = "Now"
-                    date = {nowDate}
-                  />
+          <>
+            {mode &&
+              <div className="row">
+                <div className="col-12">
+                  <DatePicker/>
                 </div>
-                <div className={classesSecondRow}>
-                  <DateCard
-                    heading = "Set date"
-                    date = {baseDate}
-                    classes = "bl-fav-orange-dark"
-                  />
+              </div>
+            }
+            {mode && baseDate &&
+              <>
+                <div className="row">
+                  <div className={classesFrstRow}>
+                    <DateCard
+                      heading = "Now"
+                      date = {nowDate}
+                    />
+                  </div>
+                  <div className={classesSecondRow}>
+                    <DateCard
+                      heading = "Set date"
+                      date = {baseDate}
+                      classes = "bl-fav-orange-dark"
+                    />
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-12">
+                    <TimeDifference />
+                  </div>
                 </div>
               </>
             }
-          </div>
-          <div className="row">
-            <div className="col-12">
-              <TimeDifference />
-            </div>
-          </div>
+          </>
         </div>
       </section>
     );
@@ -63,6 +68,7 @@ const mapStateToProps = ({main}) => {
   return {
     baseDate: main.baseDate,
     baseDateIsInThePast: main.baseDateIsInThePast,
+    mode: main.mode,
     nowDate: main.nowDate
   }
 }
@@ -74,6 +80,7 @@ const HomeConnect = connect(
 Home.propTypes = {
   baseDate: PropTypes.string,
   baseDateIsInThePast: PropTypes.bool,
+  mode: PropTypes.string,
   nowDate: PropTypes.string
 };
 

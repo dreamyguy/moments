@@ -19,7 +19,7 @@ class SetMode extends Component {
     } = this.props;
     let classesButtonMode = `button button--mode${classes ? ' ' + classes : ''}`;
     if (mode) {
-      classesButtonMode = `button button--mode${mode === modeType ? ' selected' : ' translucid'}${classes ? ' ' + classes : ''}`;
+      classesButtonMode = `button button--mode${mode === modeType ? ' selected' : ' wowza'}${classes ? ' ' + classes : ''}`;
     }
     return (
       <button
@@ -27,6 +27,7 @@ class SetMode extends Component {
         onClick={() => {
           setModeAction(mode === modeType ? '' : modeType)
         }}
+        disabled={mode && mode !== modeType ? true : false}
       >
         {modeName}
       </button>

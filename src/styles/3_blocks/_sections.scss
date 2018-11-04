@@ -23,15 +23,68 @@
   background-color: $cl-dark-gray-light;
 }
 
+$button-mode-translate-position: $gutter-size;
+$button-mode-transition-time: 400ms;
+$button-mode-transition-type: cubic-bezier(
+  0.165,
+  0.84,
+  0.44,
+  1
+); // https://easings.net/#easeOutQuart
+@keyframes button-mode-hide {
+  from {
+    opacity: 1;
+    margin-bottom: $gutter-size;
+    height: auto;
+    color: $cl-white;
+  }
+  to {
+    opacity: 0;
+    margin-bottom: 0;
+    padding: 0;
+    height: 0;
+    width: 0;
+    color: transparent;
+  }
+}
+@keyframes button-mode-show {
+  from {
+    opacity: 0;
+    margin-bottom: 0;
+    padding: 0;
+    height: 0;
+    width: 0;
+    color: transparent;
+  }
+  to {
+    opacity: 1;
+    margin-bottom: $gutter-size;
+    height: auto;
+    color: $cl-white;
+  }
+}
 .button--mode {
+  animation: button-mode-show $button-mode-transition-time $button-mode-transition-type forwards;
   padding: $gutter-size;
   background-color: $cl-dark-gray-light;
   color: $cl-white;
   border-width: 0 0 0 5px;
   border-left-style: solid;
   border-left-color: $cl-sb-magenta;
+  cursor: pointer;
+  &:focus {
+    outline-color: $cl-sb-magenta;
+  }
   &.selected {
+    animation: button-mode-show $button-mode-transition-time $button-mode-transition-type forwards;
     border-left-color: $cl-fav-green-light;
+    &:focus {
+      outline-color: $cl-fav-green-light;
+    }
+  }
+  &.wowza {
+    animation: button-mode-hide $button-mode-transition-time $button-mode-transition-type forwards;
+    cursor: default;
   }
 }
 
