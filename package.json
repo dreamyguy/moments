@@ -1,7 +1,27 @@
 {
   "name": "moments",
   "version": "0.1.0",
-  "private": true,
+  "description": "Time calculation has never been so fun!",
+  "keywords": [
+    "moments",
+    "time calculation",
+    "time since",
+    "time until",
+    "date calculation",
+    "date manipulation"
+  ],
+  "homepage": "https://github.com/dreamyguy/moments",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dreamyguy/moments"
+  },
+  "author": {
+    "name": "Wallace Sidhrée",
+    "email": "i@dreamyguy.com",
+    "url": "http://sidhree.com/"
+  },
+  "copyright": "Copyright (c) Wallace Sidhrée - All rights reserved.",
+  "license": "MIT",
   "dependencies": {
     "acorn": "^6.0.0",
     "ajv": "^6.0.0",

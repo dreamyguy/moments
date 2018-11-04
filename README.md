@@ -1,6 +1,8 @@
 # Moments
 
-> Time calculation has never been so fun!
+> :calendar: :crystal_ball: :sparkles: Time calculation has never been so fun!
+
+[![MIT Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/dreamyguy/moments/blob/master/LICENSE)
 
 With **Moments** one can do two things _(sometimes three)_:
 
@@ -72,9 +74,13 @@ To run test coverage, run:
 
     yarn test:coverage
 
+### License
+
+[MIT](LICENSE)
+
 ### About
 
-**Moments** was conceived and developed by [Wallace Sidhrée][1]. is written in [React][4], with [Redux][5] used for state management. It was initialized through [create-react-app][6] and built upon that with some sensible strategies. [Jest][7] and [Enzyme][9] are used for tests. [Momentjs][10] is used for time calculations. [VS Code][13] was used as the IDE of choice.
+**Moments** was conceived and developed by [Wallace Sidhrée][1]. is written in [React][4], with [Redux][5] used for state management. It was initialized through [create-react-app 2][6] and built upon that with some sensible strategies. [Jest][7] and [Enzyme][9] are used for tests. [Momentjs][10] is used for time calculations. [VS Code][13] was used as the IDE of choice.
 
 It's a project made out sheer fun &mdash; to honour, acnowledge and nourish the _geekiness_ in all of us. It is, therefore, a part of [WTFoo][11], a tiny but mighty group of skilled developers that celebrate exactly that.
 
