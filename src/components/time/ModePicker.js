@@ -32,14 +32,17 @@ class ModePicker extends Component {
                 <SetMode
                   modeType = "relativeToNow"
                   modeName = "Relative to Now"
+                  modePath = "/relative-to-now"
                 />
                 <SetMode
                   modeType = "betweenTwoDates"
                   modeName = "Between Two Dates"
+                  modePath = "/between-two-dates"
                 />
                 <SetMode
                   modeType = "discoverMoment"
                   modeName = "Discover Moment"
+                  modePath = "/discover-moment"
                 />
               </div>
             </div>

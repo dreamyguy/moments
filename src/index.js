@@ -10,10 +10,11 @@ import './styles/main.scss';
 // Import components
 import App from './components/App';
 // Import pages
-import Home from './pages/Home';
 import Api from './pages/Api';
 import About from './pages/About';
-import FromDate from './pages/FromDate';
+import ModeRelativeToNow from './pages/ModeRelativeToNow';
+import ModeBetweenTwoDates from './pages/ModeBetweenTwoDates';
+import ModeDiscoverMoments from './pages/ModeDiscoverMoments';
 
 // Import store
 import initStore from './store/store';
@@ -25,10 +26,12 @@ ReactDom.render((
     <BrowserRouter basename="/">
       <App>
         <Switch>
-          <Route exact path="/" component={Home}/>
+          <Route exact path="/" component={ModeRelativeToNow}/>
           <Route exact path="/api" component={Api}/>
           <Route exact path="/about" component={About}/>
-          <Route exact path="/from-date" component={FromDate}/>
+          <Route exact path="/relative-to-now" component={ModeRelativeToNow}/>
+          <Route exact path="/between-two-dates" component={ModeBetweenTwoDates}/>
+          <Route exact path="/discover-moment" component={ModeDiscoverMoments}/>
         </Switch>
       </App>
     </BrowserRouter>

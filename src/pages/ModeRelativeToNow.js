@@ -8,7 +8,7 @@ import DateCard from './../components/time/DateCard';
 import DatePicker from './../components/time/DatePicker';
 import TimeDifference from './../components/time/TimeDifference';
 
-class Home extends Component {
+class ModeRelativeToNow extends Component {
   render () {
     const {
       baseDate,
@@ -73,15 +73,15 @@ const mapStateToProps = ({main}) => {
   }
 }
 
-const HomeConnect = connect(
+const ModeRelativeToNowConnect = connect(
   mapStateToProps
-)(Home);
+)(ModeRelativeToNow);
 
-Home.propTypes = {
+ModeRelativeToNow.propTypes = {
   baseDate: PropTypes.string,
   baseDateIsInThePast: PropTypes.bool,
   mode: PropTypes.string,
   nowDate: PropTypes.string
 };
 
-export default HomeConnect;
+export default ModeRelativeToNowConnect;

@@ -7,7 +7,7 @@ import {Provider} from 'react-redux';
 import App from './App';
 
 // Import a page component, just for testing the rendering
-import Home from './../pages/Home';
+import ModeRelativeToNow from './../pages/ModeRelativeToNow';
 
 // Import store
 import initStore from './../store/store';
@@ -21,7 +21,7 @@ describe('App', () => {
   const app = shallow(
     <Provider store={store}>
       <App>
-        <Home/>
+        <ModeRelativeToNow/>
       </App>
     </Provider>
   );

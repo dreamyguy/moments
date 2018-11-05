@@ -12,9 +12,11 @@ class SetMode extends Component {
   render () {
     const {
       classes = '',
+      history,
       mode = '',
       modeType = '',
       modeName = '',
+      modePath = '',
       setModeAction
     } = this.props;
     let classesButtonMode = `button button--mode${classes ? ' ' + classes : ''}`;
@@ -26,6 +28,9 @@ class SetMode extends Component {
         className={classesButtonMode}
         onClick={() => {
           setModeAction(mode === modeType ? '' : modeType)
+          if (history && modePath) {
+            history.push(modePath);
+          }
         }}
         disabled={mode && mode !== modeType ? true : false}
       >
@@ -52,6 +57,7 @@ SetMode.propTypes = {
   // Props passed down
   modeName: PropTypes.string.isRequired,
   modeType: PropTypes.string.isRequired,
+  modepath: PropTypes.string,
   // Props coming from state
   mode: PropTypes.string,
   setModeAction: PropTypes.func.isRequired

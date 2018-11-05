@@ -15,7 +15,7 @@ ShallowWrapper {
     }
   >
     <App>
-      <Connect(Home) />
+      <Connect(ModeRelativeToNow) />
     </App>
   </Provider>,
   Symbol(enzyme.__renderer__): Object {
@@ -31,7 +31,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <Connect(Home) />,
+      "children": <Connect(ModeRelativeToNow) />,
     },
     "ref": null,
     "rendered": Object {
@@ -51,7 +51,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <Connect(Home) />,
+        "children": <Connect(ModeRelativeToNow) />,
       },
       "ref": null,
       "rendered": Object {

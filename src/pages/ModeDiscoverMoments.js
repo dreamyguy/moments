@@ -9,7 +9,7 @@ import DatePicker from './../components/time/DatePicker';
 import TimeDifference from './../components/time/TimeDifference';
 import DiscoverMoments from './../components/time/DiscoverMoments';
 
-class FromDate extends Component {
+class ModeDiscoverMoments extends Component {
   render () {
     const {
       baseDate,
@@ -53,14 +53,14 @@ const mapStateToProps = ({main}) => {
   }
 }
 
-const FromDateConnect = connect(
+const ModeDiscoverMomentsConnect = connect(
   mapStateToProps
-)(FromDate);
+)(ModeDiscoverMoments);
 
-FromDate.propTypes = {
+ModeDiscoverMoments.propTypes = {
   baseDate: PropTypes.string,
   baseDateIsInThePast: PropTypes.bool,
   baseDateIsInTheFuture: PropTypes.bool,
 };
 
-export default FromDateConnect;
+export default ModeDiscoverMomentsConnect;
