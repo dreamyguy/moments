@@ -1,5 +1,6 @@
 // Import dependencies
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -28,8 +29,12 @@ class SetMode extends Component {
         className={classesButtonMode}
         onClick={() => {
           setModeAction(mode === modeType ? '' : modeType)
-          if (history && modePath) {
+          if (history && modePath && !mode) {
+            // If 'mode' is not set, we want to navigate to 'modePath'
             history.push(modePath);
+          } else if (history && modePath && mode) {
+            // If 'mode' is set, we want to navigate back to '/' as it's only a reset
+            history.push('/');
           }
         }}
         disabled={mode && mode !== modeType ? true : false}
@@ -63,4 +68,4 @@ SetMode.propTypes = {
   setModeAction: PropTypes.func.isRequired
 };
 
-export default SetModeConnect;
+export default withRouter(SetModeConnect);
