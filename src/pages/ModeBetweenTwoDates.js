@@ -47,7 +47,7 @@ class ModeRelativeToNow extends Component {
                 </div>
               </>
             }
-            {mode && baseDate &&
+            {mode && baseDate && targetDate &&
               <>
                 <div className="row">
                   <div className={classesFrstRow}>
