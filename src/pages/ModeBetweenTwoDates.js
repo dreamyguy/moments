@@ -31,12 +31,18 @@ class ModeRelativeToNow extends Component {
               <>
                 <div className="row m-b-20">
                   <div className="col-12">
-                    <DatePickerBaseDate/>
+                    <DatePickerBaseDate
+                      instructionStart = "Choose a year for Date A:"
+                      instructionYearDefined = "Refine Date A:"
+                    />
                   </div>
                 </div>
                 <div className="row m-b-20">
                   <div className="col-12">
-                    <DatePickerTargetDate/>
+                    <DatePickerTargetDate
+                      instructionStart = "Choose a year for Date B:"
+                      instructionYearDefined = "Refine Date B:"
+                    />
                   </div>
                 </div>
               </>

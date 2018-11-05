@@ -35,14 +35,18 @@ class DatePickerTargetDate extends Component {
   }
   renderInstructions () {
     const {
+      // Props passed down
+      instructionStart = 'To get started, choose a year:',
+      instructionYearDefined = 'Refine your date:',
+      // Props passed from state
       targetYearDefined = false,
     } = this.props;
     let instructions = '';
     const optional = <span className="optional">(optional)</span>;
     if (!targetYearDefined) {
-      instructions = 'To get started, choose a year:'
+      instructions = instructionStart;
     } else {
-      instructions = 'Refine your date:';
+      instructions = instructionYearDefined;
     }
     return (
       <div className="m-b-10 align-center">
@@ -135,6 +139,10 @@ const DatePickerTargetDateConnect = connect(
 )(DatePickerTargetDate);
 
 DatePickerTargetDate.propTypes = {
+  // Props passed down
+  instructionStart: PropTypes.string,
+  instructionYearDefined: PropTypes.string,
+  // Props passed from state
   targetYearDefined: PropTypes.bool,
   targetMonthDefined: PropTypes.bool,
   targetDayDefined: PropTypes.bool,
