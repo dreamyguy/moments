@@ -7,42 +7,60 @@ import PropTypes from 'prop-types';
 import { timeDiff } from './../../utils/timeDiffUtil';
 
 class TimeDifference extends Component {
-  render () {
+  renderHeading () {
     const {
+      // Passed down
+      timeA = '',
+      timeB = '',
+      // Passed from state
       baseDate,
       nowDate,
       baseDateIsInThePast,
       baseDateIsInTheFuture,
     } = this.props;
-    if (baseDate) {
+    // Support mode '1' & '3'
+    if (timeA === baseDate && timeB === nowDate) {
+      if (baseDateIsInThePast) {
+        return 'Time since';
+      }
+      if (baseDateIsInTheFuture) {
+        return 'Time until';
+      }
+    }
+    // Support mode '2'
+    // Note that there will be a check for 'timeA' & 'timeB'
+    // around the fallback return, so we're safe doing this
+    return 'Time difference';
+  }
+  render () {
+    const {
+      timeA,
+      timeB,
+    } = this.props;
+    if (timeA && timeB) {
       return (
         <>
-          {baseDateIsInThePast &&
-            <h3 className="m-t-20 m-b-20">Time since</h3>
-          }
-          {baseDateIsInTheFuture &&
-            <h3 className="m-t-20 m-b-20">Time until</h3>
-          }
+          <h3 className="m-t-20 m-b-20">{this.renderHeading()}</h3>
           <div className="time-unit-output bl-purple">
-            {timeDiff(baseDate, nowDate, 'years')}
+            {timeDiff(timeA, timeB, 'years')}
           </div>
           <div className="time-unit-output bl-fuchsia">
-            {timeDiff(baseDate, nowDate, 'months')}
+            {timeDiff(timeA, timeB, 'months')}
           </div>
           <div className="time-unit-output bl-red">
-            {timeDiff(baseDate, nowDate, 'weeks')}
+            {timeDiff(timeA, timeB, 'weeks')}
           </div>
           <div className="time-unit-output bl-orange">
-            {timeDiff(baseDate, nowDate, 'days')}
+            {timeDiff(timeA, timeB, 'days')}
           </div>
           <div className="time-unit-output bl-yellow">
-            {timeDiff(baseDate, nowDate, 'hours')}
+            {timeDiff(timeA, timeB, 'hours')}
           </div>
           <div className="time-unit-output bl-fav-green-light">
-            {timeDiff(baseDate, nowDate, 'minutes')}
+            {timeDiff(timeA, timeB, 'minutes')}
           </div>
           <div className="time-unit-output bl-teal">
-            {timeDiff(baseDate, nowDate, 'seconds')}
+            {timeDiff(timeA, timeB, 'seconds')}
           </div>
         </>
       )
@@ -65,6 +83,10 @@ const TimeDifferenceConnect = connect(
 )(TimeDifference);
 
 TimeDifference.propTypes = {
+  // Passed down
+  timeA: PropTypes.string,
+  timeB: PropTypes.string,
+  // Passed from state
   baseDate: PropTypes.string,
   baseDateIsInThePast: PropTypes.bool,
   baseDateIsInTheFuture: PropTypes.bool,

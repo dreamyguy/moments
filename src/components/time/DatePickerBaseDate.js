@@ -9,9 +9,9 @@ import uuidv4 from 'uuid/v4';
 import { numberRange } from './../../utils/rangeUtil';
 
 // Import components
-import Dropdown from './Dropdown';
+import DropdownBaseDate from './DropdownBaseDate';
 
-class DatePicker extends Component {
+class DatePickerBaseDate extends Component {
   getTimeUnit (mode) {
     const options = [];
     let units = [];
@@ -66,13 +66,13 @@ class DatePicker extends Component {
       <>
         {this.renderInstructions()}
         <div className="container-flex date-picker">
-          <Dropdown
+          <DropdownBaseDate
             tabIndex = "1"
             options = {this.getTimeUnit('year')}
             value = {baseYear}
             type = "year"
           />
-          <Dropdown
+          <DropdownBaseDate
             tabIndex = "1"
             options = {this.getTimeUnit('month')}
             value = {baseMonth}
@@ -80,7 +80,7 @@ class DatePicker extends Component {
             disabled={!baseYearDefined}
             classes = {!baseYearDefined ? 'hidden' : ''}
           />
-          <Dropdown
+          <DropdownBaseDate
             tabIndex = "1"
             options = {this.getTimeUnit('day')}
             value = {baseDay}
@@ -90,19 +90,19 @@ class DatePicker extends Component {
           />
           {baseDayDefined &&
             <>
-              <Dropdown
+              <DropdownBaseDate
                 tabIndex = "1"
                 options = {this.getTimeUnit('hour')}
                 value = {baseHour}
                 type = "hour"
               />
-              <Dropdown
+              <DropdownBaseDate
                 tabIndex = "1"
                 options = {this.getTimeUnit('minute')}
                 value = {baseMinute}
                 type = "minute"
               />
-              <Dropdown
+              <DropdownBaseDate
                 tabIndex = "1"
                 options = {this.getTimeUnit('second')}
                 value = {baseSecond}
@@ -130,11 +130,11 @@ const mapStateToProps = ({main}) => {
   }
 }
 
-const DatePickerConnect = connect(
+const DatePickerBaseDateConnect = connect(
   mapStateToProps
-)(DatePicker);
+)(DatePickerBaseDate);
 
-DatePicker.propTypes = {
+DatePickerBaseDate.propTypes = {
   baseYearDefined: PropTypes.bool,
   baseMonthDefined: PropTypes.bool,
   baseDayDefined: PropTypes.bool,
@@ -146,4 +146,4 @@ DatePicker.propTypes = {
   baseSecond: PropTypes.string,
 };
 
-export default DatePickerConnect;
+export default DatePickerBaseDateConnect;

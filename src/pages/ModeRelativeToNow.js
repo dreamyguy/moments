@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 // Import components
 import DateCard from './../components/time/DateCard';
-import DatePicker from './../components/time/DatePicker';
+import DatePickerBaseDate from './../components/time/DatePickerBaseDate';
 import TimeDifference from './../components/time/TimeDifference';
 
 class ModeRelativeToNow extends Component {
@@ -29,7 +29,7 @@ class ModeRelativeToNow extends Component {
             {mode &&
               <div className="row">
                 <div className="col-12">
-                  <DatePicker/>
+                  <DatePickerBaseDate/>
                 </div>
               </div>
             }
@@ -52,7 +52,10 @@ class ModeRelativeToNow extends Component {
                 </div>
                 <div className="row">
                   <div className="col-12">
-                    <TimeDifference />
+                    <TimeDifference
+                      timeA = {baseDate}
+                      timeB = {nowDate}
+                    />
                   </div>
                 </div>
               </>

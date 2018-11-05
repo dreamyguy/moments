@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 // Import components
 import DateCard from './../components/time/DateCard';
-import DatePicker from './../components/time/DatePicker';
+import DatePickerBaseDate from './../components/time/DatePickerBaseDate';
 import TimeDifference from './../components/time/TimeDifference';
 import DiscoverMoments from './../components/time/DiscoverMoments';
 
@@ -13,13 +13,14 @@ class ModeDiscoverMoments extends Component {
   render () {
     const {
       baseDate,
+      nowDate
     } = this.props;
     return (
       <section className="section section--alt">
         <div className="container m-t-20 m-b-20">
           <div className="row">
             <div className="col-12">
-              <DatePicker/>
+              <DatePickerBaseDate/>
             </div>
           </div>
           {baseDate &&
@@ -36,7 +37,10 @@ class ModeDiscoverMoments extends Component {
           <div className="row">
             <div className="col-12">
               <DiscoverMoments />
-              <TimeDifference />
+              <TimeDifference
+                timeA = {baseDate}
+                timeB = {nowDate}
+              />
             </div>
           </div>
         </div>
@@ -50,6 +54,7 @@ const mapStateToProps = ({main}) => {
     baseDate: main.baseDate,
     baseDateIsInThePast: main.baseDateIsInThePast,
     baseDateIsInTheFuture: main.baseDateIsInTheFuture,
+    nowDate: main.nowDate,
   }
 }
 
@@ -61,6 +66,7 @@ ModeDiscoverMoments.propTypes = {
   baseDate: PropTypes.string,
   baseDateIsInThePast: PropTypes.bool,
   baseDateIsInTheFuture: PropTypes.bool,
+  nowDate: PropTypes.string,
 };
 
 export default ModeDiscoverMomentsConnect;

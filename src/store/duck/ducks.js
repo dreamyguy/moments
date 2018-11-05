@@ -29,6 +29,9 @@ const SET_MOMENT_BASE_SECOND = 'SET_MOMENT_BASE_SECOND';
 // ActionTypes - moment - target
 const SET_MOMENT_TARGET_DATE = 'SET_MOMENT_TARGET_DATE';
 const SET_MOMENT_TARGET_NAME = 'SET_MOMENT_TARGET_NAME';
+const SET_MOMENT_TARGET_DATE_IS_IN_THE_PAST = 'SET_MOMENT_TARGET_DATE_IS_IN_THE_PAST';
+const SET_MOMENT_TARGET_DATE_IS_IN_THE_FUTURE = 'SET_MOMENT_TARGET_DATE_IS_IN_THE_FUTURE';
+const SET_MOMENT_TARGET_YEAR_DEFINED = 'SET_MOMENT_TARGET_YEAR_DEFINED';
 const SET_MOMENT_TARGET_YEAR = 'SET_MOMENT_TARGET_YEAR';
 const SET_MOMENT_TARGET_MONTH = 'SET_MOMENT_TARGET_MONTH';
 const SET_MOMENT_TARGET_WEEK = 'SET_MOMENT_TARGET_WEEK';
@@ -83,6 +86,8 @@ export const initialStateMain = {
   // Target moment
   targetDate: '',
   targetDateName: '',
+  targetDateIsInThePast: false,
+  targetDateIsInTheFuture: false,
   targetYearDefined: false,
   targetMonthDefined: false,
   targetDayDefined: false,
@@ -274,11 +279,31 @@ export function reducerMain (state = initialStateMain, action) {
         loading: false,
         targetName: action.payload
       }
+    case SET_MOMENT_TARGET_DATE_IS_IN_THE_PAST:
+      return {
+        ...state,
+        loading: false,
+        targetDateIsInThePast: action.payload
+      }
+    case SET_MOMENT_TARGET_DATE_IS_IN_THE_FUTURE:
+      return {
+        ...state,
+        loading: false,
+        targetDateIsInTheFuture: action.payload
+      }
+    case SET_MOMENT_TARGET_YEAR_DEFINED:
+      return {
+        ...state,
+        loading: false,
+        targetYearDefined: action.payload,
+      }
     case SET_MOMENT_TARGET_YEAR:
       return {
         ...state,
         loading: false,
-        targetYearDefined: true,
+        // Note that we can't set 'targetYearDefined: true' here,
+        // as this is an input field that needs to be validated. Because of that
+        // we should use 'SET_MOMENT_TARGET_YEAR_DEFINED' instead
         targetYear: action.payload,
       }
     case SET_MOMENT_TARGET_MONTH:
@@ -413,6 +438,9 @@ export const setMomentBaseSecondAction = (action) => ({ type: SET_MOMENT_BASE_SE
 // ActionTypes - moment - target
 export const setMomentTargetDateAction = (action) => ({ type: SET_MOMENT_TARGET_DATE, payload: action });
 export const setMomentTargetNameAction = (action) => ({ type: SET_MOMENT_TARGET_NAME, payload: action });
+export const setMomentTargetDateIsInThePastAction = (action) => ({ type: SET_MOMENT_TARGET_DATE_IS_IN_THE_PAST, payload: action });
+export const setMomentTargetDateIsInTheFutureAction = (action) => ({ type: SET_MOMENT_TARGET_DATE_IS_IN_THE_FUTURE, payload: action });
+export const setMomentTargetYearDefinedAction = (action) => ({ type: SET_MOMENT_TARGET_YEAR_DEFINED, payload: action });
 export const setMomentTargetYearAction = (action) => ({ type: SET_MOMENT_TARGET_YEAR, payload: action });
 export const setMomentTargetMonthAction = (action) => ({ type: SET_MOMENT_TARGET_MONTH, payload: action });
 export const setMomentTargetWeekAction = (action) => ({ type: SET_MOMENT_TARGET_WEEK, payload: action });

@@ -5,20 +5,21 @@ import PropTypes from 'prop-types';
 
 // Import components
 import DateCard from './../components/time/DateCard';
-import DatePicker from './../components/time/DatePicker';
+import DatePickerBaseDate from './../components/time/DatePickerBaseDate';
+import DatePickerTargetDate from './../components/time/DatePickerTargetDate';
 import TimeDifference from './../components/time/TimeDifference';
 
 class ModeRelativeToNow extends Component {
   render () {
     const {
       baseDate,
-      baseDateIsInThePast,
+      targetDateIsInThePast,
       mode,
       targetDate
     } = this.props;
     let classesFrstRow = 'col-12 col-md-6';
     let classesSecondRow = 'col-12 col-md-6';
-    if (baseDateIsInThePast) {
+    if (targetDateIsInThePast) {
       classesFrstRow = 'col-12 col-md-6 order-2';
       classesSecondRow = 'col-12 col-md-6 order-1';
     }
@@ -30,12 +31,12 @@ class ModeRelativeToNow extends Component {
               <>
                 <div className="row m-b-20">
                   <div className="col-12">
-                    <DatePicker/>
+                    <DatePickerBaseDate/>
                   </div>
                 </div>
                 <div className="row m-b-20">
                   <div className="col-12">
-                    <DatePicker set="targetDate"/>
+                    <DatePickerTargetDate/>
                   </div>
                 </div>
               </>
@@ -45,14 +46,14 @@ class ModeRelativeToNow extends Component {
                 <div className="row">
                   <div className={classesFrstRow}>
                     <DateCard
-                      heading = "Set date"
+                      heading = "Date A"
                       date = {baseDate}
                       classes = "bl-fav-orange-dark"
                     />
                   </div>
                   <div className={classesSecondRow}>
                     <DateCard
-                      heading = "Target Date"
+                      heading = "Date B"
                       date = {targetDate}
                       classes = "bl-purple"
                     />
@@ -60,7 +61,10 @@ class ModeRelativeToNow extends Component {
                 </div>
                 <div className="row">
                   <div className="col-12">
-                    <TimeDifference />
+                    <TimeDifference
+                      timeA = {baseDate}
+                      timeB = {targetDate}
+                    />
                   </div>
                 </div>
               </>
@@ -75,7 +79,7 @@ class ModeRelativeToNow extends Component {
 const mapStateToProps = ({main}) => {
   return {
     baseDate: main.baseDate,
-    baseDateIsInThePast: main.baseDateIsInThePast,
+    targetDateIsInThePast: main.targetDateIsInThePast,
     mode: main.mode,
     targetDate: main.targetDate
   }
@@ -87,7 +91,7 @@ const ModeRelativeToNowConnect = connect(
 
 ModeRelativeToNow.propTypes = {
   baseDate: PropTypes.string,
-  baseDateIsInThePast: PropTypes.bool,
+  targetDateIsInThePast: PropTypes.bool,
   mode: PropTypes.string,
   targetDate: PropTypes.string
 };

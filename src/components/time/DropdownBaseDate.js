@@ -27,7 +27,7 @@ import {
   setMomentBaseSecondAction
 } from './../../store/duck/ducks';
 
-class Dropdown extends Component {
+class DropdownBaseDate extends Component {
   setTimePeriod (value) {
     // Determine if date is in the 'past' or 'future'
     const {
@@ -147,12 +147,12 @@ const mapDispatchToProps = {
   setMomentBaseMinuteAction,
   setMomentBaseSecondAction
 }
-const DropdownConnect = connect(
+const DropdownBaseDateConnect = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Dropdown);
+)(DropdownBaseDate);
 
-Dropdown.propTypes = {
+DropdownBaseDate.propTypes = {
   // Props related to select, passed down
   options: PropTypes.array.isRequired,
   tabIndex: PropTypes.string,
@@ -169,4 +169,4 @@ Dropdown.propTypes = {
   nowYear: PropTypes.string,
 };
 
-export default DropdownConnect;
+export default DropdownBaseDateConnect;
