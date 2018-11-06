@@ -21,6 +21,7 @@ const SET_MOMENT_BASE_DATE_IS_IN_THE_FUTURE = 'SET_MOMENT_BASE_DATE_IS_IN_THE_FU
 const SET_MOMENT_BASE_YEAR_DEFINED = 'SET_MOMENT_BASE_YEAR_DEFINED';
 const SET_MOMENT_BASE_YEAR = 'SET_MOMENT_BASE_YEAR';
 const SET_MOMENT_BASE_MONTH = 'SET_MOMENT_BASE_MONTH';
+const SET_MOMENT_BASE_MONTH_DAY_COUNT = 'SET_MOMENT_BASE_MONTH_DAY_COUNT';
 const SET_MOMENT_BASE_WEEK = 'SET_MOMENT_BASE_WEEK';
 const SET_MOMENT_BASE_DAY = 'SET_MOMENT_BASE_DAY';
 const SET_MOMENT_BASE_HOUR = 'SET_MOMENT_BASE_HOUR';
@@ -34,6 +35,7 @@ const SET_MOMENT_TARGET_DATE_IS_IN_THE_FUTURE = 'SET_MOMENT_TARGET_DATE_IS_IN_TH
 const SET_MOMENT_TARGET_YEAR_DEFINED = 'SET_MOMENT_TARGET_YEAR_DEFINED';
 const SET_MOMENT_TARGET_YEAR = 'SET_MOMENT_TARGET_YEAR';
 const SET_MOMENT_TARGET_MONTH = 'SET_MOMENT_TARGET_MONTH';
+const SET_MOMENT_TARGET_MONTH_DAY_COUNT = 'SET_MOMENT_TARGET_MONTH_DAY_COUNT';
 const SET_MOMENT_TARGET_WEEK = 'SET_MOMENT_TARGET_WEEK';
 const SET_MOMENT_TARGET_DAY = 'SET_MOMENT_TARGET_DAY';
 const SET_MOMENT_TARGET_HOUR = 'SET_MOMENT_TARGET_HOUR';
@@ -79,6 +81,7 @@ export const initialStateMain = {
   baseDayDefined: false,
   baseYear: '',
   baseMonth: '',
+  baseMonthDayCount: null,
   baseDay: '',
   baseHour: '',
   baseMinute: '',
@@ -93,6 +96,7 @@ export const initialStateMain = {
   targetDayDefined: false,
   targetYear: '',
   targetMonth: '',
+  targetMonthDayCount: null,
   targetDay: '',
   targetHour: '',
   targetMinute: '',
@@ -226,39 +230,67 @@ export function reducerMain (state = initialStateMain, action) {
         // as this is an input field that needs to be validated. Because of that
         // we should use 'SET_MOMENT_BASE_YEAR_DEFINED' instead
         baseYear: action.payload,
+        baseMonth: '',
+        baseMonthDefined: false,
+        baseMonthDayCount: null,
+        baseDay: '',
+        baseDayDefined: false,
+        baseHour: '',
+        baseMinute: '',
+        baseSecond: '',
       }
     case SET_MOMENT_BASE_MONTH:
       return {
         ...state,
         loading: false,
         baseMonthDefined: true,
-        baseMonth: action.payload
+        baseMonth: action.payload,
+        baseDay: '',
+        baseDayDefined: false,
+        baseHour: '',
+        baseMinute: '',
+        baseSecond: '',
+      }
+    case SET_MOMENT_BASE_MONTH_DAY_COUNT:
+      return {
+        ...state,
+        loading: false,
+        baseMonthDayCount: action.payload
       }
     case SET_MOMENT_BASE_WEEK:
       return {
         ...state,
         loading: false,
         baseWeekDefined: true,
-        baseWeek: action.payload
+        baseWeek: action.payload,
+        baseHour: '',
+        baseMinute: '',
+        baseSecond: '',
       }
     case SET_MOMENT_BASE_DAY:
       return {
         ...state,
         loading: false,
         baseDayDefined: true,
-        baseDay: action.payload
+        baseDay: action.payload,
+        baseHour: '',
+        baseMinute: '',
+        baseSecond: '',
       }
     case SET_MOMENT_BASE_HOUR:
       return {
         ...state,
         loading: false,
-        baseHour: action.payload
+        baseHour: action.payload,
+        baseMinute: '',
+        baseSecond: '',
       }
     case SET_MOMENT_BASE_MINUTE:
       return {
         ...state,
         loading: false,
-        baseMinute: action.payload
+        baseMinute: action.payload,
+        baseSecond: '',
       }
     case SET_MOMENT_BASE_SECOND:
       return {
@@ -305,39 +337,67 @@ export function reducerMain (state = initialStateMain, action) {
         // as this is an input field that needs to be validated. Because of that
         // we should use 'SET_MOMENT_TARGET_YEAR_DEFINED' instead
         targetYear: action.payload,
+        targetMonth: '',
+        targetMonthDefined: false,
+        targetMonthDayCount: null,
+        targetDay: '',
+        targetDayDefined: false,
+        targetHour: '',
+        targetMinute: '',
+        targetSecond: '',
       }
     case SET_MOMENT_TARGET_MONTH:
       return {
         ...state,
         loading: false,
         targetMonthDefined: true,
-        targetMonth: action.payload
+        targetMonth: action.payload,
+        targetDay: '',
+        targetDayDefined: false,
+        targetHour: '',
+        targetMinute: '',
+        targetSecond: '',
+      }
+    case SET_MOMENT_TARGET_MONTH_DAY_COUNT:
+      return {
+        ...state,
+        loading: false,
+        targetMonthDayCount: action.payload
       }
     case SET_MOMENT_TARGET_WEEK:
       return {
         ...state,
         loading: false,
         targetWeekDefined: true,
-        targetWeek: action.payload
+        targetWeek: action.payload,
+        targetHour: '',
+        targetMinute: '',
+        targetSecond: '',
       }
     case SET_MOMENT_TARGET_DAY:
       return {
         ...state,
         loading: false,
         targetDayDefined: true,
-        targetDay: action.payload
+        targetDay: action.payload,
+        targetHour: '',
+        targetMinute: '',
+        targetSecond: '',
       }
     case SET_MOMENT_TARGET_HOUR:
       return {
         ...state,
         loading: false,
-        targetHour: action.payload
+        targetHour: action.payload,
+        targetMinute: '',
+        targetSecond: '',
       }
     case SET_MOMENT_TARGET_MINUTE:
       return {
         ...state,
         loading: false,
-        targetMinute: action.payload
+        targetMinute: action.payload,
+        targetSecond: '',
       }
     case SET_MOMENT_TARGET_SECOND:
       return {
@@ -430,6 +490,7 @@ export const setMomentBaseDateIsInTheFutureAction = (action) => ({ type: SET_MOM
 export const setMomentBaseYearDefinedAction = (action) => ({ type: SET_MOMENT_BASE_YEAR_DEFINED, payload: action });
 export const setMomentBaseYearAction = (action) => ({ type: SET_MOMENT_BASE_YEAR, payload: action });
 export const setMomentBaseMonthAction = (action) => ({ type: SET_MOMENT_BASE_MONTH, payload: action });
+export const setMomentBaseMonthDayCountAction = (action) => ({ type: SET_MOMENT_BASE_MONTH_DAY_COUNT, payload: action })
 export const setMomentBaseWeekAction = (action) => ({ type: SET_MOMENT_BASE_WEEK, payload: action });
 export const setMomentBaseDayAction = (action) => ({ type: SET_MOMENT_BASE_DAY, payload: action });
 export const setMomentBaseHourAction = (action) => ({ type: SET_MOMENT_BASE_HOUR, payload: action });
@@ -443,6 +504,7 @@ export const setMomentTargetDateIsInTheFutureAction = (action) => ({ type: SET_M
 export const setMomentTargetYearDefinedAction = (action) => ({ type: SET_MOMENT_TARGET_YEAR_DEFINED, payload: action });
 export const setMomentTargetYearAction = (action) => ({ type: SET_MOMENT_TARGET_YEAR, payload: action });
 export const setMomentTargetMonthAction = (action) => ({ type: SET_MOMENT_TARGET_MONTH, payload: action });
+export const setMomentTargetMonthDayCountAction = (action) => ({ type: SET_MOMENT_TARGET_MONTH_DAY_COUNT, payload: action })
 export const setMomentTargetWeekAction = (action) => ({ type: SET_MOMENT_TARGET_WEEK, payload: action });
 export const setMomentTargetDayAction = (action) => ({ type: SET_MOMENT_TARGET_DAY, payload: action });
 export const setMomentTargetHourAction = (action) => ({ type: SET_MOMENT_TARGET_HOUR, payload: action });

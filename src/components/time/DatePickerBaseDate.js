@@ -13,6 +13,9 @@ import DropdownBaseDate from './DropdownBaseDate';
 
 class DatePickerBaseDate extends Component {
   getTimeUnit (mode) {
+    const {
+      baseMonthDayCount
+    } = this.props;
     const options = [];
     let units = [];
     if (mode === 'year') {
@@ -21,7 +24,11 @@ class DatePickerBaseDate extends Component {
     } else if (mode === 'month') {
       units = moment.localeData().months();
     } else if (mode === 'day') {
-      units = numberRange(1, 31);
+      if (baseMonthDayCount) {
+        units = numberRange(1, baseMonthDayCount);
+      } else {
+        units = numberRange(1, 31);
+      }
     } else if (mode === 'hour') {
       units = numberRange(0, 23);
     } else if (mode === 'minute' || mode === 'second') {
@@ -127,6 +134,7 @@ const mapStateToProps = ({main}) => {
     baseDayDefined: main.baseDayDefined,
     baseYear: main.baseYear,
     baseMonth: main.baseMonth,
+    baseMonthDayCount: main.baseMonthDayCount,
     baseDay: main.baseDay,
     baseHour: main.baseHour,
     baseMinute: main.baseMinute,
@@ -148,6 +156,7 @@ DatePickerBaseDate.propTypes = {
   baseDayDefined: PropTypes.bool,
   baseYear: PropTypes.string,
   baseMonth: PropTypes.string,
+  baseMonthDayCount: PropTypes.number,
   baseDay: PropTypes.string,
   baseHour: PropTypes.string,
   baseMinute: PropTypes.string,

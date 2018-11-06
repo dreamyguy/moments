@@ -20,6 +20,7 @@ import {
   setMomentTargetYearDefinedAction,
   setMomentTargetYearAction,
   setMomentTargetMonthAction,
+  setMomentTargetMonthDayCountAction,
   setMomentTargetWeekAction,
   setMomentTargetDayAction,
   setMomentTargetHourAction,
@@ -58,6 +59,7 @@ class DropdownTargetDate extends Component {
       setMomentTargetDateAction,
       setMomentTargetYearAction,
       setMomentTargetMonthAction,
+      setMomentTargetMonthDayCountAction,
       setMomentTargetDayAction,
       setMomentTargetHourAction,
       setMomentTargetMinuteAction,
@@ -65,9 +67,12 @@ class DropdownTargetDate extends Component {
       setMomentTargetYearDefinedAction
     } = this.props;
     let theTargetDate = '';
+    let theTargetMonthDayCount = '';
     if (mode === 'year') {
       if (value !== '' && value !== undefined) {
         theTargetDate = moment().year(value).format(MOMENT_TIME_FORMAT);
+        theTargetMonthDayCount = moment(theTargetDate, MOMENT_TIME_FORMAT).daysInMonth();
+        setMomentTargetMonthDayCountAction(theTargetMonthDayCount);
         setMomentTargetYearDefinedAction(true);
       } else {
         setMomentTargetYearDefinedAction(false);
@@ -76,6 +81,8 @@ class DropdownTargetDate extends Component {
       this.setTimePeriod(value);
     } else if (mode === 'month') {
       theTargetDate = moment().year(targetYear).month(value).format(MOMENT_TIME_FORMAT);
+      theTargetMonthDayCount = moment(theTargetDate, MOMENT_TIME_FORMAT).daysInMonth();
+      setMomentTargetMonthDayCountAction(theTargetMonthDayCount);
       setMomentTargetMonthAction(value);
     } else if (mode === 'day') {
       theTargetDate = moment().year(targetYear).month(targetMonth).date(value).format(MOMENT_TIME_FORMAT);
@@ -141,6 +148,7 @@ const mapDispatchToProps = {
   setMomentTargetYearDefinedAction,
   setMomentTargetYearAction,
   setMomentTargetMonthAction,
+  setMomentTargetMonthDayCountAction,
   setMomentTargetWeekAction,
   setMomentTargetDayAction,
   setMomentTargetHourAction,

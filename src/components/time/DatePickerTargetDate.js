@@ -13,6 +13,9 @@ import DropdownTargetDate from './DropdownTargetDate';
 
 class DatePickerTargetDate extends Component {
   getTimeUnit (mode) {
+    const {
+      targetMonthDayCount
+    } = this.props;
     const options = [];
     let units = [];
     if (mode === 'year') {
@@ -21,7 +24,11 @@ class DatePickerTargetDate extends Component {
     } else if (mode === 'month') {
       units = moment.localeData().months();
     } else if (mode === 'day') {
-      units = numberRange(1, 31);
+      if (targetMonthDayCount) {
+        units = numberRange(1, targetMonthDayCount);
+      } else {
+        units = numberRange(1, 31);
+      }
     } else if (mode === 'hour') {
       units = numberRange(0, 23);
     } else if (mode === 'minute' || mode === 'second') {
@@ -127,6 +134,7 @@ const mapStateToProps = ({main}) => {
     targetDayDefined: main.targetDayDefined,
     targetYear: main.targetYear,
     targetMonth: main.targetMonth,
+    targetMonthDayCount: main.targetMonthDayCount,
     targetDay: main.targetDay,
     targetHour: main.targetHour,
     targetMinute: main.targetMinute,
@@ -148,6 +156,7 @@ DatePickerTargetDate.propTypes = {
   targetDayDefined: PropTypes.bool,
   targetYear: PropTypes.string,
   targetMonth: PropTypes.string,
+  targetMonthDayCount: PropTypes.number,
   targetDay: PropTypes.string,
   targetHour: PropTypes.string,
   targetMinute: PropTypes.string,
