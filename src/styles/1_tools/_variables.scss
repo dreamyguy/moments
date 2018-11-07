@@ -4,10 +4,10 @@
 $rem-base: 20px;
 $gutter-size: $rem-base;
 $bottom-spacing: 4rem;
-$responsive-spacing-top: $rem-base * 2;
+$responsive-spacing-top: $gutter-size * 2;
 $transition-time: .2s;
 $default-border-size: 1px;
-$base-font-size: $rem-base;
+$base-font-size: $gutter-size;
 
 // fonts
 $path-fonts: "../fonts";
@@ -21,4 +21,4 @@ $xlarge-font-size: 24px;
 $xxlarge-font-size: 32px;
 
 // padding and margin values for content
-$padding-default: $rem-base;
+$padding-default: $gutter-size;

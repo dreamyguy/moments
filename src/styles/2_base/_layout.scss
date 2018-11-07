@@ -36,7 +36,7 @@ footer {
 content {
   max-width: 1234px;
   margin: 0 auto;
-  padding: $rem-base $rem-base $bottom-spacing $rem-base;
+  padding: $gutter-size $gutter-size $bottom-spacing $gutter-size;
   position: relative;
 }
 

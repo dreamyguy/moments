@@ -1,5 +1,5 @@
 // this file compiles and concatenates all the CSS
-@charset"utf-8";
+@charset 'utf-8';
 
 /* --------------------------------------------
 ::: Resets. tools, variables and settings :::::
@@ -8,7 +8,8 @@
 // Normalize browser defaults
 @import '../../node_modules/normalize.css/normalize.css';
 
-@import "1_tools/colors";
+@import '1_tools/functions';
+@import '1_tools/colors';
 @import '1_tools/variables';
 @import '1_tools/mixins';
 @import '1_tools/helpers';
@@ -24,7 +25,7 @@ html {
 }
 @import '2_base/fonts';
 @import '2_base/images';
-@import "2_base/layout";
+@import '2_base/layout';
 @import '2_base/radio-buttons';
 @import '2_base/input';
 @import '2_base/typography';

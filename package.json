@@ -10,7 +10,7 @@
     "date calculation",
     "date manipulation"
   ],
-  "homepage": "https://github.com/dreamyguy/moments",
+  "homepage": "https://dreamyguy.github.io/moments/",
   "repository": {
     "type": "git",
     "url": "https://github.com/dreamyguy/moments"
@@ -49,6 +49,7 @@
     "babel-preset-react-app-babel-7": "^4.0.2-0",
     "eslint": "^5.0.0",
     "eslint-plugin-jest": "^21.17.0",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.9.4"
   },
   "scripts": {
@@ -57,7 +58,9 @@
     "test": "jest",
     "test:local": "jest --verbose --watch",
     "test:coverage": "jest --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
