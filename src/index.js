@@ -26,12 +26,12 @@ ReactDom.render((
     <BrowserRouter basename="/moments">
       <App>
         <Switch>
-          <Route exact path="/" component={ModeRelativeToNow}/>
-          <Route exact path="/api" component={Api}/>
-          <Route exact path="/about" component={About}/>
-          <Route exact path="/relative-to-now" component={ModeRelativeToNow}/>
-          <Route exact path="/between-two-dates" component={ModeBetweenTwoDates}/>
-          <Route exact path="/discover-moment" component={ModeDiscoverMoments}/>
+          <Route exact path="/moments/" component={ModeRelativeToNow}/>
+          <Route exact path="/moments/api" component={Api}/>
+          <Route exact path="/moments/about" component={About}/>
+          <Route exact path="/moments/relative-to-now" component={ModeRelativeToNow}/>
+          <Route exact path="/moments/between-two-dates" component={ModeBetweenTwoDates}/>
+          <Route exact path="/moments/discover-moment" component={ModeDiscoverMoments}/>
         </Switch>
       </App>
     </BrowserRouter>
