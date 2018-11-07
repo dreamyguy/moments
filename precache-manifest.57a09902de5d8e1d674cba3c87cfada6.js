@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/moments/static/media/Montserrat-Medium.d815b0a2.otf"
   },
   {
-    "revision": "7a354fcf8a9720aeb06b",
+    "revision": "a91f856e2b2c340d0207",
     "url": "/moments/static/css/main.1494068b.chunk.css"
   },
   {
@@ -48,8 +48,8 @@ self.__precacheManifest = [
     "url": "/moments/static/media/Montserrat-ExtraLightItalic.ca2d2548.otf"
   },
   {
-    "revision": "7a354fcf8a9720aeb06b",
-    "url": "/moments/static/js/main.7a354fcf.chunk.js"
+    "revision": "a91f856e2b2c340d0207",
+    "url": "/moments/static/js/main.a91f856e.chunk.js"
   },
   {
     "revision": "bb3740d350b0186ce32b5678972bf061",
@@ -96,7 +96,7 @@ self.__precacheManifest = [
     "url": "/moments/static/css/1.2616fe00.chunk.css"
   },
   {
-    "revision": "aa0f968b79abe5975dbd83605eb23cb4",
+    "revision": "774e174bd023355314b5cd2731b0148a",
     "url": "/moments/index.html"
   }
 ];
