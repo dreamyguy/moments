@@ -24,7 +24,7 @@
 }
 
 $button-mode-translate-position: $gutter-size;
-$button-mode-transition-time: 400ms;
+$button-mode-transition-time: $transition-time;
 $button-mode-transition-type: cubic-bezier(
   0.165,
   0.84,
@@ -32,45 +32,63 @@ $button-mode-transition-type: cubic-bezier(
   1
 ); // https://easings.net/#easeOutQuart
 @keyframes button-mode-hide {
-  from {
+  0% {
     opacity: 1;
     margin-bottom: $gutter-size;
-    height: auto;
     color: $cl-white;
   }
-  to {
+  10% {
+    margin-bottom: 0;
+    color: transparent;
+    border-left-color: $cl-dark-gray-light;
+  }
+  90% {
+    min-height: 62px;
+  }
+  100% {
     opacity: 0;
     margin-bottom: 0;
     padding: 0;
     height: 0;
     width: 0;
     color: transparent;
+    border-left-color: $cl-dark-gray-light;
   }
 }
 @keyframes button-mode-show {
-  from {
+  0% {
     opacity: 0;
     margin-bottom: 0;
     padding: 0;
     height: 0;
     width: 0;
     color: transparent;
+    border-left-color: $cl-dark-gray-light;
   }
-  to {
+  10% {
+    min-height: 62px;
+  }
+  90% {
+    margin-bottom: $gutter-size;
+    color: transparent;
+    border-left-color: $cl-dark-gray-light;
+  }
+  100% {
     opacity: 1;
     margin-bottom: $gutter-size;
-    height: auto;
     color: $cl-white;
   }
 }
 .button--mode {
   animation: button-mode-show $button-mode-transition-time $button-mode-transition-type forwards;
+  max-height: 63px;
   padding: $gutter-size;
   background-color: $cl-dark-gray-light;
   color: $cl-white;
   border-width: 0 0 0 5px;
   border-left-style: solid;
   border-left-color: $cl-sb-magenta;
+  overflow: hidden;
   cursor: pointer;
   &:focus {
     outline-color: $cl-sb-magenta;
