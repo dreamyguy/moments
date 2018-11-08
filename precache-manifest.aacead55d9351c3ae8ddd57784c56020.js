@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/moments/static/media/Montserrat-Medium.d815b0a2.otf"
   },
   {
-    "revision": "a91f856e2b2c340d0207",
-    "url": "/moments/static/css/main.1494068b.chunk.css"
+    "revision": "5a933ec7e9dc85bf9454",
+    "url": "/moments/static/css/main.20a599d6.chunk.css"
   },
   {
     "revision": "880b0f4de395298b9c1316476d406cae",
@@ -48,8 +48,12 @@ self.__precacheManifest = [
     "url": "/moments/static/media/Montserrat-ExtraLightItalic.ca2d2548.otf"
   },
   {
-    "revision": "a91f856e2b2c340d0207",
-    "url": "/moments/static/js/main.a91f856e.chunk.js"
+    "revision": "5a933ec7e9dc85bf9454",
+    "url": "/moments/static/js/main.5a933ec7.chunk.js"
+  },
+  {
+    "revision": "bb3740d350b0186ce32b5678972bf061",
+    "url": "/moments/static/media/Montserrat-SemiBold.bb3740d3.otf"
   },
   {
     "revision": "9c71d42b6a840ecfda8fc555040a1c76",
@@ -58,10 +62,6 @@ self.__precacheManifest = [
   {
     "revision": "433ac418a603294fc5891dde6a73cd24",
     "url": "/moments/static/media/Montserrat-ExtraBold.433ac418.otf"
-  },
-  {
-    "revision": "bb3740d350b0186ce32b5678972bf061",
-    "url": "/moments/static/media/Montserrat-SemiBold.bb3740d3.otf"
   },
   {
     "revision": "468fb6c77e29f39a59d2d00b3d99d5ec",
@@ -80,12 +80,12 @@ self.__precacheManifest = [
     "url": "/moments/static/media/Montserrat-Italic.078a83ae.otf"
   },
   {
-    "revision": "96947c00edbd07b60480ede114296275",
-    "url": "/moments/static/media/Montserrat-MediumItalic.96947c00.otf"
-  },
-  {
     "revision": "977365caf72d2be914c1b88f903ad355",
     "url": "/moments/static/media/Montserrat-SemiBoldItalic.977365ca.otf"
+  },
+  {
+    "revision": "96947c00edbd07b60480ede114296275",
+    "url": "/moments/static/media/Montserrat-MediumItalic.96947c00.otf"
   },
   {
     "revision": "1fb2347e5e70361a92e8d4c4281cf457",
@@ -96,7 +96,7 @@ self.__precacheManifest = [
     "url": "/moments/static/css/1.2616fe00.chunk.css"
   },
   {
-    "revision": "774e174bd023355314b5cd2731b0148a",
+    "revision": "845a7a2ecbb43fc113749e2bad70fbc3",
     "url": "/moments/index.html"
   }
 ];
