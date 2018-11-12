@@ -9,13 +9,13 @@ import { MOMENT_TIME_FORMAT } from './../../config';
 
 // Import actions
 import {
-  setMomentNowDateAction,
-  setMomentNowYearAction,
-  setMomentNowMonthAction,
-  setMomentNowDayAction,
-  setMomentNowHourAction,
-  setMomentNowMinuteAction,
-  setMomentNowSecondAction
+  setNowDateAction,
+  setNowYearAction,
+  setNowMonthAction,
+  setNowDayAction,
+  setNowHourAction,
+  setNowMinuteAction,
+  setNowSecondAction
 } from './../../store/duck/ducks';
 
 class NowTicker extends Component {
@@ -30,13 +30,13 @@ class NowTicker extends Component {
     );
   }
   updateNow () {
-    this.props.setMomentNowDateAction(moment().format(MOMENT_TIME_FORMAT));
-    this.props.setMomentNowYearAction(moment().format('YYYY'));
-    this.props.setMomentNowMonthAction(moment().format('MMMM'));
-    this.props.setMomentNowDayAction(moment().format('D'));
-    this.props.setMomentNowHourAction(moment().format('H'));
-    this.props.setMomentNowMinuteAction(moment().format('mm'));
-    this.props.setMomentNowSecondAction(moment().format('ss'));
+    this.props.setNowDateAction(moment().format(MOMENT_TIME_FORMAT));
+    this.props.setNowYearAction(moment().format('YYYY'));
+    this.props.setNowMonthAction(moment().format('MMMM'));
+    this.props.setNowDayAction(moment().format('D'));
+    this.props.setNowHourAction(moment().format('H'));
+    this.props.setNowMinuteAction(moment().format('mm'));
+    this.props.setNowSecondAction(moment().format('ss'));
   }
   tick () {
     this.updateNow();
@@ -53,13 +53,13 @@ const mapStateToProps = ({main}) => {
   }
 }
 const mapDispatchToProps = {
-  setMomentNowDateAction,
-  setMomentNowYearAction,
-  setMomentNowMonthAction,
-  setMomentNowDayAction,
-  setMomentNowHourAction,
-  setMomentNowMinuteAction,
-  setMomentNowSecondAction
+  setNowDateAction,
+  setNowYearAction,
+  setNowMonthAction,
+  setNowDayAction,
+  setNowHourAction,
+  setNowMinuteAction,
+  setNowSecondAction
 }
 const NowTickerConnect = connect(
   mapStateToProps,

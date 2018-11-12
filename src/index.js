@@ -32,6 +32,9 @@ ReactDom.render((
           <Route exact path="/relative-to-now" component={ModeRelativeToNow}/>
           <Route exact path="/between-two-dates" component={ModeBetweenTwoDates}/>
           <Route exact path="/discover-moment" component={ModeDiscoverMoments}/>
+          <Route exact path="/1/:urlMode/date-a/:urlBaseYear/:urlBaseMonth/:urlBaseDay/:urlBaseHour/:urlBaseMinute/:urlBaseSecond/" component={ModeRelativeToNow}/>
+          <Route exact path="/2/:urlMode/date-a/:urlBaseYear/:urlBaseMonth/:urlBaseDay/:urlBaseHour/:urlBaseMinute/:urlBaseSecond/date-b/:urlTargetYear/:urlTargetMonth/:urlTargetDay/:urlTargetHour/:urlTargetMinute/:urlTargetSecond" component={ModeBetweenTwoDates}/>
+          <Route exact path="/3/:urlMode/date-a/:urlBaseYear/:urlBaseMonth/:urlBaseDay/:urlBaseHour/:urlBaseMinute/:urlBaseSecond/" component={ModeDiscoverMoments}/>
         </Switch>
       </App>
     </BrowserRouter>

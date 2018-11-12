@@ -28,7 +28,9 @@
 - Introduce meta tags
 
 - ~Push to GitHub~
-- Create page on GitHub
+- ~Create page on GitHub~
+
+- ~Create shareable urls~
 
 ## PHASE II
 

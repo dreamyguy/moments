@@ -12,15 +12,71 @@ With **Moments** one can do two things _(sometimes three)_:
 
 3. If the resulting moment is in the future, one will have the opportunity to set a calendar event.
 
+## Modes
+
+There are three modes one can use:
+
+#### 1. Moment relative to now
+
+Set a base date and get the time difference between that date and now. If the base date is set in the future the calculation will still be done. One will see a visual representation of chronology, with a respective "time since" or "time until" heading over the results.
+
+It can be accessed at:
+
+```
+/relative-to-now
+```
+
+#### 2. Time between two dates
+
+Set a base date (Date A) and a target date (Date B) and get the time difference between them.
+
+It can be accessed at:
+
+```
+/between-two-dates
+```
+
+#### 3. Discover Moments
+
+Set a base date and get the time difference between that date and now. At the bottom of the page, one will see the results, which can be used as inspiration.
+
+Right below the set date one will get some "time-unit" fields that can be filled with numbers. The resulting moment will render below each field. If the result is in the future, one will be able to set calendar events _(this feature is in the works)_.
+
+It can be accessed at:
+
+```
+/discover-moment
+```
+
+> Because results in **Moments** are presented in a structured way, one can use the application dynamically from somewhere else. One has two options:
+
+## Shareable URLs
+
+**1.** Link to the **Moments** website on Github, passing the expected time parameters.
+
+#### 1.1. Moment relative to now
+
+```
+/1/:urlMode/date-a/:urlBaseYear/:urlBaseMonth/:urlBaseDay/:urlBaseHour/:urlBaseMinute/:urlBaseSecond/
+```
+
+#### 1.2. Time between two dates
+
+```
+/2/:urlMode/date-a/:urlBaseYear/:urlBaseMonth/:urlBaseDay/:urlBaseHour/:urlBaseMinute/:urlBaseSecond/date-b/:urlTargetYear/:urlTargetMonth/:urlTargetDay/:urlTargetHour/:urlTargetMinute/:urlTargetSecond
+```
+
+#### 1.3. Discover Moments
+
+```
+/3/:urlMode/date-a/:urlBaseYear/:urlBaseMonth/:urlBaseDay/:urlBaseHour/:urlBaseMinute/:urlBaseSecond/
+```
+
+_Shareable URLs will eventually be provided from the application itself, but right now it can only be built manually._
+
 ## API
 
-Because results in **Moments** are presented in a structured way, one can use the application dynamically from somewhere else. One has two options:
-
-1. Link to the **Moments** website on Github, passing the expected time parameters.
-
-_Details on this are currently being refined_
-
-2. Hit the **Moments** `API` directly to generate a `JSON` response with all the calculations made for the moment defined in the request. This can then be consumed by your own application.
+**2.** Hit the **Moments** `API` directly to generate a `JSON` response with all the calculations made for the moment defined in the request. This can then be consumed by your own application.
 
 _Details on this are currently being refined_
 

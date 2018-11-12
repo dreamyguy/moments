@@ -7,10 +7,12 @@ import PropTypes from 'prop-types';
 import DateCard from './../components/time/DateCard';
 import DatePickerBaseDate from './../components/time/DatePickerBaseDate';
 import TimeDifference from './../components/time/TimeDifference';
+import SetDateFromUrl from './../components/time/SetDateFromUrl';
 
 class ModeRelativeToNow extends Component {
   render () {
     const {
+      match,
       baseDate,
       baseDateIsInThePast,
       mode,
@@ -24,6 +26,7 @@ class ModeRelativeToNow extends Component {
     }
     return (
       <section className="section section--alt">
+        <SetDateFromUrl match={match}/>
         <div className="container m-t-20 m-b-20">
           <>
             {mode &&

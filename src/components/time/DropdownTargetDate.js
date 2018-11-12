@@ -13,19 +13,19 @@ import { timePeriod } from './../../utils/timePeriodUtil';
 
 // Import actions
 import {
-  setMomentTargetDateAction,
-  setMomentTargetNameAction,
-  setMomentTargetDateIsInThePastAction,
-  setMomentTargetDateIsInTheFutureAction,
-  setMomentTargetYearDefinedAction,
-  setMomentTargetYearAction,
-  setMomentTargetMonthAction,
-  setMomentTargetMonthDayCountAction,
-  setMomentTargetWeekAction,
-  setMomentTargetDayAction,
-  setMomentTargetHourAction,
-  setMomentTargetMinuteAction,
-  setMomentTargetSecondAction
+  setTargetDateAction,
+  setTargetNameAction,
+  setTargetDateIsInThePastAction,
+  setTargetDateIsInTheFutureAction,
+  setTargetYearDefinedAction,
+  setAndResetTargetYearAction,
+  setAndResetTargetMonthAction,
+  setTargetMonthDayCountAction,
+  setTargetWeekAction,
+  setAndResetTargetDayAction,
+  setAndResetTargetHourAction,
+  setAndResetTargetMinuteAction,
+  setTargetSecondAction
 } from './../../store/duck/ducks';
 
 class DropdownTargetDate extends Component {
@@ -33,19 +33,19 @@ class DropdownTargetDate extends Component {
     // Determine if date is in the 'past' or 'future'
     const {
       baseYear = '',
-      setMomentTargetDateIsInThePastAction,
-      setMomentTargetDateIsInTheFutureAction,
+      setTargetDateIsInThePastAction,
+      setTargetDateIsInTheFutureAction,
     } = this.props;
     if (baseYear) {
       if (timePeriod(baseYear, value) === 'past') {
-        setMomentTargetDateIsInThePastAction(true);
-        setMomentTargetDateIsInTheFutureAction(false);
+        setTargetDateIsInThePastAction(true);
+        setTargetDateIsInTheFutureAction(false);
       } else if (timePeriod(baseYear, value) === 'future') {
-        setMomentTargetDateIsInThePastAction(false);
-        setMomentTargetDateIsInTheFutureAction(true);
+        setTargetDateIsInThePastAction(false);
+        setTargetDateIsInTheFutureAction(true);
       } else {
-        setMomentTargetDateIsInThePastAction(false);
-        setMomentTargetDateIsInTheFutureAction(false);
+        setTargetDateIsInThePastAction(false);
+        setTargetDateIsInTheFutureAction(false);
       }
     }
   }
@@ -56,15 +56,15 @@ class DropdownTargetDate extends Component {
       targetDay,
       targetHour,
       targetMinute,
-      setMomentTargetDateAction,
-      setMomentTargetYearAction,
-      setMomentTargetMonthAction,
-      setMomentTargetMonthDayCountAction,
-      setMomentTargetDayAction,
-      setMomentTargetHourAction,
-      setMomentTargetMinuteAction,
-      setMomentTargetSecondAction,
-      setMomentTargetYearDefinedAction
+      setTargetDateAction,
+      setAndResetTargetYearAction,
+      setAndResetTargetMonthAction,
+      setTargetMonthDayCountAction,
+      setAndResetTargetDayAction,
+      setAndResetTargetHourAction,
+      setAndResetTargetMinuteAction,
+      setTargetSecondAction,
+      setTargetYearDefinedAction
     } = this.props;
     let theTargetDate = '';
     let theTargetMonthDayCount = '';
@@ -72,32 +72,32 @@ class DropdownTargetDate extends Component {
       if (value !== '' && value !== undefined) {
         theTargetDate = moment().year(value).format(MOMENT_TIME_FORMAT);
         theTargetMonthDayCount = moment(theTargetDate, MOMENT_TIME_FORMAT).daysInMonth();
-        setMomentTargetMonthDayCountAction(theTargetMonthDayCount);
-        setMomentTargetYearDefinedAction(true);
+        setTargetMonthDayCountAction(theTargetMonthDayCount);
+        setTargetYearDefinedAction(true);
       } else {
-        setMomentTargetYearDefinedAction(false);
+        setTargetYearDefinedAction(false);
       }
-      setMomentTargetYearAction(value);
+      setAndResetTargetYearAction(value);
       this.setTimePeriod(value);
     } else if (mode === 'month') {
       theTargetDate = moment().year(targetYear).month(value).format(MOMENT_TIME_FORMAT);
       theTargetMonthDayCount = moment(theTargetDate, MOMENT_TIME_FORMAT).daysInMonth();
-      setMomentTargetMonthDayCountAction(theTargetMonthDayCount);
-      setMomentTargetMonthAction(value);
+      setTargetMonthDayCountAction(theTargetMonthDayCount);
+      setAndResetTargetMonthAction(value);
     } else if (mode === 'day') {
       theTargetDate = moment().year(targetYear).month(targetMonth).date(value).format(MOMENT_TIME_FORMAT);
-      setMomentTargetDayAction(value);
+      setAndResetTargetDayAction(value);
     } else if (mode === 'hour') {
       theTargetDate = moment().year(targetYear).month(targetMonth).date(targetDay).hour(value).format(MOMENT_TIME_FORMAT);
-      setMomentTargetHourAction(value);
+      setAndResetTargetHourAction(value);
     } else if (mode === 'minute') {
       theTargetDate = moment().year(targetYear).month(targetMonth).date(targetDay).hour(targetHour).minute(value).format(MOMENT_TIME_FORMAT);
-      setMomentTargetMinuteAction(value);
+      setAndResetTargetMinuteAction(value);
     } else if (mode === 'second') {
       theTargetDate = moment().year(targetYear).month(targetMonth).date(targetDay).hour(targetHour).minute(targetMinute).second(value).format(MOMENT_TIME_FORMAT);
-      setMomentTargetSecondAction(value);
+      setTargetSecondAction(value);
     }
-    setMomentTargetDateAction(theTargetDate);
+    setTargetDateAction(theTargetDate);
   }
   render () {
     const {
@@ -141,19 +141,19 @@ const mapStateToProps = ({main}) => {
   }
 }
 const mapDispatchToProps = {
-  setMomentTargetDateAction,
-  setMomentTargetNameAction,
-  setMomentTargetDateIsInThePastAction,
-  setMomentTargetDateIsInTheFutureAction,
-  setMomentTargetYearDefinedAction,
-  setMomentTargetYearAction,
-  setMomentTargetMonthAction,
-  setMomentTargetMonthDayCountAction,
-  setMomentTargetWeekAction,
-  setMomentTargetDayAction,
-  setMomentTargetHourAction,
-  setMomentTargetMinuteAction,
-  setMomentTargetSecondAction
+  setTargetDateAction,
+  setTargetNameAction,
+  setTargetDateIsInThePastAction,
+  setTargetDateIsInTheFutureAction,
+  setTargetYearDefinedAction,
+  setAndResetTargetYearAction,
+  setAndResetTargetMonthAction,
+  setTargetMonthDayCountAction,
+  setTargetWeekAction,
+  setAndResetTargetDayAction,
+  setAndResetTargetHourAction,
+  setAndResetTargetMinuteAction,
+  setTargetSecondAction
 }
 const DropdownTargetDateConnect = connect(
   mapStateToProps,

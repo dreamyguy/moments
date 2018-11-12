@@ -8,10 +8,12 @@ import DateCard from './../components/time/DateCard';
 import DatePickerBaseDate from './../components/time/DatePickerBaseDate';
 import DatePickerTargetDate from './../components/time/DatePickerTargetDate';
 import TimeDifference from './../components/time/TimeDifference';
+import SetDateFromUrl from './../components/time/SetDateFromUrl';
 
-class ModeRelativeToNow extends Component {
+class ModeBetweenTwoDates extends Component {
   render () {
     const {
+      match,
       baseDate,
       targetDateIsInThePast,
       mode,
@@ -25,6 +27,7 @@ class ModeRelativeToNow extends Component {
     }
     return (
       <section className="section section--alt">
+        <SetDateFromUrl match={match}/>
         <div className="container m-t-20 m-b-20">
           <>
             {mode &&
@@ -91,15 +94,15 @@ const mapStateToProps = ({main}) => {
   }
 }
 
-const ModeRelativeToNowConnect = connect(
+const ModeBetweenTwoDatesConnect = connect(
   mapStateToProps
-)(ModeRelativeToNow);
+)(ModeBetweenTwoDates);
 
-ModeRelativeToNow.propTypes = {
+ModeBetweenTwoDates.propTypes = {
   baseDate: PropTypes.string,
   targetDateIsInThePast: PropTypes.bool,
   mode: PropTypes.string,
   targetDate: PropTypes.string
 };
 
-export default ModeRelativeToNowConnect;
+export default ModeBetweenTwoDatesConnect;

@@ -8,15 +8,18 @@ import DateCard from './../components/time/DateCard';
 import DatePickerBaseDate from './../components/time/DatePickerBaseDate';
 import TimeDifference from './../components/time/TimeDifference';
 import DiscoverMoments from './../components/time/DiscoverMoments';
+import SetDateFromUrl from './../components/time/SetDateFromUrl';
 
 class ModeDiscoverMoments extends Component {
   render () {
     const {
+      match,
       baseDate,
       nowDate
     } = this.props;
     return (
       <section className="section section--alt">
+        <SetDateFromUrl match={match}/>
         <div className="container m-t-20 m-b-20">
           <div className="row">
             <div className="col-12">

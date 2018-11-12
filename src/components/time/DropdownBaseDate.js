@@ -13,19 +13,19 @@ import { timePeriod } from './../../utils/timePeriodUtil';
 
 // Import actions
 import {
-  setMomentBaseDateAction,
-  setMomentBaseNameAction,
-  setMomentBaseDateIsInThePastAction,
-  setMomentBaseDateIsInTheFutureAction,
-  setMomentBaseYearDefinedAction,
-  setMomentBaseYearAction,
-  setMomentBaseMonthAction,
-  setMomentBaseMonthDayCountAction,
-  setMomentBaseWeekAction,
-  setMomentBaseDayAction,
-  setMomentBaseHourAction,
-  setMomentBaseMinuteAction,
-  setMomentBaseSecondAction
+  setBaseDateAction,
+  setBaseNameAction,
+  setBaseDateIsInThePastAction,
+  setBaseDateIsInTheFutureAction,
+  setBaseYearDefinedAction,
+  setAndResetBaseYearAction,
+  setAndResetBaseMonthAction,
+  setBaseMonthDayCountAction,
+  setBaseWeekAction,
+  setAndResetBaseDayAction,
+  setAndResetBaseHourAction,
+  setAndResetBaseMinuteAction,
+  setBaseSecondAction
 } from './../../store/duck/ducks';
 
 class DropdownBaseDate extends Component {
@@ -33,19 +33,19 @@ class DropdownBaseDate extends Component {
     // Determine if date is in the 'past' or 'future'
     const {
       nowYear = '',
-      setMomentBaseDateIsInThePastAction,
-      setMomentBaseDateIsInTheFutureAction,
+      setBaseDateIsInThePastAction,
+      setBaseDateIsInTheFutureAction,
     } = this.props;
     if (nowYear) {
       if (timePeriod(nowYear, value) === 'past') {
-        setMomentBaseDateIsInThePastAction(true);
-        setMomentBaseDateIsInTheFutureAction(false);
+        setBaseDateIsInThePastAction(true);
+        setBaseDateIsInTheFutureAction(false);
       } else if (timePeriod(nowYear, value) === 'future') {
-        setMomentBaseDateIsInThePastAction(false);
-        setMomentBaseDateIsInTheFutureAction(true);
+        setBaseDateIsInThePastAction(false);
+        setBaseDateIsInTheFutureAction(true);
       } else {
-        setMomentBaseDateIsInThePastAction(false);
-        setMomentBaseDateIsInTheFutureAction(false);
+        setBaseDateIsInThePastAction(false);
+        setBaseDateIsInTheFutureAction(false);
       }
     }
   }
@@ -56,15 +56,15 @@ class DropdownBaseDate extends Component {
       baseDay,
       baseHour,
       baseMinute,
-      setMomentBaseDateAction,
-      setMomentBaseYearAction,
-      setMomentBaseMonthAction,
-      setMomentBaseMonthDayCountAction,
-      setMomentBaseDayAction,
-      setMomentBaseHourAction,
-      setMomentBaseMinuteAction,
-      setMomentBaseSecondAction,
-      setMomentBaseYearDefinedAction
+      setBaseDateAction,
+      setAndResetBaseYearAction,
+      setAndResetBaseMonthAction,
+      setBaseMonthDayCountAction,
+      setAndResetBaseDayAction,
+      setAndResetBaseHourAction,
+      setAndResetBaseMinuteAction,
+      setBaseSecondAction,
+      setBaseYearDefinedAction
     } = this.props;
     let theBaseDate = '';
     let theBaseMonthDayCount = '';
@@ -72,32 +72,32 @@ class DropdownBaseDate extends Component {
       if (value !== '' && value !== undefined) {
         theBaseDate = moment().year(value).format(MOMENT_TIME_FORMAT);
         theBaseMonthDayCount = moment(theBaseDate, MOMENT_TIME_FORMAT).daysInMonth();
-        setMomentBaseMonthDayCountAction(theBaseMonthDayCount);
-        setMomentBaseYearDefinedAction(true);
+        setBaseMonthDayCountAction(theBaseMonthDayCount);
+        setBaseYearDefinedAction(true);
       } else {
-        setMomentBaseYearDefinedAction(false);
+        setBaseYearDefinedAction(false);
       }
-      setMomentBaseYearAction(value);
+      setAndResetBaseYearAction(value);
       this.setTimePeriod(value);
     } else if (mode === 'month') {
       theBaseDate = moment().year(baseYear).month(value).format(MOMENT_TIME_FORMAT);
       theBaseMonthDayCount = moment(theBaseDate, MOMENT_TIME_FORMAT).daysInMonth();
-      setMomentBaseMonthDayCountAction(theBaseMonthDayCount);
-      setMomentBaseMonthAction(value);
+      setBaseMonthDayCountAction(theBaseMonthDayCount);
+      setAndResetBaseMonthAction(value);
     } else if (mode === 'day') {
       theBaseDate = moment().year(baseYear).month(baseMonth).date(value).format(MOMENT_TIME_FORMAT);
-      setMomentBaseDayAction(value);
+      setAndResetBaseDayAction(value);
     } else if (mode === 'hour') {
       theBaseDate = moment().year(baseYear).month(baseMonth).date(baseDay).hour(value).format(MOMENT_TIME_FORMAT);
-      setMomentBaseHourAction(value);
+      setAndResetBaseHourAction(value);
     } else if (mode === 'minute') {
       theBaseDate = moment().year(baseYear).month(baseMonth).date(baseDay).hour(baseHour).minute(value).format(MOMENT_TIME_FORMAT);
-      setMomentBaseMinuteAction(value);
+      setAndResetBaseMinuteAction(value);
     } else if (mode === 'second') {
       theBaseDate = moment().year(baseYear).month(baseMonth).date(baseDay).hour(baseHour).minute(baseMinute).second(value).format(MOMENT_TIME_FORMAT);
-      setMomentBaseSecondAction(value);
+      setBaseSecondAction(value);
     }
-    setMomentBaseDateAction(theBaseDate);
+    setBaseDateAction(theBaseDate);
   }
   render () {
     const {
@@ -141,19 +141,19 @@ const mapStateToProps = ({main}) => {
   }
 }
 const mapDispatchToProps = {
-  setMomentBaseDateAction,
-  setMomentBaseNameAction,
-  setMomentBaseDateIsInThePastAction,
-  setMomentBaseDateIsInTheFutureAction,
-  setMomentBaseYearDefinedAction,
-  setMomentBaseYearAction,
-  setMomentBaseMonthAction,
-  setMomentBaseMonthDayCountAction,
-  setMomentBaseWeekAction,
-  setMomentBaseDayAction,
-  setMomentBaseHourAction,
-  setMomentBaseMinuteAction,
-  setMomentBaseSecondAction
+  setBaseDateAction,
+  setBaseNameAction,
+  setBaseDateIsInThePastAction,
+  setBaseDateIsInTheFutureAction,
+  setBaseYearDefinedAction,
+  setAndResetBaseYearAction,
+  setAndResetBaseMonthAction,
+  setBaseMonthDayCountAction,
+  setBaseWeekAction,
+  setAndResetBaseDayAction,
+  setAndResetBaseHourAction,
+  setAndResetBaseMinuteAction,
+  setBaseSecondAction
 }
 const DropdownBaseDateConnect = connect(
   mapStateToProps,
