@@ -1,7 +1,7 @@
 // Import dependencies
 import React from 'react';
 import ReactDom from 'react-dom';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 // Import utils
 import * as serviceWorker from './serviceWorker';
@@ -23,7 +23,7 @@ const store = initStore();
 
 ReactDom.render((
   <Provider store={store}>
-    <BrowserRouter basename="/moments">
+    <HashRouter basename="/moments">
       <App>
         <Switch>
           <Route exact path="/" component={ModeRelativeToNow}/>
@@ -37,7 +37,7 @@ ReactDom.render((
           <Route exact path="/3/:urlMode/date-a/:urlBaseYear/:urlBaseMonth/:urlBaseDay/:urlBaseHour/:urlBaseMinute/:urlBaseSecond/" component={ModeDiscoverMoments}/>
         </Switch>
       </App>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>
 ), document.getElementById('root'));
 
