@@ -1,16 +1,16 @@
 {
   "main.css": "/moments/static/css/main.20a599d6.chunk.css",
-  "main.js": "/moments/static/js/main.d7d6294e.chunk.js",
-  "main.js.map": "/moments/static/js/main.d7d6294e.chunk.js.map",
+  "main.js": "/moments/static/js/main.91ba87ab.chunk.js",
+  "main.js.map": "/moments/static/js/main.91ba87ab.chunk.js.map",
   "static/css/1.2616fe00.chunk.css": "/moments/static/css/1.2616fe00.chunk.css",
-  "static/js/1.9b371c9e.chunk.js": "/moments/static/js/1.9b371c9e.chunk.js",
-  "static/js/1.9b371c9e.chunk.js.map": "/moments/static/js/1.9b371c9e.chunk.js.map",
+  "static/js/1.ba06feb9.chunk.js": "/moments/static/js/1.ba06feb9.chunk.js",
+  "static/js/1.ba06feb9.chunk.js.map": "/moments/static/js/1.ba06feb9.chunk.js.map",
   "runtime~main.js": "/moments/static/js/runtime~main.f3c13c9d.js",
   "runtime~main.js.map": "/moments/static/js/runtime~main.f3c13c9d.js.map",
-  "static/media/main.scss": "/moments/static/media/Montserrat-ExtraBoldItalic.880b0f4d.otf",
+  "static/media/main.scss": "/moments/static/media/Montserrat-MediumItalic.96947c00.otf",
   "static/css/main.20a599d6.chunk.css.map": "/moments/static/css/main.20a599d6.chunk.css.map",
   "static/css/1.2616fe00.chunk.css.map": "/moments/static/css/1.2616fe00.chunk.css.map",
   "index.html": "/moments/index.html",
-  "precache-manifest.d22f009192a24075c422761cd7cb4b36.js": "/moments/precache-manifest.d22f009192a24075c422761cd7cb4b36.js",
+  "precache-manifest.88d65453c5a3662b916a116a1e14ecc8.js": "/moments/precache-manifest.88d65453c5a3662b916a116a1e14ecc8.js",
   "service-worker.js": "/moments/service-worker.js"
 }
