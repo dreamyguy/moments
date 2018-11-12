@@ -60,17 +60,23 @@ It can be accessed at:
 /1/:urlMode/date-a/:urlBaseYear/:urlBaseMonth/:urlBaseDay/:urlBaseHour/:urlBaseMinute/:urlBaseSecond/
 ```
 
+Ex.: https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1975/February/19/21/0/0/
+
 #### 1.2. Time between two dates
 
 ```
 /2/:urlMode/date-a/:urlBaseYear/:urlBaseMonth/:urlBaseDay/:urlBaseHour/:urlBaseMinute/:urlBaseSecond/date-b/:urlTargetYear/:urlTargetMonth/:urlTargetDay/:urlTargetHour/:urlTargetMinute/:urlTargetSecond
 ```
 
+Ex.: https://dreamyguy.github.io/moments/#/2/between-two-dates/date-a/2017/May/22/0/22/0/date-b/1975/February/19/21/0/0/
+
 #### 1.3. Discover Moments
 
 ```
 /3/:urlMode/date-a/:urlBaseYear/:urlBaseMonth/:urlBaseDay/:urlBaseHour/:urlBaseMinute/:urlBaseSecond/
 ```
+
+Ex.: https://dreamyguy.github.io/moments/#/3/discover-moment/date-a/1975/February/19/21/0/0/
 
 _Shareable URLs will eventually be provided from the application itself, but right now it can only be built manually._
 
