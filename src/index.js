@@ -23,7 +23,7 @@ const store = initStore();
 
 ReactDom.render((
   <Provider store={store}>
-    <HashRouter basename="/moments">
+    <HashRouter basename="/">
       <App>
         <Switch>
           <Route exact path="/" component={ModeRelativeToNow}/>
