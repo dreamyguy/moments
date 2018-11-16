@@ -84,6 +84,7 @@ export const initialStateMain = {
   errorCode: '',
   errorMessage: '',
   errorMessageTitle: '',
+  errorMessageFriendly: '',
   mode: '', // 'pastToNow', 'nowToFuture', 'twoDates', 'addToBase'
   // Now moment
   nowDate: '',
@@ -154,7 +155,8 @@ export function reducerMain (state = initialStateMain, action) {
         errorId: action.payload.errorId,
         errorCode: action.payload.errorCode,
         errorMessage: action.payload.errorMessage,
-        errorMessageTitle: action.payload.errorMessageTitle
+        errorMessageFriendly: action.payload.errorMessageFriendly,
+        errorMessageTitle: action.payload.errorMessageTitle,
       }
     case CLEAR_STATE:
       return initialStateMain
@@ -594,7 +596,7 @@ export function reducerMain (state = initialStateMain, action) {
 
 // Actions Generic
 export const clearStateAction = (action) => ({ type: CLEAR_STATE, payload: action });
-export const errorAction = (action) => ({ type: ERROR, payload: { errorId: action.errorId, errorCode: action.errorCode, errorMessage: action.errorMessage, errorMessageFriendlyTitle: action.errorMessageFriendlyTitle, errorMessageFriendly: action.errorMessageFriendly }}); // for testing
+export const errorAction = (action) => ({ type: ERROR, payload: { errorId: action.errorId, errorCode: action.errorCode, errorMessage: action.errorMessage, errorMessageTitle: action.errorMessageTitle, errorMessageFriendly: action.errorMessageFriendly }}); // for testing
 export const loadingAction = (action) => ({ type: LOADING, payload: action }); // for testing
 export const setModeAction = (action) => ({ type: SET_MODE, payload: action });
 // ------- ActionTypes - now

@@ -19,18 +19,24 @@
 - ~Create 'Mode 3'~
 - ~Introduce svg icons~
 - ~Style the dropdown~
-
 - ~Refine DatePicker~
   - ~'Day' should reflect the chosen month's day count, so that we get February right~
   - ~Dropdowns should only show if their 'parent' unit is selected~
-- Refine Header
-- Refine Footer
-- Introduce meta tags
-
 - ~Push to GitHub~
 - ~Create page on GitHub~
-
 - ~Create shareable urls~
+- Create logo
+- Refine Header
+- Refine Footer
+- Ensure responsive behaves as expected
+- Introduce meta tags
+- Let user copy shareable urls
+- Let user clear the state
+- Test EVERYTHING
+- Make it possible to create a calendar event based on the resulting date, whenever it's in the future.
+ - If possible, set two reminders:
+   - 24h before
+   -  1h before
 
 ## PHASE II
 
@@ -44,10 +50,6 @@
   - It will need to validate against a four-digit year
   - Year range might need to be limited (test and find out)
 - User should be able to define 'baseDateName'.
-- Make it possible to create a calendar event based on the resulting date, whenever it's in the future.
- - If possible, set two reminders:
-   - 24h before
-   -  1h before
 - Implement Next.js
 
 ## OPTIONAL
