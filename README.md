@@ -2,7 +2,7 @@
 
 > :calendar: :crystal_ball: :sparkles: Time calculation has never been so fun!
 
-[![MIT Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/dreamyguy/moments/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/dreamyguy/moments.svg?branch=master)](https://travis-ci.org/dreamyguy/moments) [![MIT Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/dreamyguy/moments/blob/master/LICENSE)
 
 With **Moments** one can do two things _(sometimes three)_:
 
