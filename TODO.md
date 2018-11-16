@@ -25,6 +25,7 @@
 - ~Push to GitHub~
 - ~Create page on GitHub~
 - ~Create shareable urls~
+- ~Have 'Travis' report build status~
 - Create logo
 - Refine Header
 - Refine Footer
@@ -33,6 +34,9 @@
 - Let user copy shareable urls
 - Let user clear the state
 - Test EVERYTHING
+  - ~Unit tests for utililies (called 'utils')~
+  - ~Test Redux - Reducers and Actions~
+  - All components
 - Make it possible to create a calendar event based on the resulting date, whenever it's in the future.
  - If possible, set two reminders:
    - 24h before
