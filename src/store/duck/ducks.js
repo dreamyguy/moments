@@ -6,6 +6,7 @@ const CLEAR_STATE = 'CLEAR_STATE';
 const SET_MODE = 'SET_MODE'
 // ------- ActionTypes - now
 const SET_NOW_DATE = 'SET_NOW_DATE';
+const SET_NOW_DAILY_DATE = 'SET_NOW_DAILY_DATE';
 const SET_NOW_YEAR = 'SET_NOW_YEAR';
 const SET_NOW_MONTH = 'SET_NOW_MONTH';
 const SET_NOW_WEEK = 'SET_NOW_WEEK';
@@ -85,9 +86,10 @@ export const initialStateMain = {
   errorMessage: '',
   errorMessageTitle: '',
   errorMessageFriendly: '',
-  mode: '', // 'pastToNow', 'nowToFuture', 'twoDates', 'addToBase'
+  mode: '', // 'relativeToNow', 'betweenTwoDates', 'discoverMoment'
   // Now moment
   nowDate: '',
+  nowDailyDate: '',
   nowYear: '',
   nowMonth: '',
   nowDay: '',
@@ -172,6 +174,12 @@ export function reducerMain (state = initialStateMain, action) {
         ...state,
         loading: false,
         nowDate: action.payload
+      }
+    case SET_NOW_DAILY_DATE:
+      return {
+        ...state,
+        loading: false,
+        nowDailyDate: action.payload
       }
     case SET_NOW_YEAR:
       return {
@@ -601,6 +609,7 @@ export const loadingAction = (action) => ({ type: LOADING, payload: action }); /
 export const setModeAction = (action) => ({ type: SET_MODE, payload: action });
 // ------- ActionTypes - now
 export const setNowDateAction = (action) => ({ type: SET_NOW_DATE, payload: action })
+export const setNowDailyDateAction = (action) => ({ type: SET_NOW_DAILY_DATE, payload: action })
 export const setNowYearAction = (action) => ({ type: SET_NOW_YEAR, payload: action });
 export const setNowMonthAction = (action) => ({ type: SET_NOW_MONTH, payload: action });
 export const setNowWeekAction = (action) => ({ type: SET_NOW_WEEK, payload: action });

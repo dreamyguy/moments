@@ -32,15 +32,15 @@ class DropdownBaseDate extends Component {
   setTimePeriod (value) {
     // Determine if date is in the 'past' or 'future'
     const {
-      nowYear = '',
+      nowDailyDate = '',
       setBaseDateIsInThePastAction,
       setBaseDateIsInTheFutureAction,
     } = this.props;
-    if (nowYear) {
-      if (timePeriod(nowYear, value) === 'past') {
+    if (nowDailyDate) {
+      if (timePeriod(nowDailyDate, value) === 'past') {
         setBaseDateIsInThePastAction(true);
         setBaseDateIsInTheFutureAction(false);
-      } else if (timePeriod(nowYear, value) === 'future') {
+      } else if (timePeriod(nowDailyDate, value) === 'future') {
         setBaseDateIsInThePastAction(false);
         setBaseDateIsInTheFutureAction(true);
       } else {
@@ -78,7 +78,6 @@ class DropdownBaseDate extends Component {
         setBaseYearDefinedAction(false);
       }
       setAndResetBaseYearAction(value);
-      this.setTimePeriod(value);
     } else if (mode === 'month') {
       theBaseDate = moment().year(baseYear).month(value).format(MOMENT_TIME_FORMAT);
       theBaseMonthDayCount = moment(theBaseDate, MOMENT_TIME_FORMAT).daysInMonth();
@@ -97,6 +96,7 @@ class DropdownBaseDate extends Component {
       theBaseDate = moment().year(baseYear).month(baseMonth).date(baseDay).hour(baseHour).minute(baseMinute).second(value).format(MOMENT_TIME_FORMAT);
       setBaseSecondAction(value);
     }
+    this.setTimePeriod(theBaseDate);
     setBaseDateAction(theBaseDate);
   }
   render () {
@@ -137,7 +137,7 @@ const mapStateToProps = ({main}) => {
     baseDay: main.baseDay,
     baseHour: main.baseHour,
     baseMinute: main.baseMinute,
-    nowYear: main.nowYear,
+    nowDailyDate: main.nowDailyDate,
   }
 }
 const mapDispatchToProps = {
@@ -174,7 +174,7 @@ DropdownBaseDate.propTypes = {
   baseDay: PropTypes.string,
   baseHour: PropTypes.string,
   baseMinute: PropTypes.string,
-  nowYear: PropTypes.string,
+  nowDailyDate: PropTypes.string,
 };
 
 export default DropdownBaseDateConnect;

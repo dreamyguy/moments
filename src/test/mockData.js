@@ -8,6 +8,7 @@ module.exports = {
   errorMessageFriendly: '',
   mode: 'betweenTwoDates',
   nowDate: 'November 16th 2018, 19:11:56',
+  nowDailyDate: 'November 16th 2018',
   nowYear: '2018',
   nowMonth: 'November',
   nowDay: '16',

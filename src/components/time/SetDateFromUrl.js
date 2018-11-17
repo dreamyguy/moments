@@ -69,8 +69,8 @@ class SetDateFromUrl extends Component {
   setTimePeriod (value) {
     // Determine if date is in the 'past' or 'future'
     const {
-      nowYear = '',
-      baseYear = '',
+      nowDate = '',
+      baseDate = '',
       setBaseDateIsInThePastAction,
       setBaseDateIsInTheFutureAction,
       setTargetDateIsInThePastAction,
@@ -83,11 +83,11 @@ class SetDateFromUrl extends Component {
       } = {}
     } = this.props;
     if (urlMode === 'between-two-dates') {
-      if (baseYear) {
-        if (timePeriod(baseYear, value) === 'past') {
+      if (baseDate) {
+        if (timePeriod(baseDate, value) === 'past') {
           setTargetDateIsInThePastAction(true);
           setTargetDateIsInTheFutureAction(false);
-        } else if (timePeriod(baseYear, value) === 'future') {
+        } else if (timePeriod(baseDate, value) === 'future') {
           setTargetDateIsInThePastAction(false);
           setTargetDateIsInTheFutureAction(true);
         } else {
@@ -96,11 +96,11 @@ class SetDateFromUrl extends Component {
         }
       }
     } else if (urlMode === 'relative-to-now' || urlMode === 'discover-moment') {
-      if (nowYear) {
-        if (timePeriod(nowYear, value) === 'past') {
+      if (nowDate) {
+        if (timePeriod(nowDate, value) === 'past') {
           setBaseDateIsInThePastAction(true);
           setBaseDateIsInTheFutureAction(false);
-        } else if (timePeriod(nowYear, value) === 'future') {
+        } else if (timePeriod(nowDate, value) === 'future') {
           setBaseDateIsInThePastAction(false);
           setBaseDateIsInTheFutureAction(true);
         } else {
@@ -139,7 +139,7 @@ class SetDateFromUrl extends Component {
     } = this.props;
     let theBaseDate = '';
     let theBaseMonthDayCount = '';
-    if (urlBaseYear) {
+    if (urlBaseYear && !urlBaseMonth && !urlBaseDay && !urlBaseHour && !urlBaseMinute && !urlBaseSecond) {
       if (
         urlBaseYear !== '' &&
         urlBaseYear !== undefined
@@ -152,9 +152,8 @@ class SetDateFromUrl extends Component {
         setBaseYearDefinedAction(false);
       }
       setBaseYearAction(urlBaseYear);
-      this.setTimePeriod(urlBaseYear);
     }
-    if (urlBaseYear && urlBaseMonth) {
+    if (urlBaseYear && urlBaseMonth && !urlBaseDay && !urlBaseHour && !urlBaseMinute && !urlBaseSecond) {
       if (
         urlBaseYear !== '' &&
         urlBaseYear !== undefined &&
@@ -170,7 +169,7 @@ class SetDateFromUrl extends Component {
         setBaseMonthDefinedAction(false);
       }
     }
-    if (urlBaseYear && urlBaseMonth && urlBaseDay) {
+    if (urlBaseYear && urlBaseMonth && urlBaseDay && !urlBaseHour && !urlBaseMinute && !urlBaseSecond) {
       if (
         urlBaseYear !== '' &&
         urlBaseYear !== undefined &&
@@ -186,11 +185,11 @@ class SetDateFromUrl extends Component {
         setBaseDayDefinedAction(false);
       }
     }
-    if (urlBaseYear && urlBaseMonth && urlBaseDay && urlBaseHour) {
+    if (urlBaseYear && urlBaseMonth && urlBaseDay && urlBaseHour && !urlBaseMinute && !urlBaseSecond) {
       theBaseDate = moment().year(urlBaseYear).month(urlBaseMonth).date(urlBaseDay).hour(urlBaseHour).format(MOMENT_TIME_FORMAT);
       setBaseHourAction(urlBaseHour);
     }
-    if (urlBaseYear && urlBaseMonth && urlBaseDay && urlBaseHour && urlBaseMinute) {
+    if (urlBaseYear && urlBaseMonth && urlBaseDay && urlBaseHour && urlBaseMinute && !urlBaseSecond) {
       theBaseDate = moment().year(urlBaseYear).month(urlBaseMonth).date(urlBaseDay).hour(urlBaseHour).minute(urlBaseMinute).format(MOMENT_TIME_FORMAT);
       setBaseMinuteAction(urlBaseMinute);
     }
@@ -199,6 +198,7 @@ class SetDateFromUrl extends Component {
       setBaseSecondAction(urlBaseSecond);
     }
     setBaseDateAction(theBaseDate);
+    this.setTimePeriod(theBaseDate);
   }
   setDateTarget () {
     const {
@@ -229,7 +229,7 @@ class SetDateFromUrl extends Component {
     } = this.props;
     let theTargetDate = '';
     let theTargetMonthDayCount = '';
-    if (urlTargetYear) {
+    if (urlTargetYear && !urlTargetMonth && !urlTargetDay && !urlTargetHour && !urlTargetMinute && !urlTargetSecond) {
       if (
         urlTargetYear !== '' &&
         urlTargetYear !== undefined
@@ -242,9 +242,8 @@ class SetDateFromUrl extends Component {
         setTargetYearDefinedAction(false);
       }
       setTargetYearAction(urlTargetYear);
-      this.setTimePeriod(urlTargetYear);
     }
-    if (urlTargetYear && urlTargetMonth) {
+    if (urlTargetYear && urlTargetMonth && !urlTargetDay && !urlTargetHour && !urlTargetMinute && !urlTargetSecond) {
       if (
         urlTargetYear !== '' &&
         urlTargetYear !== undefined &&
@@ -260,7 +259,7 @@ class SetDateFromUrl extends Component {
         setTargetMonthDefinedAction(false);
       }
     }
-    if (urlTargetYear && urlTargetMonth && urlTargetDay) {
+    if (urlTargetYear && urlTargetMonth && urlTargetDay && !urlTargetHour && !urlTargetMinute && !urlTargetSecond) {
       if (
         urlTargetYear !== '' &&
         urlTargetYear !== undefined &&
@@ -276,11 +275,11 @@ class SetDateFromUrl extends Component {
         setTargetDayDefinedAction(false);
       }
     }
-    if (urlTargetYear && urlTargetMonth && urlTargetDay && urlTargetHour) {
+    if (urlTargetYear && urlTargetMonth && urlTargetDay && urlTargetHour && !urlTargetMinute && !urlTargetSecond) {
       theTargetDate = moment().year(urlTargetYear).month(urlTargetMonth).date(urlTargetDay).hour(urlTargetHour).format(MOMENT_TIME_FORMAT);
       setTargetHourAction(urlTargetHour);
     }
-    if (urlTargetYear && urlTargetMonth && urlTargetDay && urlTargetHour && urlTargetMinute) {
+    if (urlTargetYear && urlTargetMonth && urlTargetDay && urlTargetHour && urlTargetMinute && !urlTargetSecond) {
       theTargetDate = moment().year(urlTargetYear).month(urlTargetMonth).date(urlTargetDay).hour(urlTargetHour).minute(urlTargetMinute).format(MOMENT_TIME_FORMAT);
       setTargetMinuteAction(urlTargetMinute);
     }
@@ -289,6 +288,7 @@ class SetDateFromUrl extends Component {
       setTargetSecondAction(urlTargetSecond);
     }
     setTargetDateAction(theTargetDate);
+    this.setTimePeriod(theTargetDate);
   }
   setDate () {
     const {
@@ -316,8 +316,8 @@ class SetDateFromUrl extends Component {
 const mapStateToProps = ({main}) => {
   return {
     mode: main.mode,
-    baseYear: main.baseYear,
-    nowYear: main.nowYear,
+    baseDate: main.baseDate,
+    nowDate: main.nowDate,
   }
 }
 const mapDispatchToProps = {
@@ -356,8 +356,8 @@ const SetDateFromUrlConnect = connect(
 
 SetDateFromUrl.propTypes = {
   mode: PropTypes.string,
-  baseYear: PropTypes.string,
-  nowYear: PropTypes.string,
+  baseDate: PropTypes.string,
+  nowDate: PropTypes.string,
 };
 
 export default SetDateFromUrlConnect;

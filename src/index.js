@@ -29,12 +29,12 @@ ReactDom.render((
           <Route exact path="/" component={ModeRelativeToNow}/>
           <Route exact path="/api" component={Api}/>
           <Route exact path="/about" component={About}/>
-          <Route exact path="/relative-to-now" component={ModeRelativeToNow}/>
-          <Route exact path="/between-two-dates" component={ModeBetweenTwoDates}/>
-          <Route exact path="/discover-moment" component={ModeDiscoverMoments}/>
           <Route exact path="/1/:urlMode/date-a/:urlBaseYear/:urlBaseMonth/:urlBaseDay/:urlBaseHour/:urlBaseMinute/:urlBaseSecond/" component={ModeRelativeToNow}/>
           <Route exact path="/2/:urlMode/date-a/:urlBaseYear/:urlBaseMonth/:urlBaseDay/:urlBaseHour/:urlBaseMinute/:urlBaseSecond/date-b/:urlTargetYear/:urlTargetMonth/:urlTargetDay/:urlTargetHour/:urlTargetMinute/:urlTargetSecond" component={ModeBetweenTwoDates}/>
           <Route exact path="/3/:urlMode/date-a/:urlBaseYear/:urlBaseMonth/:urlBaseDay/:urlBaseHour/:urlBaseMinute/:urlBaseSecond/" component={ModeDiscoverMoments}/>
+          <Route exact path="/1/:urlMode" component={ModeRelativeToNow}/>
+          <Route exact path="/2/:urlMode" component={ModeBetweenTwoDates}/>
+          <Route exact path="/3/:urlMode" component={ModeDiscoverMoments}/>
         </Switch>
       </App>
     </HashRouter>

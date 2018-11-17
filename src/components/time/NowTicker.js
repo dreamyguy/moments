@@ -5,11 +5,15 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 
 // Import constants
-import { MOMENT_TIME_FORMAT } from './../../config';
+import {
+  MOMENT_TIME_FORMAT,
+  MOMENT_TIME_DAILY_FORMAT,
+} from './../../config';
 
 // Import actions
 import {
   setNowDateAction,
+  setNowDailyDateAction,
   setNowYearAction,
   setNowMonthAction,
   setNowDayAction,
@@ -30,13 +34,21 @@ class NowTicker extends Component {
     );
   }
   updateNow () {
-    this.props.setNowDateAction(moment().format(MOMENT_TIME_FORMAT));
-    this.props.setNowYearAction(moment().format('YYYY'));
-    this.props.setNowMonthAction(moment().format('MMMM'));
-    this.props.setNowDayAction(moment().format('D'));
-    this.props.setNowHourAction(moment().format('H'));
-    this.props.setNowMinuteAction(moment().format('mm'));
-    this.props.setNowSecondAction(moment().format('ss'));
+    const {
+      mode,
+      baseYear,
+    } = this.props;
+    // Only do this when these conditions are met, for performance's sake
+    if (mode && mode !== 'betweenTwoDates' && baseYear) {
+      this.props.setNowDateAction(moment().format(MOMENT_TIME_FORMAT));
+      this.props.setNowDailyDateAction(moment().format(MOMENT_TIME_DAILY_FORMAT));
+      this.props.setNowYearAction(moment().format('YYYY'));
+      this.props.setNowMonthAction(moment().format('MMMM'));
+      this.props.setNowDayAction(moment().format('D'));
+      this.props.setNowHourAction(moment().format('H'));
+      this.props.setNowMinuteAction(moment().format('mm'));
+      this.props.setNowSecondAction(moment().format('ss'));
+    }
   }
   tick () {
     this.updateNow();
@@ -49,11 +61,14 @@ class NowTicker extends Component {
 
 const mapStateToProps = ({main}) => {
   return {
-    nowDate: main.nowDate
+    mode: main.mode,
+    nowDate: main.nowDate,
+    baseYear: main.baseYear
   }
 }
 const mapDispatchToProps = {
   setNowDateAction,
+  setNowDailyDateAction,
   setNowYearAction,
   setNowMonthAction,
   setNowDayAction,
@@ -67,6 +82,8 @@ const NowTickerConnect = connect(
 )(NowTicker);
 
 NowTicker.propTypes = {
+  mode: PropTypes.string,
+  baseYear: PropTypes.string,
   nowDate: PropTypes.string
 };
 

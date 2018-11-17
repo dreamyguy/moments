@@ -32,15 +32,15 @@ class DropdownTargetDate extends Component {
   setTimePeriod (value) {
     // Determine if date is in the 'past' or 'future'
     const {
-      baseYear = '',
+      baseDate = '',
       setTargetDateIsInThePastAction,
       setTargetDateIsInTheFutureAction,
     } = this.props;
-    if (baseYear) {
-      if (timePeriod(baseYear, value) === 'past') {
+    if (baseDate) {
+      if (timePeriod(baseDate, value) === 'past') {
         setTargetDateIsInThePastAction(true);
         setTargetDateIsInTheFutureAction(false);
-      } else if (timePeriod(baseYear, value) === 'future') {
+      } else if (timePeriod(baseDate, value) === 'future') {
         setTargetDateIsInThePastAction(false);
         setTargetDateIsInTheFutureAction(true);
       } else {
@@ -78,7 +78,6 @@ class DropdownTargetDate extends Component {
         setTargetYearDefinedAction(false);
       }
       setAndResetTargetYearAction(value);
-      this.setTimePeriod(value);
     } else if (mode === 'month') {
       theTargetDate = moment().year(targetYear).month(value).format(MOMENT_TIME_FORMAT);
       theTargetMonthDayCount = moment(theTargetDate, MOMENT_TIME_FORMAT).daysInMonth();
@@ -97,6 +96,7 @@ class DropdownTargetDate extends Component {
       theTargetDate = moment().year(targetYear).month(targetMonth).date(targetDay).hour(targetHour).minute(targetMinute).second(value).format(MOMENT_TIME_FORMAT);
       setTargetSecondAction(value);
     }
+    this.setTimePeriod(theTargetDate);
     setTargetDateAction(theTargetDate);
   }
   render () {
@@ -137,7 +137,7 @@ const mapStateToProps = ({main}) => {
     targetDay: main.targetDay,
     targetHour: main.targetHour,
     targetMinute: main.targetMinute,
-    baseYear: main.baseYear,
+    baseDate: main.baseDate,
   }
 }
 const mapDispatchToProps = {
@@ -174,7 +174,7 @@ DropdownTargetDate.propTypes = {
   targetDay: PropTypes.string,
   targetHour: PropTypes.string,
   targetMinute: PropTypes.string,
-  baseYear: PropTypes.string,
+  baseDate: PropTypes.string,
 };
 
 export default DropdownTargetDateConnect;
