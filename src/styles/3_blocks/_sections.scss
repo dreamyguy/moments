@@ -144,3 +144,26 @@ select {
     }
   }
 }
+
+// Temporary, for debugging only
+.period {
+  padding: 5px;
+  border-radius: 15px;
+  color: white;
+  &--past {
+    background-color: red;
+    &::before { content: 'past' }
+  }
+  &--future {
+    background-color: purple;
+    &::before { content: 'future' }
+  }
+  &--now {
+    background-color: fuchsia;
+    &::before { content: 'now' }
+  }
+  &--wtf {
+    background-color: blue;
+    &::before { content: 'wtf' }
+  }
+}

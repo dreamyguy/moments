@@ -16,16 +16,13 @@ class TimeDifference extends Component {
       baseDate,
       nowDate,
       baseDateIsInThePast,
-      baseDateIsInTheFuture,
     } = this.props;
     // Support mode '1' & '3'
     if (timeA === baseDate && timeB === nowDate) {
       if (baseDateIsInThePast) {
         return 'Time since';
       }
-      if (baseDateIsInTheFuture) {
-        return 'Time until';
-      }
+      return 'Time until';
     }
     // Support mode '2'
     // Note that there will be a check for 'timeA' & 'timeB'
@@ -73,7 +70,6 @@ const mapStateToProps = ({main}) => {
   return {
     baseDate: main.baseDate,
     baseDateIsInThePast: main.baseDateIsInThePast,
-    baseDateIsInTheFuture: main.baseDateIsInTheFuture,
     nowDate: main.nowDate,
   }
 }
@@ -89,7 +85,6 @@ TimeDifference.propTypes = {
   // Passed from state
   baseDate: PropTypes.string,
   baseDateIsInThePast: PropTypes.bool,
-  baseDateIsInTheFuture: PropTypes.bool,
   nowDate: PropTypes.string,
 };
 

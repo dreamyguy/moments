@@ -16,7 +16,6 @@ import {
   setBaseDateAction,
   setBaseNameAction,
   setBaseDateIsInThePastAction,
-  setBaseDateIsInTheFutureAction,
   setBaseYearDefinedAction,
   setBaseMonthDefinedAction,
   setBaseDayDefinedAction,
@@ -36,8 +35,6 @@ import {
   setAndResetBaseMinuteAction,
   setTargetDateAction,
   setTargetNameAction,
-  setTargetDateIsInThePastAction,
-  setTargetDateIsInTheFutureAction,
   setTargetYearDefinedAction,
   setTargetMonthDefinedAction,
   setTargetDayDefinedAction,
@@ -103,7 +100,7 @@ describe('Actions', () => {
     }),
     it('should fire action and update store', () => {
       const mockPayload = {...props};
-      const mockResponse = {'loading': false, 'error': false, 'errorId': '', 'errorCode': '', 'errorMessage': '', 'errorMessageTitle': '', 'errorMessageFriendly': '', 'mode': '', 'nowDate': '', 'nowDailyDate': '', 'nowYear': '', 'nowMonth': '', 'nowDay': '', 'nowHour': '', 'nowMinute': '', 'nowSecond': '', 'baseDate': '', 'baseDateName': '', 'baseDateIsInThePast': false, 'baseDateIsInTheFuture': false, 'baseYearDefined': false, 'baseMonthDefined': false, 'baseDayDefined': false, 'baseYear': '', 'baseMonth': '', 'baseMonthDayCount': null, 'baseDay': '', 'baseHour': '', 'baseMinute': '', 'baseSecond': '', 'targetDate': '', 'targetDateName': '', 'targetDateIsInThePast': false, 'targetDateIsInTheFuture': false, 'targetYearDefined': false, 'targetMonthDefined': false, 'targetDayDefined': false, 'targetYear': '', 'targetMonth': '', 'targetMonthDayCount': null, 'targetDay': '', 'targetHour': '', 'targetMinute': '', 'targetSecond': '', 'addToBaseDateYears': null, 'addToBaseDateMonths': null, 'addToBaseDateWeeks': null, 'addToBaseDateDays': null, 'addToBaseDateHours': null, 'addToBaseDateMinutes': null, 'addToBaseDateSeconds': null, 'frontend': { 'mobileMenuStatus': false}};
+      const mockResponse = {'loading': false, 'error': false, 'errorId': '', 'errorCode': '', 'errorMessage': '', 'errorMessageTitle': '', 'errorMessageFriendly': '', 'mode': '', 'nowDate': '', 'nowDailyDate': '', 'nowYear': '', 'nowMonth': '', 'nowDay': '', 'nowHour': '', 'nowMinute': '', 'nowSecond': '', 'baseDate': '', 'baseDateName': '', 'baseDateIsInThePast': false,  'basePeriod': '', 'baseYearDefined': false, 'baseMonthDefined': false, 'baseDayDefined': false, 'baseYear': '', 'baseMonth': '', 'baseMonthDayCount': null, 'baseDay': '', 'baseHour': '', 'baseMinute': '', 'baseSecond': '', 'targetDate': '', 'targetDateName': '', 'targetYearDefined': false, 'targetMonthDefined': false, 'targetDayDefined': false, 'targetYear': '', 'targetMonth': '', 'targetMonthDayCount': null, 'targetDay': '', 'targetHour': '', 'targetMinute': '', 'targetSecond': '', 'addToBaseDateYears': null, 'addToBaseDateMonths': null, 'addToBaseDateWeeks': null, 'addToBaseDateDays': null, 'addToBaseDateHours': null, 'addToBaseDateMinutes': null, 'addToBaseDateSeconds': null, 'frontend': { 'mobileMenuStatus': false}};
       const actionPayload = clearStateAction(mockPayload);
       const storePayload = reducerMain([], actionPayload);
       const result = mockResponse;
@@ -287,20 +284,6 @@ describe('Actions', () => {
       const mockPayload = props.baseDateIsInThePast;
       const mockResponse = {'baseDateIsInThePast': false, 'loading': false};
       const actionPayload = setBaseDateIsInThePastAction(mockPayload);
-      const storePayload = reducerMain([], actionPayload);
-      const result = mockResponse;
-      expect(storePayload).toEqual(result);
-    })
-  }),
-  describe('setBaseDateIsInTheFutureAction', () => {
-    it('should fire an action with type equal SET_BASE_DATE_IS_IN_THE_FUTURE', () => {
-      const actionResult = setBaseDateIsInTheFutureAction({}).type;
-      expect(actionResult).toEqual('SET_BASE_DATE_IS_IN_THE_FUTURE');
-    }),
-    it('should fire action and update store', () => {
-      const mockPayload = props.baseDateIsInTheFuture;
-      const mockResponse = {'baseDateIsInTheFuture': false, 'loading': false};
-      const actionPayload = setBaseDateIsInTheFutureAction(mockPayload);
       const storePayload = reducerMain([], actionPayload);
       const result = mockResponse;
       expect(storePayload).toEqual(result);
@@ -567,34 +550,6 @@ describe('Actions', () => {
       const mockPayload = props.targetName;
       const mockResponse = {'loading': false, };
       const actionPayload = setTargetNameAction(mockPayload);
-      const storePayload = reducerMain([], actionPayload);
-      const result = mockResponse;
-      expect(storePayload).toEqual(result);
-    })
-  }),
-  describe('setTargetDateIsInThePastAction', () => {
-    it('should fire an action with type equal SET_TARGET_DATE_IS_IN_THE_PAST', () => {
-      const actionResult = setTargetDateIsInThePastAction({}).type;
-      expect(actionResult).toEqual('SET_TARGET_DATE_IS_IN_THE_PAST');
-    }),
-    it('should fire action and update store', () => {
-      const mockPayload = true;
-      const mockResponse = {'loading': false, 'targetDateIsInThePast': true};
-      const actionPayload = setTargetDateIsInThePastAction(mockPayload);
-      const storePayload = reducerMain([], actionPayload);
-      const result = mockResponse;
-      expect(storePayload).toEqual(result);
-    })
-  }),
-  describe('setTargetDateIsInTheFutureAction', () => {
-    it('should fire an action with type equal SET_TARGET_DATE_IS_IN_THE_FUTURE', () => {
-      const actionResult = setTargetDateIsInTheFutureAction({}).type;
-      expect(actionResult).toEqual('SET_TARGET_DATE_IS_IN_THE_FUTURE');
-    }),
-    it('should fire action and update store', () => {
-      const mockPayload = true;
-      const mockResponse = {'loading': false, 'targetDateIsInTheFuture': true};
-      const actionPayload = setTargetDateIsInTheFutureAction(mockPayload);
       const storePayload = reducerMain([], actionPayload);
       const result = mockResponse;
       expect(storePayload).toEqual(result);

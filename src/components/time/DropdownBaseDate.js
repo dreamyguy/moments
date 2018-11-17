@@ -16,7 +16,7 @@ import {
   setBaseDateAction,
   setBaseNameAction,
   setBaseDateIsInThePastAction,
-  setBaseDateIsInTheFutureAction,
+  setBasePeriodAction,
   setBaseYearDefinedAction,
   setAndResetBaseYearAction,
   setAndResetBaseMonthAction,
@@ -32,20 +32,54 @@ class DropdownBaseDate extends Component {
   setTimePeriod (value) {
     // Determine if date is in the 'past' or 'future'
     const {
+      mode = '',
       nowDailyDate = '',
+      targetDate = '',
       setBaseDateIsInThePastAction,
-      setBaseDateIsInTheFutureAction,
+      setBasePeriodAction,
+      match: {
+        params: {
+          urlBaseYear = '',
+        } = {}
+      } = {}
     } = this.props;
-    if (nowDailyDate) {
-      if (timePeriod(nowDailyDate, value) === 'past') {
-        setBaseDateIsInThePastAction(true);
-        setBaseDateIsInTheFutureAction(false);
-      } else if (timePeriod(nowDailyDate, value) === 'future') {
-        setBaseDateIsInThePastAction(false);
-        setBaseDateIsInTheFutureAction(true);
+    // If 'urlBaseYear' is defined, we are definitely setting our dates based on
+    // 'URL' parameters
+    console.log('setTimePeriod - DropdownBaseDate');
+    if (!urlBaseYear) {
+      console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear');
+      if (mode === 'relativeToNow' || mode === 'discoverMoment') {
+        console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === relativeToNow || mode === discoverMoment');
+        if (nowDailyDate) {
+          console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === relativeToNow || mode === discoverMoment - nowDailyDate');
+          setBasePeriodAction(timePeriod(value, nowDailyDate));
+          console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === relativeToNow || mode === discoverMoment - nowDailyDate - setBasePeriodAction(timePeriod(value, nowDailyDate))');
+          console.log(`[value]: ${value}`);
+          console.log(`[targetDate]: ${nowDailyDate}`);
+          console.log(`[timePeriod]: ${timePeriod(value, nowDailyDate)}`);
+          if (timePeriod(value, nowDailyDate) === 'past') {
+            setBaseDateIsInThePastAction(true);
+          } else {
+            setBaseDateIsInThePastAction(false);
+          }
+        }
+      } else if (mode === 'betweenTwoDates') {
+        console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === betweenTwoDates');
+        if (targetDate) {
+          console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === betweenTwoDates - targetDate');
+          setBasePeriodAction(timePeriod(targetDate, value));
+          console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === betweenTwoDates - targetDate - setBasePeriodAction(timePeriod(value, targetDate))');
+          console.log(`[value]: ${value}`);
+          console.log(`[targetDate]: ${targetDate}`);
+          console.log(`[timePeriod]: ${timePeriod(targetDate, value)}`);
+          if (timePeriod(targetDate, value) === 'past') {
+            setBaseDateIsInThePastAction(true);
+          } else {
+            setBaseDateIsInThePastAction(false);
+          }
+        }
       } else {
-        setBaseDateIsInThePastAction(false);
-        setBaseDateIsInTheFutureAction(false);
+        console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - NO MODE');
       }
     }
   }
@@ -138,13 +172,15 @@ const mapStateToProps = ({main}) => {
     baseHour: main.baseHour,
     baseMinute: main.baseMinute,
     nowDailyDate: main.nowDailyDate,
+    targetDate: main.targetDate,
+    mode: main.mode,
   }
 }
 const mapDispatchToProps = {
   setBaseDateAction,
   setBaseNameAction,
   setBaseDateIsInThePastAction,
-  setBaseDateIsInTheFutureAction,
+  setBasePeriodAction,
   setBaseYearDefinedAction,
   setAndResetBaseYearAction,
   setAndResetBaseMonthAction,
@@ -175,6 +211,8 @@ DropdownBaseDate.propTypes = {
   baseHour: PropTypes.string,
   baseMinute: PropTypes.string,
   nowDailyDate: PropTypes.string,
+  targetDate: PropTypes.string,
+  mode: PropTypes.string,
 };
 
 export default DropdownBaseDateConnect;

@@ -56,7 +56,6 @@ const mapStateToProps = ({main}) => {
   return {
     baseDate: main.baseDate,
     baseDateIsInThePast: main.baseDateIsInThePast,
-    baseDateIsInTheFuture: main.baseDateIsInTheFuture,
     nowDate: main.nowDate,
   }
 }
@@ -68,7 +67,6 @@ const ModeDiscoverMomentsConnect = connect(
 ModeDiscoverMoments.propTypes = {
   baseDate: PropTypes.string,
   baseDateIsInThePast: PropTypes.bool,
-  baseDateIsInTheFuture: PropTypes.bool,
   nowDate: PropTypes.string,
 };
 

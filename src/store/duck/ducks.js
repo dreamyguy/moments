@@ -19,7 +19,7 @@ const SET_NOW_SECOND = 'SET_NOW_SECOND';
 const SET_BASE_DATE = 'SET_BASE_DATE';
 const SET_BASE_NAME = 'SET_BASE_NAME';
 const SET_BASE_DATE_IS_IN_THE_PAST = 'SET_BASE_DATE_IS_IN_THE_PAST';
-const SET_BASE_DATE_IS_IN_THE_FUTURE = 'SET_BASE_DATE_IS_IN_THE_FUTURE';
+const SET_BASE_PERIOD = 'SET_BASE_PERIOD';
 const SET_BASE_YEAR_DEFINED = 'SET_BASE_YEAR_DEFINED';
 const SET_BASE_MONTH_DEFINED = 'SET_BASE_MONTH_DEFINED';
 const SET_BASE_DAY_DEFINED = 'SET_BASE_DAY_DEFINED';
@@ -43,8 +43,6 @@ const SET_AND_RESET_BASE_MINUTE = 'SET_AND_RESET_BASE_MINUTE';
 // Misc
 const SET_TARGET_DATE = 'SET_TARGET_DATE';
 const SET_TARGET_NAME = 'SET_TARGET_NAME';
-const SET_TARGET_DATE_IS_IN_THE_PAST = 'SET_TARGET_DATE_IS_IN_THE_PAST';
-const SET_TARGET_DATE_IS_IN_THE_FUTURE = 'SET_TARGET_DATE_IS_IN_THE_FUTURE';
 const SET_TARGET_YEAR_DEFINED = 'SET_TARGET_YEAR_DEFINED';
 const SET_TARGET_MONTH_DEFINED = 'SET_TARGET_MONTH_DEFINED';
 const SET_TARGET_DAY_DEFINED = 'SET_TARGET_DAY_DEFINED';
@@ -100,7 +98,7 @@ export const initialStateMain = {
   baseDate: '',
   baseDateName: '',
   baseDateIsInThePast: false,
-  baseDateIsInTheFuture: false,
+  basePeriod: '',
   baseYearDefined: false,
   baseMonthDefined: false,
   baseDayDefined: false,
@@ -114,8 +112,6 @@ export const initialStateMain = {
   // Target moment
   targetDate: '',
   targetDateName: '',
-  targetDateIsInThePast: false,
-  targetDateIsInTheFuture: false,
   targetYearDefined: false,
   targetMonthDefined: false,
   targetDayDefined: false,
@@ -243,11 +239,11 @@ export function reducerMain (state = initialStateMain, action) {
         loading: false,
         baseDateIsInThePast: action.payload
       }
-    case SET_BASE_DATE_IS_IN_THE_FUTURE:
+    case SET_BASE_PERIOD:
       return {
         ...state,
         loading: false,
-        baseDateIsInTheFuture: action.payload
+        basePeriod: action.payload
       }
     case SET_BASE_YEAR_DEFINED:
       return {
@@ -394,18 +390,6 @@ export function reducerMain (state = initialStateMain, action) {
         ...state,
         loading: false,
         targetName: action.payload
-      }
-    case SET_TARGET_DATE_IS_IN_THE_PAST:
-      return {
-        ...state,
-        loading: false,
-        targetDateIsInThePast: action.payload
-      }
-    case SET_TARGET_DATE_IS_IN_THE_FUTURE:
-      return {
-        ...state,
-        loading: false,
-        targetDateIsInTheFuture: action.payload
       }
     case SET_TARGET_YEAR_DEFINED:
       return {
@@ -622,7 +606,7 @@ export const setNowSecondAction = (action) => ({ type: SET_NOW_SECOND, payload: 
 export const setBaseDateAction = (action) => ({ type: SET_BASE_DATE, payload: action });
 export const setBaseNameAction = (action) => ({ type: SET_BASE_NAME, payload: action });
 export const setBaseDateIsInThePastAction = (action) => ({ type: SET_BASE_DATE_IS_IN_THE_PAST, payload: action });
-export const setBaseDateIsInTheFutureAction = (action) => ({ type: SET_BASE_DATE_IS_IN_THE_FUTURE, payload: action });
+export const setBasePeriodAction = (action) => ({ type: SET_BASE_PERIOD, payload: action });
 export const setBaseYearDefinedAction = (action) => ({ type: SET_BASE_YEAR_DEFINED, payload: action });
 export const setBaseMonthDefinedAction = (action) => ({ type: SET_BASE_MONTH_DEFINED, payload: action });
 export const setBaseDayDefinedAction = (action) => ({ type: SET_BASE_DAY_DEFINED, payload: action });
@@ -646,8 +630,6 @@ export const setAndResetBaseMinuteAction = (action) => ({ type: SET_AND_RESET_BA
 // Misc
 export const setTargetDateAction = (action) => ({ type: SET_TARGET_DATE, payload: action });
 export const setTargetNameAction = (action) => ({ type: SET_TARGET_NAME, payload: action });
-export const setTargetDateIsInThePastAction = (action) => ({ type: SET_TARGET_DATE_IS_IN_THE_PAST, payload: action });
-export const setTargetDateIsInTheFutureAction = (action) => ({ type: SET_TARGET_DATE_IS_IN_THE_FUTURE, payload: action });
 export const setTargetYearDefinedAction = (action) => ({ type: SET_TARGET_YEAR_DEFINED, payload: action });
 export const setTargetMonthDefinedAction = (action) => ({ type: SET_TARGET_MONTH_DEFINED, payload: action });
 export const setTargetDayDefinedAction = (action) => ({ type: SET_TARGET_DAY_DEFINED, payload: action });

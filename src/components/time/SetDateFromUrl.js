@@ -14,7 +14,6 @@ import { timePeriod } from './../../utils/timePeriodUtil';
 import {
   setBaseDateAction,
   setBaseDateIsInThePastAction,
-  setBaseDateIsInTheFutureAction,
   setBaseYearDefinedAction,
   setBaseMonthDefinedAction,
   setBaseDayDefinedAction,
@@ -26,8 +25,6 @@ import {
   setBaseMinuteAction,
   setBaseSecondAction,
   setTargetDateAction,
-  setTargetDateIsInThePastAction,
-  setTargetDateIsInTheFutureAction,
   setTargetYearDefinedAction,
   setTargetMonthDefinedAction,
   setTargetDayDefinedAction,
@@ -70,42 +67,34 @@ class SetDateFromUrl extends Component {
     // Determine if date is in the 'past' or 'future'
     const {
       nowDate = '',
-      baseDate = '',
+      targetDate = '',
       setBaseDateIsInThePastAction,
-      setBaseDateIsInTheFutureAction,
-      setTargetDateIsInThePastAction,
-      setTargetDateIsInTheFutureAction,
       // 'this.props.match.params', passed down manually from parent (App)
       match: {
         params: {
-          urlMode = ''
+          urlMode = '',
+          urlBaseYear = '',
         } = {}
       } = {}
     } = this.props;
-    if (urlMode === 'between-two-dates') {
-      if (baseDate) {
-        if (timePeriod(baseDate, value) === 'past') {
-          setTargetDateIsInThePastAction(true);
-          setTargetDateIsInTheFutureAction(false);
-        } else if (timePeriod(baseDate, value) === 'future') {
-          setTargetDateIsInThePastAction(false);
-          setTargetDateIsInTheFutureAction(true);
-        } else {
-          setTargetDateIsInThePastAction(false);
-          setTargetDateIsInTheFutureAction(false);
+    // If 'urlBaseYear' is defined, we are definitely setting our dates based on
+    // 'URL' parameters
+    if (urlBaseYear) {
+      if (urlMode === 'relative-to-now' || urlMode === 'discover-moment') {
+        if (nowDate) {
+          if (timePeriod(value, nowDate) === 'past') {
+            setBaseDateIsInThePastAction(true);
+          } else {
+            setBaseDateIsInThePastAction(false);
+          }
         }
-      }
-    } else if (urlMode === 'relative-to-now' || urlMode === 'discover-moment') {
-      if (nowDate) {
-        if (timePeriod(nowDate, value) === 'past') {
-          setBaseDateIsInThePastAction(true);
-          setBaseDateIsInTheFutureAction(false);
-        } else if (timePeriod(nowDate, value) === 'future') {
-          setBaseDateIsInThePastAction(false);
-          setBaseDateIsInTheFutureAction(true);
-        } else {
-          setBaseDateIsInThePastAction(false);
-          setBaseDateIsInTheFutureAction(false);
+      } else if (urlMode === 'between-two-dates') {
+        if (targetDate) {
+          if (timePeriod(targetDate, value) === 'past') {
+            setBaseDateIsInThePastAction(true);
+          } else {
+            setBaseDateIsInThePastAction(false);
+          }
         }
       }
     }
@@ -316,14 +305,13 @@ class SetDateFromUrl extends Component {
 const mapStateToProps = ({main}) => {
   return {
     mode: main.mode,
-    baseDate: main.baseDate,
+    targetDate: main.targetDate,
     nowDate: main.nowDate,
   }
 }
 const mapDispatchToProps = {
   setBaseDateAction,
   setBaseDateIsInThePastAction,
-  setBaseDateIsInTheFutureAction,
   setBaseYearDefinedAction,
   setBaseMonthDefinedAction,
   setBaseDayDefinedAction,
@@ -335,8 +323,6 @@ const mapDispatchToProps = {
   setBaseMinuteAction,
   setBaseSecondAction,
   setTargetDateAction,
-  setTargetDateIsInThePastAction,
-  setTargetDateIsInTheFutureAction,
   setTargetYearDefinedAction,
   setTargetMonthDefinedAction,
   setTargetDayDefinedAction,
@@ -356,7 +342,7 @@ const SetDateFromUrlConnect = connect(
 
 SetDateFromUrl.propTypes = {
   mode: PropTypes.string,
-  baseDate: PropTypes.string,
+  targetDate: PropTypes.string,
   nowDate: PropTypes.string,
 };
 

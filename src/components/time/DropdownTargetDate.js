@@ -15,8 +15,8 @@ import { timePeriod } from './../../utils/timePeriodUtil';
 import {
   setTargetDateAction,
   setTargetNameAction,
-  setTargetDateIsInThePastAction,
-  setTargetDateIsInTheFutureAction,
+  setBaseDateIsInThePastAction,
+  setBasePeriodAction,
   setTargetYearDefinedAction,
   setAndResetTargetYearAction,
   setAndResetTargetMonthAction,
@@ -33,19 +33,15 @@ class DropdownTargetDate extends Component {
     // Determine if date is in the 'past' or 'future'
     const {
       baseDate = '',
-      setTargetDateIsInThePastAction,
-      setTargetDateIsInTheFutureAction,
+      setBaseDateIsInThePastAction,
+      setBasePeriodAction,
     } = this.props;
     if (baseDate) {
-      if (timePeriod(baseDate, value) === 'past') {
-        setTargetDateIsInThePastAction(true);
-        setTargetDateIsInTheFutureAction(false);
-      } else if (timePeriod(baseDate, value) === 'future') {
-        setTargetDateIsInThePastAction(false);
-        setTargetDateIsInTheFutureAction(true);
+      setBasePeriodAction(timePeriod(value, baseDate));
+      if (timePeriod(value, baseDate) === 'past') {
+        setBaseDateIsInThePastAction(true);
       } else {
-        setTargetDateIsInThePastAction(false);
-        setTargetDateIsInTheFutureAction(false);
+        setBaseDateIsInThePastAction(false);
       }
     }
   }
@@ -143,8 +139,8 @@ const mapStateToProps = ({main}) => {
 const mapDispatchToProps = {
   setTargetDateAction,
   setTargetNameAction,
-  setTargetDateIsInThePastAction,
-  setTargetDateIsInTheFutureAction,
+  setBaseDateIsInThePastAction,
+  setBasePeriodAction,
   setTargetYearDefinedAction,
   setAndResetTargetYearAction,
   setAndResetTargetMonthAction,

@@ -15,13 +15,13 @@ class ModeBetweenTwoDates extends Component {
     const {
       match,
       baseDate,
-      targetDateIsInThePast,
+      baseDateIsInThePast,
       mode,
       targetDate
     } = this.props;
     let classesFrstRow = 'col-12 col-md-6';
     let classesSecondRow = 'col-12 col-md-6';
-    if (targetDateIsInThePast) {
+    if (baseDateIsInThePast) {
       classesFrstRow = 'col-12 col-md-6 order-2';
       classesSecondRow = 'col-12 col-md-6 order-1';
     }
@@ -55,16 +55,16 @@ class ModeBetweenTwoDates extends Component {
                 <div className="row">
                   <div className={classesFrstRow}>
                     <DateCard
-                      heading = "Date A"
-                      date = {baseDate}
-                      classes = "bl-fav-orange-dark"
+                      heading = "Date B"
+                      date = {targetDate}
+                      classes = "bl-purple"
                     />
                   </div>
                   <div className={classesSecondRow}>
                     <DateCard
-                      heading = "Date B"
-                      date = {targetDate}
-                      classes = "bl-purple"
+                      heading = "Date A"
+                      date = {baseDate}
+                      classes = "bl-fav-orange-dark"
                     />
                   </div>
                 </div>
@@ -88,7 +88,7 @@ class ModeBetweenTwoDates extends Component {
 const mapStateToProps = ({main}) => {
   return {
     baseDate: main.baseDate,
-    targetDateIsInThePast: main.targetDateIsInThePast,
+    baseDateIsInThePast: main.baseDateIsInThePast,
     mode: main.mode,
     targetDate: main.targetDate
   }
@@ -100,7 +100,7 @@ const ModeBetweenTwoDatesConnect = connect(
 
 ModeBetweenTwoDates.propTypes = {
   baseDate: PropTypes.string,
-  targetDateIsInThePast: PropTypes.bool,
+  baseDateIsInThePast: PropTypes.bool,
   mode: PropTypes.string,
   targetDate: PropTypes.string
 };
