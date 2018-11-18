@@ -45,18 +45,10 @@ class DropdownBaseDate extends Component {
     } = this.props;
     // If 'urlBaseYear' is defined, we are definitely setting our dates based on
     // 'URL' parameters
-    console.log('setTimePeriod - DropdownBaseDate');
     if (!urlBaseYear) {
-      console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear');
       if (mode === 'relativeToNow' || mode === 'discoverMoment') {
-        console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === relativeToNow || mode === discoverMoment');
         if (nowDailyDate) {
-          console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === relativeToNow || mode === discoverMoment - nowDailyDate');
           setBasePeriodAction(timePeriod(nowDailyDate, value));
-          console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === relativeToNow || mode === discoverMoment - nowDailyDate - setBasePeriodAction(timePeriod(nowDailyDate, value))');
-          console.log(`[value]: ${value}`);
-          console.log(`[targetDate]: ${nowDailyDate}`);
-          console.log(`[timePeriod]: ${timePeriod(nowDailyDate, value)}`);
           if (timePeriod(nowDailyDate, value) === 'past') {
             setBaseDateIsInThePastAction(true);
           } else {
@@ -64,22 +56,14 @@ class DropdownBaseDate extends Component {
           }
         }
       } else if (mode === 'betweenTwoDates') {
-        console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === betweenTwoDates');
         if (targetDate) {
-          console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === betweenTwoDates - targetDate');
           setBasePeriodAction(timePeriod(targetDate, value));
-          console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === betweenTwoDates - targetDate - setBasePeriodAction(timePeriod(value, targetDate))');
-          console.log(`[value]: ${value}`);
-          console.log(`[targetDate]: ${targetDate}`);
-          console.log(`[timePeriod]: ${timePeriod(targetDate, value)}`);
           if (timePeriod(targetDate, value) === 'past') {
             setBaseDateIsInThePastAction(true);
           } else {
             setBaseDateIsInThePastAction(false);
           }
         }
-      } else {
-        console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - NO MODE');
       }
     }
   }
