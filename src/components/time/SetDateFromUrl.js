@@ -284,16 +284,24 @@ class SetDateFromUrl extends Component {
       // 'this.props.match.params', passed down manually from parent (App)
       match: {
         params: {
-          urlMode = ''
+          urlMode = '',
+          urlBaseYear = '',
+          urlTargetYear = '',
         } = {}
       } = {}
     } = this.props;
     this.setModeFromUrl();
-    if (urlMode === 'between-two-dates') {
-      this.setDateBase();
-      this.setDateTarget();
-    } else if (urlMode === 'relative-to-now' || urlMode === 'discover-moment') {
-      this.setDateBase();
+    // If 'urlBaseYear' is defined, we are definitely setting our dates based on
+    // 'URL' parameters
+    if (urlBaseYear) {
+      if (urlMode === 'between-two-dates') {
+        this.setDateBase();
+        if (urlTargetYear) {
+          this.setDateTarget();
+        }
+      } else if (urlMode === 'relative-to-now' || urlMode === 'discover-moment') {
+        this.setDateBase();
+      }
     }
   }
   render () {
