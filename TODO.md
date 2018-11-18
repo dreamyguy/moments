@@ -27,6 +27,11 @@
 - ~Create shareable urls~
 - ~Have 'Travis' report build status~
 - Create logo
+  - ~Create README logo~
+  - ~Create header logo~
+  - Include header logo
+  - Create 'og-image'(s) logo
+  - Include 'og-image'(s) logo
 - Refine Header
 - Refine Footer
 - Ensure responsive behaves as expected

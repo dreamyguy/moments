@@ -1,3 +1,5 @@
+![Moments](https://raw.githubusercontent.com/dreamyguy/moments/master/docs/moments-logo-github-full-width.png "Time calculation has never been so fun!")
+
 # Moments
 
 > :calendar: :crystal_ball: :sparkles: Time calculation has never been so fun!
