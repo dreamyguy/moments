@@ -24,9 +24,7 @@ Set a base date and get the time difference between that date and now. If the ba
 
 It can be accessed at:
 
-```
-/relative-to-now
-```
+https://dreamyguy.github.io/moments/#/1/relative-to-now/
 
 #### 2. Time between two dates
 
@@ -34,9 +32,7 @@ Set a base date (Date A) and a target date (Date B) and get the time difference 
 
 It can be accessed at:
 
-```
-/between-two-dates
-```
+https://dreamyguy.github.io/moments/#/2/between-two-dates/
 
 #### 3. Discover Moments
 
@@ -46,9 +42,7 @@ Right below the set date one will get some "time-unit" fields that can be filled
 
 It can be accessed at:
 
-```
-/discover-moment
-```
+https://dreamyguy.github.io/moments/#/3/discover-moment/
 
 > Because results in **Moments** are presented in a structured way, one can use the application dynamically from somewhere else. One has two options:
 
@@ -82,7 +76,7 @@ Ex.: https://dreamyguy.github.io/moments/#/3/discover-moment/date-a/1975/Februar
 
 _Shareable URLs will eventually be provided from the application itself, but right now it can only be built manually._
 
-## API
+## API (Not available yet)
 
 **2.** Hit the **Moments** `API` directly to generate a `JSON` response with all the calculations made for the moment defined in the request. This can then be consumed by your own application.
 
@@ -96,7 +90,7 @@ Clone this repo locally. You'll need to have [NodeJS][1] installed. Install all 
 
     npm i
 
-If not already present, you need [Watchman][8] to run the test with `--watch` flag. You can install it in a number of ways, but I recommend using [Homebrew][12]:
+If not already present, you need [Watchman][8] to run the test with `--watch` flag. You can install it in a number of ways, but I recommend using [Homebrew][11]:
 
     brew install watchman
 
@@ -126,7 +120,7 @@ For the best integration experience while developing, run (it will start the `--
 
     npm run test:local
 
-It's recommended to keep tests running locally as one develops. Running tests on your IDE's terminal window, kept visible while you're writing the application would be for instance a great place to start. [VS Code][13] supports that natively.
+It's recommended to keep tests running locally as one develops. Running tests on your IDE's terminal window, kept visible while you're writing the application would be for instance a great place to start. [VS Code][12] supports that natively.
 
 Tests can be written in different ways, but [Jest][4] _(for unit tests)_ and [Enzyme][5] _(for integration tests)_ are good starting points. At this point _Enzyme_ still needs to be implemented.
 
@@ -136,7 +130,7 @@ Test coverage won't ever hit 100%, but can be used as a way to trace exceptions/
 
 To run test coverage, run:
 
-    yarn test:coverage
+    npm run test:coverage
 
 ### License
 
@@ -144,9 +138,7 @@ To run test coverage, run:
 
 ### About
 
-**Moments** was conceived and developed by [Wallace Sidhrée][1]. is written in [React][4], with [Redux][5] used for state management. It was initialized through [create-react-app 2][6] and built upon that with some sensible strategies. [Jest][7] and [Enzyme][9] are used for tests. [Momentjs][10] is used for time calculations. [VS Code][13] was used as the IDE of choice.
-
-It's a project made out sheer fun &mdash; to honour, acnowledge and nourish the _geekiness_ in all of us. It is, therefore, a part of [WTFoo][11], a tiny but mighty group of skilled developers that celebrate exactly that.
+**Moments** was conceived and developed by [Wallace Sidhrée][1]. is written in [React][4], with [Redux][5] used for state management. It was initialized through [create-react-app 2][6] and built upon that with some sensible strategies. [Jest][7] and [Enzyme][9] are used for tests. [Momentjs][10] is used for time calculations. [VS Code][12] was used as the IDE of choice.
 
   [1]: http://sidhree.com/
   [2]: https://nodejs.org/
@@ -158,6 +150,5 @@ It's a project made out sheer fun &mdash; to honour, acnowledge and nourish the 
   [8]: https://facebook.github.io/watchman/
   [9]: https://airbnb.io/enzyme/
   [10]: https://momentjs.com/
-  [11]: https://github.com/whatthefoo
-  [12]: https://brew.sh/
-  [13]: https://code.visualstudio.com/
+  [11]: https://brew.sh/
+  [12]: https://code.visualstudio.com/
