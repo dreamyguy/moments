@@ -52,12 +52,12 @@ class DropdownBaseDate extends Component {
         console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === relativeToNow || mode === discoverMoment');
         if (nowDailyDate) {
           console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === relativeToNow || mode === discoverMoment - nowDailyDate');
-          setBasePeriodAction(timePeriod(value, nowDailyDate));
-          console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === relativeToNow || mode === discoverMoment - nowDailyDate - setBasePeriodAction(timePeriod(value, nowDailyDate))');
+          setBasePeriodAction(timePeriod(nowDailyDate, value));
+          console.log('setTimePeriod - DropdownBaseDate - !urlBaseYear - mode === relativeToNow || mode === discoverMoment - nowDailyDate - setBasePeriodAction(timePeriod(nowDailyDate, value))');
           console.log(`[value]: ${value}`);
           console.log(`[targetDate]: ${nowDailyDate}`);
-          console.log(`[timePeriod]: ${timePeriod(value, nowDailyDate)}`);
-          if (timePeriod(value, nowDailyDate) === 'past') {
+          console.log(`[timePeriod]: ${timePeriod(nowDailyDate, value)}`);
+          if (timePeriod(nowDailyDate, value) === 'past') {
             setBaseDateIsInThePastAction(true);
           } else {
             setBaseDateIsInThePastAction(false);

@@ -39,18 +39,17 @@ class NowTicker extends Component {
       baseYear,
     } = this.props;
     // Only do this when these conditions are met, for performance's sake
+    if (mode === 'relativeToNow' || mode === 'discoverMoment') {
+      this.props.setNowDailyDateAction(moment().format(MOMENT_TIME_DAILY_FORMAT));
+    }
     if (mode && baseYear) {
-      if (mode === 'betweenTwoDates') {
-        this.props.setNowDailyDateAction(moment().format(MOMENT_TIME_DAILY_FORMAT));
-      } else if (mode === 'relativeToNow' || mode === 'discoverMoment') {
-        this.props.setNowDateAction(moment().format(MOMENT_TIME_FORMAT));
-        this.props.setNowYearAction(moment().format('YYYY'));
-        this.props.setNowMonthAction(moment().format('MMMM'));
-        this.props.setNowDayAction(moment().format('D'));
-        this.props.setNowHourAction(moment().format('H'));
-        this.props.setNowMinuteAction(moment().format('mm'));
-        this.props.setNowSecondAction(moment().format('ss'));
-      }
+      this.props.setNowDateAction(moment().format(MOMENT_TIME_FORMAT));
+      this.props.setNowYearAction(moment().format('YYYY'));
+      this.props.setNowMonthAction(moment().format('MMMM'));
+      this.props.setNowDayAction(moment().format('D'));
+      this.props.setNowHourAction(moment().format('H'));
+      this.props.setNowMinuteAction(moment().format('mm'));
+      this.props.setNowSecondAction(moment().format('ss'));
     }
   }
   tick () {
