@@ -35,21 +35,61 @@ class NowTicker extends Component {
   }
   updateNow () {
     const {
+      setNowDailyDateAction,
+      setNowDateAction,
+      setNowYearAction,
+      setNowMonthAction,
+      setNowDayAction,
+      setNowHourAction,
+      setNowMinuteAction,
+      setNowSecondAction,
+      nowDailyDate,
+      nowDate,
+      nowYear,
+      nowMonth,
+      nowDay,
+      nowHour,
+      nowMinute,
+      nowSecond,
       mode,
       baseYear,
     } = this.props;
+    const newNowDailyDate = moment().format(MOMENT_TIME_DAILY_FORMAT);
+    const newNowDate = moment().format(MOMENT_TIME_FORMAT);
+    const newNowYear = moment().format('YYYY');
+    const newNowMonth = moment().format('MMMM');
+    const newNowDay = moment().format('D');
+    const newNowHour = moment().format('H');
+    const newNowMinute = moment().format('mm');
+    const newNowSecond = moment().format('ss');
     // Only do this when these conditions are met, for performance's sake
     if (mode === 'relativeToNow' || mode === 'discoverMoment') {
-      this.props.setNowDailyDateAction(moment().format(MOMENT_TIME_DAILY_FORMAT));
+      if (newNowDailyDate !== nowDailyDate) {
+        setNowDailyDateAction(moment().format(MOMENT_TIME_DAILY_FORMAT));
+      }
     }
     if (mode && baseYear) {
-      this.props.setNowDateAction(moment().format(MOMENT_TIME_FORMAT));
-      this.props.setNowYearAction(moment().format('YYYY'));
-      this.props.setNowMonthAction(moment().format('MMMM'));
-      this.props.setNowDayAction(moment().format('D'));
-      this.props.setNowHourAction(moment().format('H'));
-      this.props.setNowMinuteAction(moment().format('mm'));
-      this.props.setNowSecondAction(moment().format('ss'));
+      if (newNowDate !== nowDate) {
+        setNowDateAction(newNowDate);
+      }
+      if (newNowYear !== nowYear) {
+        setNowYearAction(newNowYear);
+      }
+      if (newNowMonth !== nowMonth) {
+        setNowMonthAction(newNowMonth);
+      }
+      if (newNowDay !== nowDay) {
+        setNowDayAction(newNowDay);
+      }
+      if (newNowHour !== nowHour) {
+        setNowHourAction(newNowHour);
+      }
+      if (newNowMinute !== nowMinute) {
+        setNowMinuteAction(newNowMinute);
+      }
+      if (newNowSecond !== nowSecond) {
+        setNowSecondAction(newNowSecond);
+      }
     }
   }
   tick () {
@@ -64,8 +104,15 @@ class NowTicker extends Component {
 const mapStateToProps = ({main}) => {
   return {
     mode: main.mode,
+    baseYear: main.baseYear,
+    nowDailyDate: main.nowDailyDate,
     nowDate: main.nowDate,
-    baseYear: main.baseYear
+    nowYear: main.nowYear,
+    nowMonth: main.nowMonth,
+    nowDay: main.nowDay,
+    nowHour: main.nowHour,
+    nowMinute: main.nowMinute,
+    nowSecond: main.nowSecond,
   }
 }
 const mapDispatchToProps = {
@@ -86,7 +133,14 @@ const NowTickerConnect = connect(
 NowTicker.propTypes = {
   mode: PropTypes.string,
   baseYear: PropTypes.string,
-  nowDate: PropTypes.string
+  nowDailyDate: PropTypes.string,
+  nowDate: PropTypes.string,
+  nowYear: PropTypes.string,
+  nowMonth: PropTypes.string,
+  nowDay: PropTypes.string,
+  nowHour: PropTypes.string,
+  nowMinute: PropTypes.string,
+  nowSecond: PropTypes.string,
 };
 
 export default NowTickerConnect;
