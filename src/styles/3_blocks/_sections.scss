@@ -82,7 +82,7 @@ $button-mode-transition-type: cubic-bezier(
 .button--mode {
   animation: button-mode-show $button-mode-transition-time $button-mode-transition-type forwards;
   max-height: 63px;
-  padding: $gutter-size 0;
+  padding: $gutter-size;
   background-color: $cl-dark-gray-light;
   color: $cl-white;
   border-width: 0 0 0 5px;
