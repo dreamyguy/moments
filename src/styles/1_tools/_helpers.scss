@@ -14,10 +14,15 @@
 }
 .clickable {cursor: pointer;
 }
-.container-flex {
+.container-flex { // For clarity: this has nothing to do with Bootstrap's 'container'
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  &--center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 .heading-two {
   line-height: 28px;

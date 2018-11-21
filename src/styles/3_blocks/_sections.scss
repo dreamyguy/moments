@@ -82,7 +82,7 @@ $button-mode-transition-type: cubic-bezier(
 .button--mode {
   animation: button-mode-show $button-mode-transition-time $button-mode-transition-type forwards;
   max-height: 63px;
-  padding: $gutter-size;
+  padding: $gutter-size 0;
   background-color: $cl-dark-gray-light;
   color: $cl-white;
   border-width: 0 0 0 5px;
@@ -104,7 +104,7 @@ $button-mode-transition-type: cubic-bezier(
     animation: button-mode-hide $button-mode-transition-time $button-mode-transition-type forwards;
     cursor: default;
   }
-  width: 100%;
+  width: 80%;
   @include media-breakpoint-up(sm) {
     width: auto;
     margin-right: $gutter-size/2;

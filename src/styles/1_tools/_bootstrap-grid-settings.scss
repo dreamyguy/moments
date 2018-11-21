@@ -47,13 +47,6 @@ $grid-gutter-width: 40px !default;
   }
 }
 
-// A variation of 'container-flex', but with 'center' instead of 'space-evenly'
-.container-flex-center {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 // See https://getbootstrap.com/docs/4.0/layout/grid/#example-usage
 // for details on how to use breakpoints, like so:
 //

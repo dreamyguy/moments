@@ -26,14 +26,14 @@
 - ~Create page on GitHub~
 - ~Create shareable urls~
 - ~Have 'Travis' report build status~
-- Create logo
+- ~Create logo~
   - ~Create README logo~
   - ~Create header logo~
-  - Include header logo
+  - ~Include header logo~
   - Create 'og-image'(s) logo
   - Include 'og-image'(s) logo
-- Refine Header
-- Refine Footer
+- ~Refine Header~
+- ~Refine Footer~
 - Ensure responsive behaves as expected
 - Introduce meta tags
 - Let user copy shareable urls

@@ -28,7 +28,7 @@ class ModeBetweenTwoDates extends Component {
     return (
       <section className="section section--alt">
         <SetDateFromUrl match={match}/>
-        <div className="container m-t-20 m-b-20">
+        <div className="container-fluid m-t-20 m-b-20">
           <>
             {mode &&
               <>

@@ -18,7 +18,7 @@ class ModePicker extends Component {
     const optional = <span className="optional">(click to deselect)</span>;
     return (
       <section className="section--mode-picker">
-        <div className="container m-t-20 m-b-20">
+        <div className="container-fluid m-t-20 m-b-20">
           <div className="row">
             <div className="col-12">
               <div className="container-flex">
@@ -28,7 +28,7 @@ class ModePicker extends Component {
           </div>
           <div className="row">
             <div className="col-12">
-              <div className={`${mode ? 'container-flex-center ' : 'container-flex '}mode-picker`}>
+              <div className={`container-flex${mode ? '--center ' : ' '}mode-picker`}>
                 <SetMode
                   modeType = "relativeToNow"
                   modeName = "Relative to Now"
