@@ -9,6 +9,7 @@
 // layout
 
 body {
+  position: relative;
   background-color: $cl-dark-gray-medium;
   color: $cl-white;
   margin: 0;
@@ -16,28 +17,49 @@ body {
   @extend .font-montserrat-regular;
 }
 
-header {
-  border-bottom: 3px solid $cl-maroon;
-  text-shadow: 1px 1px 0 $cl-black;
-}
-
 header,
 footer {
   background-color: $cl-dark-gray-dark;
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  padding: $gutter-size/2;
   width: 100%;
 }
-footer {
-  padding: $bottom-spacing/2 0;
-  margin-top: $bottom-spacing/2;
+
+header {
+  border-bottom: $border-layout;
+  text-shadow: 1px 1px 0 $cl-black;
+  h2 {
+    display: none;
+    @include media-breakpoint-up(sm) {
+      display: block;
+    }
+  }
 }
-content {
+
+footer {
+  position: fixed;
+  bottom: 0;
+  border-top: $border-layout;
+  font-size: 15px;
+  color: $cl-gray;
+}
+
+.logo {
+  background-size: cover;
+  background-image: url('../images/moments-logo-header.png');
+  width: 70.5px; // 141 / 2
+  height: 36px; // 72 / 2
+  @include media-breakpoint-up(sm) {
+    margin-right: $gutter-size/2;
+  }
+}
+
+.content {
+  position: relative;
   max-width: 1234px;
   margin: 0 auto;
-  padding: $gutter-size $gutter-size $bottom-spacing $gutter-size;
-  position: relative;
+  padding-bottom: $bottom-spacing;
 }
 
 // colorful bar

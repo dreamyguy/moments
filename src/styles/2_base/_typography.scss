@@ -5,12 +5,15 @@ body {
   line-height: 1.55;
 }
 
-a,
-a:visited,
-a:hover,
-a:active {
-  color: $cl-silver;
+.link,
+a {
+  color: $cl-sb-blue;
   cursor: pointer;
+  &:visited,
+  &:hover,
+  &:active {
+    color: $cl-sb-blue;
+  }
 }
 
 p a {
@@ -42,10 +45,6 @@ h5, .h5 {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-
-.link {
-  color: $cl-sb-blue;
 }
 
 .optional {

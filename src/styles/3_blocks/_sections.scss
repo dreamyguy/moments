@@ -104,6 +104,11 @@ $button-mode-transition-type: cubic-bezier(
     animation: button-mode-hide $button-mode-transition-time $button-mode-transition-type forwards;
     cursor: default;
   }
+  width: 100%;
+  @include media-breakpoint-up(sm) {
+    width: auto;
+    margin-right: $gutter-size/2;
+  }
 }
 
 .form {

@@ -62,6 +62,13 @@ $grid-gutter-width: 40px !default;
 //     // do your thing
 //   }
 // }
+//
+// @include media-breakpoint-up(sm) { ... }
+// @include media-breakpoint-up(md) { ... }
+// @include media-breakpoint-up(lg) { ... }
+// @include media-breakpoint-up(xl) { ... }
+// etc...
+
 @import '../../../node_modules/bootstrap-4-grid/scss/breakpoints/mixins/breakpoints';
 
 // Make all the stack-able columns responsive on mobile
