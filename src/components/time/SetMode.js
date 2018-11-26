@@ -25,22 +25,24 @@ class SetMode extends Component {
       classesButtonMode = `button button--mode${mode === modeType ? ' selected' : ' not-selected'}${classes ? ' ' + classes : ''}`;
     }
     return (
-      <button
-        className={classesButtonMode}
-        onClick={() => {
-          setModeAction(mode === modeType ? '' : modeType)
-          if (history && modePath && !mode) {
-            // If 'mode' is not set, we want to navigate to 'modePath'
-            history.push(modePath);
-          } else if (history && modePath && mode) {
-            // If 'mode' is set, we want to navigate back to '/' as it's only a reset
-            history.push('/');
-          }
-        }}
-        disabled={mode && mode !== modeType ? true : false}
-      >
-        {modeName}
-      </button>
+      <div className="set-mode">
+        <button
+          className={classesButtonMode}
+          onClick={() => {
+            setModeAction(mode === modeType ? '' : modeType)
+            if (history && modePath && !mode) {
+              // If 'mode' is not set, we want to navigate to 'modePath'
+              history.push(modePath);
+            } else if (history && modePath && mode) {
+              // If 'mode' is set, we want to navigate back to '/' as it's only a reset
+              history.push('/');
+            }
+          }}
+          disabled={mode && mode !== modeType ? true : false}
+        >
+          {modeName}
+        </button>
+      </div>
     )
   }
 }

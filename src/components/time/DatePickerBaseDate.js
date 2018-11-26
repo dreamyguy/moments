@@ -83,22 +83,22 @@ class DatePickerBaseDate extends Component {
             value = {baseYear}
             type = "year"
           />
-          <DropdownBaseDate
-            tabIndex = "1"
-            options = {this.getTimeUnit('month')}
-            value = {baseMonth}
-            type = "month"
-            disabled={!baseYearDefined}
-            classes = {!baseYearDefined ? 'hidden' : ''}
-          />
-          <DropdownBaseDate
-            tabIndex = "1"
-            options = {this.getTimeUnit('day')}
-            value = {baseDay}
-            type = "day"
-            disabled={!baseMonthDefined}
-            classes = {!baseMonthDefined ? 'hidden' : ''}
-          />
+          {baseYearDefined &&
+            <DropdownBaseDate
+              tabIndex = "1"
+              options = {this.getTimeUnit('month')}
+              value = {baseMonth}
+              type = "month"
+            />
+          }
+          {baseMonthDefined &&
+            <DropdownBaseDate
+              tabIndex = "1"
+              options = {this.getTimeUnit('day')}
+              value = {baseDay}
+              type = "day"
+            />
+          }
           {baseDayDefined &&
             <>
               <DropdownBaseDate

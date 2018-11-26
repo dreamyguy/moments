@@ -127,7 +127,7 @@ class DropdownBaseDate extends Component {
       classes = ''
     } = this.props;
     return (
-      <>
+      <div className="dropdown">
         <label className="hidden" htmlFor="date-initial-select-hour">{`Please select a ${type}:`}</label>
         <select
           tabIndex = {tabIndex}
@@ -143,7 +143,7 @@ class DropdownBaseDate extends Component {
           <option key={uuidv4()} value="">{type}</option>
           {options}
         </select>
-      </>
+      </div>
     );
   }
 }

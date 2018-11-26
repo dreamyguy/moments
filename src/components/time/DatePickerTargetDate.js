@@ -83,22 +83,22 @@ class DatePickerTargetDate extends Component {
             value = {targetYear}
             type = "year"
           />
-          <DropdownTargetDate
-            tabIndex = "1"
-            options = {this.getTimeUnit('month')}
-            value = {targetMonth}
-            type = "month"
-            disabled={!targetYearDefined}
-            classes = {!targetYearDefined ? 'hidden' : ''}
-          />
-          <DropdownTargetDate
-            tabIndex = "1"
-            options = {this.getTimeUnit('day')}
-            value = {targetDay}
-            type = "day"
-            disabled={!targetMonthDefined}
-            classes = {!targetMonthDefined ? 'hidden' : ''}
-          />
+          {targetYearDefined &&
+            <DropdownTargetDate
+              tabIndex = "1"
+              options = {this.getTimeUnit('month')}
+              value = {targetMonth}
+              type = "month"
+            />
+          }
+          {targetMonthDefined &&
+            <DropdownTargetDate
+              tabIndex = "1"
+              options = {this.getTimeUnit('day')}
+              value = {targetDay}
+              type = "day"
+            />
+          }
           {targetDayDefined &&
             <>
               <DropdownTargetDate

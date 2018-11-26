@@ -18,7 +18,7 @@ class ModePicker extends Component {
     const optional = <span className="optional">(click to deselect)</span>;
     return (
       <section className="section--mode-picker">
-        <div className="container-fluid m-t-20 m-b-20">
+        <div className="container-fluid m-t-20">
           <div className="row">
             <div className="col-12">
               <div className="container-flex">

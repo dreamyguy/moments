@@ -34,11 +34,9 @@ $button-mode-transition-type: cubic-bezier(
 @keyframes button-mode-hide {
   0% {
     opacity: 1;
-    margin-bottom: $gutter-size;
     color: $cl-white;
   }
   10% {
-    margin-bottom: 0;
     color: transparent;
     border-left-color: $cl-dark-gray-light;
   }
@@ -47,7 +45,6 @@ $button-mode-transition-type: cubic-bezier(
   }
   100% {
     opacity: 0;
-    margin-bottom: 0;
     padding: 0;
     height: 0;
     width: 0;
@@ -58,7 +55,6 @@ $button-mode-transition-type: cubic-bezier(
 @keyframes button-mode-show {
   0% {
     opacity: 0;
-    margin-bottom: 0;
     padding: 0;
     height: 0;
     width: 0;
@@ -69,19 +65,26 @@ $button-mode-transition-type: cubic-bezier(
     min-height: 62px;
   }
   90% {
-    margin-bottom: $gutter-size;
     color: transparent;
     border-left-color: $cl-dark-gray-light;
   }
   100% {
     opacity: 1;
-    margin-bottom: $gutter-size;
     color: $cl-white;
+  }
+}
+.set-mode {
+  line-height: 0;
+  width: 100%;
+  @include media-breakpoint-up(sm) {
+    width: auto;
   }
 }
 .button--mode {
   animation: button-mode-show $button-mode-transition-time $button-mode-transition-type forwards;
+  width: 100%;
   max-height: 63px;
+  margin-bottom: $gutter-size;
   padding: $gutter-size;
   background-color: $cl-dark-gray-light;
   color: $cl-white;
@@ -93,6 +96,11 @@ $button-mode-transition-type: cubic-bezier(
   &:focus {
     outline-color: $cl-sb-magenta;
   }
+  // Because when these classes are applied, we only see one of the buttons
+  &.selected,
+  &.not-selected {
+    margin-bottom: 0;
+  }
   &.selected {
     animation: button-mode-show $button-mode-transition-time $button-mode-transition-type forwards;
     border-left-color: $cl-fav-green-light;
@@ -102,11 +110,10 @@ $button-mode-transition-type: cubic-bezier(
   }
   &.not-selected {
     animation: button-mode-hide $button-mode-transition-time $button-mode-transition-type forwards;
+    font-size: 0;
     cursor: default;
   }
-  width: 80%;
   @include media-breakpoint-up(sm) {
-    width: auto;
     margin-right: $gutter-size/2;
   }
 }
