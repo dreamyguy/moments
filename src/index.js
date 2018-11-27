@@ -12,6 +12,7 @@ import App from './components/App';
 // Import pages
 import Api from './pages/Api';
 import About from './pages/About';
+import Home from './pages/Home';
 import ModeRelativeToNow from './pages/ModeRelativeToNow';
 import ModeBetweenTwoDates from './pages/ModeBetweenTwoDates';
 import ModeDiscoverMoments from './pages/ModeDiscoverMoments';
@@ -26,7 +27,7 @@ ReactDom.render((
     <HashRouter basename="/">
       <App>
         <Switch>
-          <Route exact path="/" component={ModeRelativeToNow}/>
+          <Route exact path="/" component={Home}/>
           <Route exact path="/api" component={Api}/>
           <Route exact path="/about" component={About}/>
           <Route exact path="/1/:urlMode/date-a/:urlBaseYear/:urlBaseMonth/:urlBaseDay/:urlBaseHour/:urlBaseMinute/:urlBaseSecond/" component={ModeRelativeToNow}/>

@@ -11,7 +11,7 @@
  3. ~**baseDate => addUnitToDate**~
     ~(pick a date and see the time difference when adding time units to it)~
  - ~The user sees nothing else but the choices when loading the App for the first time.~
-   - Make the '/' page mode-free
+   - ~Make the '/' page mode-free~
  - ~If the user selects a mode, the other choices disappear. Unless the user removes the selection, he/she will stay in that mode.~
  - ~Once a mode selection is made, the user can do nothing else but choose a year. Given that he/she does that, the rest of the UI will pop.~
 - ~Refine 'Mode 1'~
