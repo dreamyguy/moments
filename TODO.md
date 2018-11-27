@@ -7,19 +7,19 @@
   - Create 'og-image'(s) logo
   - Include 'og-image'(s) logo
 - Introduce meta tags
-- Let user copy shareable urls
-- Let user clear the state
 - Test EVERYTHING
   - ~Unit tests for utililies (called 'utils')~
   - ~Test Redux - Reducers and Actions~
   - All components
+
+## PHASE II
+
+- Let user copy shareable urls
+- Let user clear the state
 - Make it possible to create a calendar event based on the resulting date, whenever it's in the future.
  - If possible, set two reminders:
    - 24h before
    -  1h before
-
-## PHASE II
-
 - Icons
   - Put arrow between
     - 'set date' (baseDate) and 'now' (nowDate)
