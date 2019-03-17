@@ -114,6 +114,9 @@ $button-mode-transition-type: cubic-bezier(
     font-size: 0;
     cursor: default;
   }
+  &.no-margin {
+    margin-bottom: 0;
+  }
   @include media-breakpoint-up(sm) {
     margin-right: $gutter-size/2;
   }
@@ -155,5 +158,18 @@ select {
     &::-ms-expand {
       display: none; // remove default arrow on ie10 and ie11
     }
+  }
+}
+
+.intro {
+  max-width: 400px;
+  padding: 30px;
+  font-size: 15px;
+  background-color: $cl-dark-gray-dark;
+  h3 {
+    text-align: center;
+  }
+  p {
+    line-height: 1.8;
   }
 }

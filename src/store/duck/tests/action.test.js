@@ -4,6 +4,7 @@ import {
   errorAction,
   clearStateAction,
   setModeAction,
+  setIntroAction,
   setNowDateAction,
   setNowDailyDateAction,
   setNowYearAction,
@@ -100,7 +101,7 @@ describe('Actions', () => {
     }),
     it('should fire action and update store', () => {
       const mockPayload = {...props};
-      const mockResponse = {'loading': false, 'error': false, 'errorId': '', 'errorCode': '', 'errorMessage': '', 'errorMessageTitle': '', 'errorMessageFriendly': '', 'mode': '', 'nowDate': '', 'nowDailyDate': '', 'nowYear': '', 'nowMonth': '', 'nowDay': '', 'nowHour': '', 'nowMinute': '', 'nowSecond': '', 'baseDate': '', 'baseDateName': '', 'baseDateIsInThePast': false,  'basePeriod': '', 'baseYearDefined': false, 'baseMonthDefined': false, 'baseDayDefined': false, 'baseYear': '', 'baseMonth': '', 'baseMonthDayCount': null, 'baseDay': '', 'baseHour': '', 'baseMinute': '', 'baseSecond': '', 'targetDate': '', 'targetDateName': '', 'targetYearDefined': false, 'targetMonthDefined': false, 'targetDayDefined': false, 'targetYear': '', 'targetMonth': '', 'targetMonthDayCount': null, 'targetDay': '', 'targetHour': '', 'targetMinute': '', 'targetSecond': '', 'addToBaseDateYears': null, 'addToBaseDateMonths': null, 'addToBaseDateWeeks': null, 'addToBaseDateDays': null, 'addToBaseDateHours': null, 'addToBaseDateMinutes': null, 'addToBaseDateSeconds': null, 'frontend': { 'mobileMenuStatus': false}};
+      const mockResponse = {'loading': false, 'error': false, 'errorId': '', 'errorCode': '', 'errorMessage': '', 'errorMessageTitle': '', 'errorMessageFriendly': '', 'mode': '', 'intro': true, 'nowDate': '', 'nowDailyDate': '', 'nowYear': '', 'nowMonth': '', 'nowDay': '', 'nowHour': '', 'nowMinute': '', 'nowSecond': '', 'baseDate': '', 'baseDateName': '', 'baseDateIsInThePast': false,  'basePeriod': '', 'baseYearDefined': false, 'baseMonthDefined': false, 'baseDayDefined': false, 'baseYear': '', 'baseMonth': '', 'baseMonthDayCount': null, 'baseDay': '', 'baseHour': '', 'baseMinute': '', 'baseSecond': '', 'targetDate': '', 'targetDateName': '', 'targetYearDefined': false, 'targetMonthDefined': false, 'targetDayDefined': false, 'targetYear': '', 'targetMonth': '', 'targetMonthDayCount': null, 'targetDay': '', 'targetHour': '', 'targetMinute': '', 'targetSecond': '', 'addToBaseDateYears': null, 'addToBaseDateMonths': null, 'addToBaseDateWeeks': null, 'addToBaseDateDays': null, 'addToBaseDateHours': null, 'addToBaseDateMinutes': null, 'addToBaseDateSeconds': null, 'frontend': { 'mobileMenuStatus': false}};
       const actionPayload = clearStateAction(mockPayload);
       const storePayload = reducerMain([], actionPayload);
       const result = mockResponse;
@@ -116,6 +117,20 @@ describe('Actions', () => {
       const mockPayload = 'betweenTwoDates';
       const mockResponse = {'mode': 'betweenTwoDates', 'loading': false};
       const actionPayload = setModeAction(mockPayload);
+      const storePayload = reducerMain([], actionPayload);
+      const result = mockResponse;
+      expect(storePayload).toEqual(result);
+    })
+  }),
+  describe('setIntroAction', () => {
+    it('should fire an action with type equal SET_INTRO', () => {
+      const actionResult = setIntroAction({}).type;
+      expect(actionResult).toEqual('SET_INTRO');
+    }),
+    it('should fire action and update store', () => {
+      const mockPayload = false;
+      const mockResponse = {'intro': false};
+      const actionPayload = setIntroAction(mockPayload);
       const storePayload = reducerMain([], actionPayload);
       const result = mockResponse;
       expect(storePayload).toEqual(result);

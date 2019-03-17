@@ -3,7 +3,8 @@
 const LOADING = 'LOADING';
 const ERROR = 'ERROR';
 const CLEAR_STATE = 'CLEAR_STATE';
-const SET_MODE = 'SET_MODE'
+const SET_MODE = 'SET_MODE';
+const SET_INTRO = 'SET_INTRO';
 // ------- ActionTypes - now
 const SET_NOW_DATE = 'SET_NOW_DATE';
 const SET_NOW_DAILY_DATE = 'SET_NOW_DAILY_DATE';
@@ -84,7 +85,8 @@ export const initialStateMain = {
   errorMessage: '',
   errorMessageTitle: '',
   errorMessageFriendly: '',
-  mode: '', // 'relativeToNow', 'betweenTwoDates', 'discoverMoment'
+  mode: '', // 'relativeToNow', 'betweenTwoDates', 'discoverMoment',
+  intro: true, // show intro at first, user can choose to take it away
   // Now moment
   nowDate: '',
   nowDailyDate: '',
@@ -163,6 +165,11 @@ export function reducerMain (state = initialStateMain, action) {
         ...state,
         loading: false,
         mode: action.payload
+      }
+    case SET_INTRO:
+      return {
+        ...state,
+        intro: action.payload
       }
     // ------- Reducers - now
     case SET_NOW_DATE:
@@ -591,6 +598,7 @@ export const clearStateAction = (action) => ({ type: CLEAR_STATE, payload: actio
 export const errorAction = (action) => ({ type: ERROR, payload: { errorId: action.errorId, errorCode: action.errorCode, errorMessage: action.errorMessage, errorMessageTitle: action.errorMessageTitle, errorMessageFriendly: action.errorMessageFriendly }}); // for testing
 export const loadingAction = (action) => ({ type: LOADING, payload: action }); // for testing
 export const setModeAction = (action) => ({ type: SET_MODE, payload: action });
+export const setIntroAction = (action) => ({ type: SET_INTRO, payload: action });
 // ------- ActionTypes - now
 export const setNowDateAction = (action) => ({ type: SET_NOW_DATE, payload: action })
 export const setNowDailyDateAction = (action) => ({ type: SET_NOW_DAILY_DATE, payload: action })
