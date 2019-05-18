@@ -37,24 +37,24 @@ class Home extends Component {
                 </div>
               </div>
             </div>
+            <div className="row m-t-50 m-b-40">
+              <div className="col-12">
+                {intro &&
+                  <div className="intro centered">
+                    <h3 className="m-b-30">Welcome to Moments!</h3>
+                    <p className="m-b-20">In <strong>Moments</strong> you can choose among 3 ways of calculating time between two moments.</p>
+                    <p className="m-b-20">You will be asked to define the moment relative to either <strong>now</strong> or a second moment that you will have to define as well, depending of the chosen <em>mode</em>.</p>
+                    <p className="m-b-20">All modes require that you define at the least the year. From there you can refine your moment, but that's optional.</p>
+                    <p className="m-b-40">To save time when changing from one <em>mode</em> to another, chosen dates are temporarily stored and used for further calculations. You can always change them.</p>
+                    <p className="align-center m-b-20"><span role="img" aria-label="warning">⚠️</span><br/><strong>Important note about privacy</strong></p>
+                    <p className="m-b-20">We do not store any entered information, nor send it anywhere. All the temporary information is stored on your browser's temporary cache and is removed upon closing the tab/window or refreshing.</p>
+                    {this.renderIntroButton()}
+                  </div>
+                }
+              </div>
+            </div>
           </div>
         </section>
-        <div className="row m-t-50 m-b-40">
-          <div className="col-12">
-            {intro &&
-              <div className="intro centered">
-                <h3 className="m-b-30">Welcome to Moments!</h3>
-                <p className="m-b-20">In <strong>Moments</strong> you can choose among 3 ways of calculating time between two moments.</p>
-                <p className="m-b-20">You will be asked to define the moment relative to either <strong>now</strong> or a second moment that you will have to define as well, depending of the chosen <em>mode</em>.</p>
-                <p className="m-b-20">All modes require that you define at the least the year. From there you can refine your moment, but that's optional.</p>
-                <p className="m-b-40">To save time when changing from one <em>mode</em> to another, chosen dates are temporarily stored and used for further calculations. You can always change them.</p>
-                <p className="m-b-20"><span role="img" aria-label="warning">⚠️</span> <strong>Important note about privacy</strong> &nbsp;<span role="img" aria-label="warning">⚠️</span></p>
-                <p className="m-b-20">We do not store any entered information, nor send it anywhere. All the temporary information is stored on your browser's temporary cache and is removed upon closing the tab/window or refreshing.</p>
-                {this.renderIntroButton()}
-              </div>
-            }
-          </div>
-        </div>
       </React.Fragment>
     );
   }

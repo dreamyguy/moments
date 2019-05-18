@@ -83,14 +83,14 @@ $button-mode-transition-type: cubic-bezier(
 .button--mode {
   animation: button-mode-show $button-mode-transition-time $button-mode-transition-type forwards;
   width: 100%;
-  max-height: 63px;
   margin-bottom: $gutter-size;
-  padding: $gutter-size;
+  padding: 16px $gutter-size;
   background-color: $cl-dark-gray-light;
   color: $cl-white;
   border-width: 0 0 0 5px;
   border-left-style: solid;
   border-left-color: $cl-sb-magenta;
+  line-height: 1.8;
   overflow: hidden;
   cursor: pointer;
   &:focus {
@@ -163,9 +163,12 @@ select {
 
 .intro {
   max-width: 400px;
-  padding: 30px;
   font-size: 15px;
   background-color: $cl-dark-gray-dark;
+  padding: 20px;
+  @include media-breakpoint-up(sm) {
+    padding: 30px;
+  }
   h3 {
     text-align: center;
   }
