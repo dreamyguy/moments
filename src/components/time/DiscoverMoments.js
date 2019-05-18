@@ -9,6 +9,7 @@ import { MOMENT_TIME_FORMAT } from './../../config';
 
 // Import utils
 import { localizeThousand } from './../../utils/localizeThousandUtil';
+import { formatDateToCalendarUtil } from './../../utils/formatDateUtil';
 
 // Import actions
 import {
@@ -21,7 +22,23 @@ import {
   setAddToBaseSecondsAction,
 } from './../../store/duck/ducks';
 
+// Import components
+import ReactAddToCalendar from './ReactAddToCalendar';
+
 class DiscoverMoments extends Component {
+  constructor (props) {
+    super(props);
+    // @TODO: since all is in store, use store here as well
+    this.state = {
+      event: {
+        title: 'Moments - Event name',
+        description: 'Moments - Event description',
+        location: 'Home',
+        startTime: '',
+        endTime: ''
+      }
+    };
+  }
   getDiscoverMomentsHeading (mode) {
     const {
       baseDate,
@@ -84,6 +101,22 @@ class DiscoverMoments extends Component {
     }
     return theMoment;
   }
+  renderAddToCalendarButton (date) {
+    const { event } = this.state; // @TODO: since all is in store, use store here as well
+    return (
+      <React.Fragment>
+        <ReactAddToCalendar
+          event={{
+            title: event.title,
+            description: event.description,
+            location: event.location,
+            startTime: formatDateToCalendarUtil(date),
+            endTime: formatDateToCalendarUtil(date),
+          }}
+        />
+      </React.Fragment>
+    )
+  }
   renderBaseDateName () {
     const {baseDateName} = this.props;
     let name = <span className="font-montserrat-regular-italic">'set date'</span>;
@@ -122,6 +155,7 @@ class DiscoverMoments extends Component {
               <>
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('year')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getDiscoverMomentsMoment('year')}</p>
+                {this.renderAddToCalendarButton(this.getDiscoverMomentsMoment('year'))}
               </>
               : null
             }
@@ -134,6 +168,7 @@ class DiscoverMoments extends Component {
               <>
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('month')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getDiscoverMomentsMoment('month')}</p>
+                {this.renderAddToCalendarButton(this.getDiscoverMomentsMoment('month'))}
               </>
               : null
             }
@@ -146,6 +181,7 @@ class DiscoverMoments extends Component {
               <>
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('week')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getDiscoverMomentsMoment('week')}</p>
+                {this.renderAddToCalendarButton(this.getDiscoverMomentsMoment('week'))}
               </>
               : null
             }
@@ -158,6 +194,7 @@ class DiscoverMoments extends Component {
               <>
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('day')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getDiscoverMomentsMoment('day')}</p>
+                {this.renderAddToCalendarButton(this.getDiscoverMomentsMoment('day'))}
               </>
               : null
             }
@@ -170,6 +207,7 @@ class DiscoverMoments extends Component {
               <>
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('hour')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getDiscoverMomentsMoment('hour')}</p>
+                {this.renderAddToCalendarButton(this.getDiscoverMomentsMoment('hour'))}
               </>
               : null
             }
@@ -182,6 +220,7 @@ class DiscoverMoments extends Component {
               <>
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('minute')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getDiscoverMomentsMoment('minute')}</p>
+                {this.renderAddToCalendarButton(this.getDiscoverMomentsMoment('minute'))}
               </>
               : null
             }
@@ -194,6 +233,7 @@ class DiscoverMoments extends Component {
               <>
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('second')}</h4>
                 <p className="font-montserrat-light m-t-15">{this.getDiscoverMomentsMoment('second')}</p>
+                {this.renderAddToCalendarButton(this.getDiscoverMomentsMoment('second'))}
               </>
               : null
             }
