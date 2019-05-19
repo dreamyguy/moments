@@ -1,3 +1,5 @@
+/*eslint no-extend-native: ["error", { "exceptions": ["String"] }]*/
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -124,9 +126,9 @@ export default class ReactAddToCalendar extends Component {
 
     return (
       <div className={this.props.buttonWrapperClass}>
-        <a className={buttonClass} onClick={this.toggleCalendarDropdown}>
+        <button className={buttonClass} onClick={this.toggleCalendarDropdown}>
           {buttonLabel}
-        </a>
+        </button>
       </div>
     );
   }
