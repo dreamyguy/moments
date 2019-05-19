@@ -129,7 +129,7 @@ class DiscoverMoments extends Component {
   renderInputFields () {
     const {
       baseDate,
-      nowDate,
+      nowDailyDate,
       addToBaseDateYears,
       addToBaseDateMonths,
       addToBaseDateWeeks,
@@ -164,7 +164,7 @@ class DiscoverMoments extends Component {
               <>
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('year')}</h4>
                 <p className="font-montserrat-light m-t-15">{discoverMomentYear}</p>
-                {timePeriod(nowDate, discoverMomentYear) === 'future' &&
+                {timePeriod(nowDailyDate, discoverMomentYear) === 'future' &&
                   this.renderAddToCalendarButton(discoverMomentYear)
                 }
               </>
@@ -179,7 +179,7 @@ class DiscoverMoments extends Component {
               <>
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('month')}</h4>
                 <p className="font-montserrat-light m-t-15">{discoverMomentMonth}</p>
-                {timePeriod(nowDate, discoverMomentMonth) === 'future' &&
+                {timePeriod(nowDailyDate, discoverMomentMonth) === 'future' &&
                   this.renderAddToCalendarButton(discoverMomentMonth)
                 }
               </>
@@ -194,7 +194,7 @@ class DiscoverMoments extends Component {
               <>
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('week')}</h4>
                 <p className="font-montserrat-light m-t-15">{discoverMomentWeek}</p>
-                {timePeriod(nowDate, discoverMomentWeek) === 'future' &&
+                {timePeriod(nowDailyDate, discoverMomentWeek) === 'future' &&
                   this.renderAddToCalendarButton(discoverMomentWeek)
                 }
               </>
@@ -209,7 +209,7 @@ class DiscoverMoments extends Component {
               <>
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('day')}</h4>
                 <p className="font-montserrat-light m-t-15">{discoverMomentDay}</p>
-                {timePeriod(nowDate, discoverMomentDay) === 'future' &&
+                {timePeriod(nowDailyDate, discoverMomentDay) === 'future' &&
                   this.renderAddToCalendarButton(discoverMomentDay)
                 }
               </>
@@ -224,7 +224,7 @@ class DiscoverMoments extends Component {
               <>
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('hour')}</h4>
                 <p className="font-montserrat-light m-t-15">{discoverMomentHour}</p>
-                {timePeriod(nowDate, discoverMomentHour) === 'future' &&
+                {timePeriod(nowDailyDate, discoverMomentHour) === 'future' &&
                   this.renderAddToCalendarButton(discoverMomentHour)
                 }
               </>
@@ -239,7 +239,7 @@ class DiscoverMoments extends Component {
               <>
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('minute')}</h4>
                 <p className="font-montserrat-light m-t-15">{discoverMomentMinute}</p>
-                {timePeriod(nowDate, discoverMomentMinute) === 'future' &&
+                {timePeriod(nowDailyDate, discoverMomentMinute) === 'future' &&
                   this.renderAddToCalendarButton(discoverMomentMinute)
                 }
               </>
@@ -254,7 +254,7 @@ class DiscoverMoments extends Component {
               <>
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('second')}</h4>
                 <p className="font-montserrat-light m-t-15">{discoverMomentSecond}</p>
-                {timePeriod(nowDate, discoverMomentSecond) === 'future' &&
+                {timePeriod(nowDailyDate, discoverMomentSecond) === 'future' &&
                   this.renderAddToCalendarButton(discoverMomentSecond)
                 }
               </>
@@ -279,7 +279,7 @@ const mapStateToProps = ({main}) => {
   return {
     baseDateName: main.baseDateName,
     baseDate: main.baseDate,
-    nowDate: main.nowDate,
+    nowDailyDate: main.nowDailyDate,
     addToBaseDateYears: main.addToBaseDateYears,
     addToBaseDateMonths: main.addToBaseDateMonths,
     addToBaseDateWeeks: main.addToBaseDateWeeks,
@@ -306,7 +306,7 @@ const DiscoverMomentsConnect = connect(
 DiscoverMoments.propTypes = {
   baseDateName: PropTypes.string,
   baseDate: PropTypes.string,
-  nowDate: PropTypes.string,
+  nowDailyDate: PropTypes.string,
   addToBaseDateYears: PropTypes.number,
   addToBaseDateMonths: PropTypes.number,
   addToBaseDateWeeks: PropTypes.number,
