@@ -63,7 +63,7 @@ const ModePickerConnect = connect(
 )(ModePicker);
 
 ModePicker.propTypes = {
-  // Props coming from state
+  // Props passed from store
   mode: PropTypes.string
 };
 

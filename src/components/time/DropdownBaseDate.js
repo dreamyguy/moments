@@ -188,7 +188,7 @@ DropdownBaseDate.propTypes = {
   type: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
   classes: PropTypes.string,
-  // Props related to choices, passed from state
+  // Props related to choices, passed from store
   baseYear: PropTypes.string,
   baseMonth: PropTypes.string,
   baseDay: PropTypes.string,

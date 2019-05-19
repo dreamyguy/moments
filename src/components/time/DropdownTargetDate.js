@@ -164,7 +164,7 @@ DropdownTargetDate.propTypes = {
   type: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
   classes: PropTypes.string,
-  // Props related to choices, passed from state
+  // Props related to choices, passed from store
   targetYear: PropTypes.string,
   targetMonth: PropTypes.string,
   targetDay: PropTypes.string,
