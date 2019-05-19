@@ -3,7 +3,7 @@
 
 .date {
   padding: $gutter-size;
-  background-color: $cl-dark-gray-light;
+  background-color: $cl-midnight-oil;
   border-left: 5px solid $cl-fav-green-light;
   &__heading {
     @extend .font-montserrat-regular-italic;
@@ -20,7 +20,7 @@
 .time-unit-output {
   padding: $gutter-size/4 $gutter-size;
   margin-bottom: $gutter-size / 2;
-  background-color: $cl-dark-gray-light;
+  background-color: $cl-midnight-oil;
 }
 
 $button-mode-translate-position: $gutter-size;
@@ -38,7 +38,7 @@ $button-mode-transition-type: cubic-bezier(
   }
   10% {
     color: transparent;
-    border-left-color: $cl-dark-gray-light;
+    border-left-color: $cl-midnight-oil;
   }
   90% {
     min-height: 62px;
@@ -49,7 +49,7 @@ $button-mode-transition-type: cubic-bezier(
     height: 0;
     width: 0;
     color: transparent;
-    border-left-color: $cl-dark-gray-light;
+    border-left-color: $cl-midnight-oil;
   }
 }
 @keyframes button-mode-show {
@@ -59,14 +59,14 @@ $button-mode-transition-type: cubic-bezier(
     height: 0;
     width: 0;
     color: transparent;
-    border-left-color: $cl-dark-gray-light;
+    border-left-color: $cl-midnight-oil;
   }
   10% {
     min-height: 62px;
   }
   90% {
     color: transparent;
-    border-left-color: $cl-dark-gray-light;
+    border-left-color: $cl-midnight-oil;
   }
   100% {
     opacity: 1;
@@ -85,7 +85,7 @@ $button-mode-transition-type: cubic-bezier(
   width: 100%;
   margin-bottom: $gutter-size;
   padding: 16px $gutter-size;
-  background-color: $cl-dark-gray-light;
+  background-color: $cl-midnight-oil;
   color: $cl-white;
   border-width: 0 0 0 5px;
   border-left-style: solid;
@@ -164,7 +164,7 @@ select {
 .intro {
   max-width: 400px;
   font-size: 15px;
-  background-color: $cl-dark-gray-dark;
+  background-color: $cl-tar;
   padding: 20px;
   @include media-breakpoint-up(sm) {
     padding: 30px;
