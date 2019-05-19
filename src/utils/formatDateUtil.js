@@ -7,7 +7,8 @@ export const dateIsValid = date => {
     date === '0001-01-01T00:00:00' ||
     date === '0001-01-01T01:00:00+01:00' ||
     date === '' ||
-    date === null
+    date === null ||
+    date === undefined
   ) {
     return false;
   }
@@ -23,7 +24,7 @@ export const dateIsValid = date => {
 }
 
 // Returns date in the format expected by the backend
-export const formatDateToCalendarUtil = date => {
+export const formatDateToCalendar = date => {
   if (dateIsValid(date)) {
     const theDate = moment(date, MOMENT_TIME_FORMAT).format(MOMENT_TIME_FORMAT_CALENDAR);
     return theDate;

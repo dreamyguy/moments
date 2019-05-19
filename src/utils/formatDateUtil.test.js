@@ -1,16 +1,21 @@
-import { formatDateToCalendarUtil, dateIsValid } from './formatDateUtil';
+import { formatDateToCalendar, dateIsValid } from './formatDateUtil';
 
 describe('formatDateUtil', () => {
   it('should return formated date as "2020-01-15 14:15:52" from "January 15th 2020, 14:15:52"', () => {
     const dateString = 'January 15th 2020, 14:15:52';
     const expectedDate = '2020-01-15 14:15:52'
-    const formatedDate = formatDateToCalendarUtil(dateString);
+    const formatedDate = formatDateToCalendar(dateString);
     expect(expectedDate).toEqual(formatedDate);
   })
 })
 
 describe('dateIsValid', () => {
   describe('test invalid dates', () => {
+    it('"undefined" is not a valid date', () => {
+      const date = undefined;
+      const checkDate = dateIsValid(date);
+      expect(checkDate).toBe(false);
+    })
     it('"0001-01-01T00:00:00" is not a valid date', () => {
       const date = '0001-01-01T00:00:00';
       const checkDate = dateIsValid(date);
