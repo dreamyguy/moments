@@ -43,3 +43,8 @@ html {
 
 // Default bootstrap grid. This can be configured under 'tools'
 @import '../../node_modules/bootstrap-4-grid/scss/grid';
+
+/* --------------------------------------------
+::: External libraries ::::::::::::::::::::::::
+----------------------------------------------- */
+@import '../components/time/ReactAddToCalendar.scss';

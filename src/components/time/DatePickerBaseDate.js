@@ -45,7 +45,7 @@ class DatePickerBaseDate extends Component {
       // Props passed down
       instructionStart = 'To get started, choose a year:',
       instructionYearDefined = 'Refine your date:',
-      // Props passed from state
+      // Props passed from store
       baseYearDefined = false,
     } = this.props;
     let instructions = '';
@@ -150,7 +150,7 @@ DatePickerBaseDate.propTypes = {
   // Props passed down
   instructionStart: PropTypes.string,
   instructionYearDefined: PropTypes.string,
-  // Props passed from state
+  // Props passed from store
   baseYearDefined: PropTypes.bool,
   baseMonthDefined: PropTypes.bool,
   baseDayDefined: PropTypes.bool,

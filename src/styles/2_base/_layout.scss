@@ -21,7 +21,7 @@ body {
     box-sizing: border-box;
   }
   position: relative;
-  background-color: $cl-dark-gray-medium;
+  background-color: $cl-petroleum;
   color: $cl-white;
   margin: 0;
   padding: 0;
@@ -30,7 +30,7 @@ body {
 
 header,
 footer {
-  background-color: $cl-dark-gray-dark;
+  background-color: $cl-tar;
   display: flex;
   justify-content: center;
   padding: $gutter-size/2 0;

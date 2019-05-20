@@ -12,7 +12,7 @@ class TimeDifference extends Component {
       // Passed down
       timeA = '',
       timeB = '',
-      // Passed from state
+      // Props passed from store
       baseDate,
       nowDate,
       baseDateIsInThePast,
@@ -82,7 +82,7 @@ TimeDifference.propTypes = {
   // Passed down
   timeA: PropTypes.string,
   timeB: PropTypes.string,
-  // Passed from state
+  // Props passed from store
   baseDate: PropTypes.string,
   baseDateIsInThePast: PropTypes.bool,
   nowDate: PropTypes.string,

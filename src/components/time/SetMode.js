@@ -65,7 +65,7 @@ SetMode.propTypes = {
   modeName: PropTypes.string.isRequired,
   modeType: PropTypes.string.isRequired,
   modepath: PropTypes.string,
-  // Props coming from state
+  // Props passed from store
   mode: PropTypes.string,
   setModeAction: PropTypes.func.isRequired
 };
