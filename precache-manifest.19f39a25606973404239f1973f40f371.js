@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "d815b0a29adf3450c55f56e2fb813be4",
-    "url": "/moments/static/media/Montserrat-Medium.d815b0a2.otf"
+    "revision": "96947c00edbd07b60480ede114296275",
+    "url": "/moments/static/media/Montserrat-MediumItalic.96947c00.otf"
   },
   {
-    "revision": "573d3557a6d602dc53c5",
-    "url": "/moments/static/css/main.e7fd5425.chunk.css"
+    "revision": "8ce36e7de6823e590afb",
+    "url": "/moments/static/css/main.cf3693f4.chunk.css"
   },
   {
     "revision": "468fb6c77e29f39a59d2d00b3d99d5ec",
     "url": "/moments/static/media/Montserrat-BlackItalic.468fb6c7.otf"
   },
   {
-    "revision": "e201186ea18c1a017349",
-    "url": "/moments/static/js/1.e201186e.chunk.js"
+    "revision": "6f8badd06b2ce19ccb32",
+    "url": "/moments/static/js/1.6f8badd0.chunk.js"
   },
   {
     "revision": "f3c13c9da0cc65d4f276",
@@ -24,20 +24,20 @@ self.__precacheManifest = [
     "url": "/moments/static/media/Montserrat-Thin.cb2144b3.otf"
   },
   {
-    "revision": "ca2d2548eadf6c546780557a20874f01",
-    "url": "/moments/static/media/Montserrat-ExtraLightItalic.ca2d2548.otf"
+    "revision": "0601e651a650facae740e7a707f31156",
+    "url": "/moments/static/media/Montserrat-ThinItalic.0601e651.otf"
   },
   {
     "revision": "2ec7cecb19c1b42ca9ca709971016156",
     "url": "/moments/static/media/Montserrat-ExtraLight.2ec7cecb.otf"
   },
   {
-    "revision": "0601e651a650facae740e7a707f31156",
-    "url": "/moments/static/media/Montserrat-ThinItalic.0601e651.otf"
-  },
-  {
     "revision": "d4a8834fa8f57f0929b9f4ef89584361",
     "url": "/moments/static/media/Montserrat-Light.d4a8834f.otf"
+  },
+  {
+    "revision": "ca2d2548eadf6c546780557a20874f01",
+    "url": "/moments/static/media/Montserrat-ExtraLightItalic.ca2d2548.otf"
   },
   {
     "revision": "64036f65a43dbe4ad8e81f2f237a4d99",
@@ -52,12 +52,12 @@ self.__precacheManifest = [
     "url": "/moments/static/media/Montserrat-Italic.078a83ae.otf"
   },
   {
-    "revision": "573d3557a6d602dc53c5",
-    "url": "/moments/static/js/main.573d3557.chunk.js"
+    "revision": "8ce36e7de6823e590afb",
+    "url": "/moments/static/js/main.8ce36e7d.chunk.js"
   },
   {
-    "revision": "96947c00edbd07b60480ede114296275",
-    "url": "/moments/static/media/Montserrat-MediumItalic.96947c00.otf"
+    "revision": "d815b0a29adf3450c55f56e2fb813be4",
+    "url": "/moments/static/media/Montserrat-Medium.d815b0a2.otf"
   },
   {
     "revision": "bb3740d350b0186ce32b5678972bf061",
@@ -72,16 +72,8 @@ self.__precacheManifest = [
     "url": "/moments/static/media/Montserrat-Bold.9c71d42b.otf"
   },
   {
-    "revision": "1fb2347e5e70361a92e8d4c4281cf457",
-    "url": "/moments/static/media/Montserrat-BoldItalic.1fb2347e.otf"
-  },
-  {
     "revision": "433ac418a603294fc5891dde6a73cd24",
     "url": "/moments/static/media/Montserrat-ExtraBold.433ac418.otf"
-  },
-  {
-    "revision": "880b0f4de395298b9c1316476d406cae",
-    "url": "/moments/static/media/Montserrat-ExtraBoldItalic.880b0f4d.otf"
   },
   {
     "revision": "3758c64fcdbcac361329aa2c01068df4",
@@ -92,15 +84,23 @@ self.__precacheManifest = [
     "url": "/moments/static/media/Montserrat-Black.561246a3.otf"
   },
   {
+    "revision": "1fb2347e5e70361a92e8d4c4281cf457",
+    "url": "/moments/static/media/Montserrat-BoldItalic.1fb2347e.otf"
+  },
+  {
     "revision": "ef32dba00933f3c84f5c2b49ab611573",
     "url": "/moments/static/media/moments-logo-header.ef32dba0.png"
   },
   {
-    "revision": "e201186ea18c1a017349",
-    "url": "/moments/static/css/1.2616fe00.chunk.css"
+    "revision": "880b0f4de395298b9c1316476d406cae",
+    "url": "/moments/static/media/Montserrat-ExtraBoldItalic.880b0f4d.otf"
   },
   {
-    "revision": "612f84e0a06ae7ed12d6c89df0508a6e",
+    "revision": "6f8badd06b2ce19ccb32",
+    "url": "/moments/static/css/1.e7846e6b.chunk.css"
+  },
+  {
+    "revision": "383fcc512bff1ae1656992f04ddd07a1",
     "url": "/moments/index.html"
   }
 ];
