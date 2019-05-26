@@ -1,16 +1,18 @@
 {
-  "main.css": "/moments/static/css/main.cf3693f4.chunk.css",
-  "main.js": "/moments/static/js/main.8ce36e7d.chunk.js",
-  "main.js.map": "/moments/static/js/main.8ce36e7d.chunk.js.map",
-  "static/css/1.e7846e6b.chunk.css": "/moments/static/css/1.e7846e6b.chunk.css",
-  "static/js/1.6f8badd0.chunk.js": "/moments/static/js/1.6f8badd0.chunk.js",
-  "static/js/1.6f8badd0.chunk.js.map": "/moments/static/js/1.6f8badd0.chunk.js.map",
-  "runtime~main.js": "/moments/static/js/runtime~main.f3c13c9d.js",
-  "runtime~main.js.map": "/moments/static/js/runtime~main.f3c13c9d.js.map",
-  "static/media/main.scss": "/moments/static/media/Montserrat-BlackItalic.468fb6c7.otf",
-  "static/css/main.cf3693f4.chunk.css.map": "/moments/static/css/main.cf3693f4.chunk.css.map",
-  "static/css/1.e7846e6b.chunk.css.map": "/moments/static/css/1.e7846e6b.chunk.css.map",
-  "index.html": "/moments/index.html",
-  "precache-manifest.19f39a25606973404239f1973f40f371.js": "/moments/precache-manifest.19f39a25606973404239f1973f40f371.js",
-  "service-worker.js": "/moments/service-worker.js"
+  "files": {
+    "main.css": "/moments/static/css/main.ad147b7d.chunk.css",
+    "main.js": "/moments/static/js/main.a48421d3.chunk.js",
+    "main.js.map": "/moments/static/js/main.a48421d3.chunk.js.map",
+    "runtime~main.js": "/moments/static/js/runtime~main.f5e79379.js",
+    "runtime~main.js.map": "/moments/static/js/runtime~main.f5e79379.js.map",
+    "static/css/2.99183fa4.chunk.css": "/moments/static/css/2.99183fa4.chunk.css",
+    "static/js/2.441751c2.chunk.js": "/moments/static/js/2.441751c2.chunk.js",
+    "static/js/2.441751c2.chunk.js.map": "/moments/static/js/2.441751c2.chunk.js.map",
+    "index.html": "/moments/index.html",
+    "precache-manifest.d04b816c77130e1d1320dd5de1413adb.js": "/moments/precache-manifest.d04b816c77130e1d1320dd5de1413adb.js",
+    "service-worker.js": "/moments/service-worker.js",
+    "static/css/2.99183fa4.chunk.css.map": "/moments/static/css/2.99183fa4.chunk.css.map",
+    "static/css/main.ad147b7d.chunk.css.map": "/moments/static/css/main.ad147b7d.chunk.css.map",
+    "static/media/main.scss": "/moments/static/media/moments-logo-header.ef32dba0.png"
+  }
 }
