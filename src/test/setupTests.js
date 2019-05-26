@@ -13,8 +13,10 @@ global.localStorage = localStorageMock;
 
 // Mock navigator
 const navigatorMock = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  clear: jest.fn()
+  msSaveOrOpenBlob: jest.fn(),
+  platform: jest.fn(),
+  serviceWorker: jest.fn(),
+  userAgent: jest.fn(),
+  vendor: jest.fn()
 };
 global.navigator = navigatorMock;
