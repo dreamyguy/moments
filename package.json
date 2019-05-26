@@ -23,34 +23,35 @@
   "copyright": "Copyright (c) Wallace Sidhrée - All rights reserved.",
   "license": "MIT",
   "dependencies": {
-    "acorn": "^6.0.0",
-    "ajv": "^6.0.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^9.0.0",
-    "babel-jest": "^23.6.0",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "acorn": "^6.1.1",
+    "ajv": "^6.10.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.8.0",
     "bootstrap-4-grid": "^2.4.1",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "jest-css-modules": "^1.1.0",
-    "jest-transform-stub": "^1.0.0",
-    "moment": "^2.22.2",
-    "normalize.css": "^8.0.0",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1",
-    "react-test-renderer": "^16.4.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.1",
+    "jest-css-modules": "^2.0.0",
+    "jest-transform-stub": "^2.0.0",
+    "moment": "^2.24.0",
+    "normalize.css": "^8.0.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.0.1",
+    "react-test-renderer": "^16.8.6",
     "redux": "^4.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.0.0",
     "babel-preset-react-app-babel-7": "^4.0.2-0",
-    "eslint": "^5.0.0",
-    "eslint-plugin-jest": "^21.17.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-jest": "^22.6.4",
     "gh-pages": "^2.0.1",
-    "node-sass": "^4.9.4"
+    "jsdom-quokka-plugin": "^1.0.14",
+    "node-sass": "^4.12.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -94,6 +95,6 @@
     ]
   },
   "engines": {
-    "node": ">=10.12.0"
+    "node": ">=v12.3.1"
   }
 }
