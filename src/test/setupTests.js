@@ -10,3 +10,11 @@ const localStorageMock = {
   clear: jest.fn()
 };
 global.localStorage = localStorageMock;
+
+// Mock navigator
+const navigatorMock = {
+  getItem: jest.fn(),
+  setItem: jest.fn(),
+  clear: jest.fn()
+};
+global.navigator = navigatorMock;

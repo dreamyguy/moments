@@ -9,7 +9,6 @@ import { MOMENT_TIME_FORMAT } from './../../config';
 
 // Import utils
 import { localizeThousand } from './../../utils/localizeThousandUtil';
-import { formatDateToCalendar } from './../../utils/formatDateUtil';
 import { timePeriod } from '../../utils/timePeriodUtil';
 
 // Import actions
@@ -24,22 +23,9 @@ import {
 } from './../../store/duck/ducks';
 
 // Import components
-import ReactAddToCalendar from './ReactAddToCalendar';
+import AddToCalendar from './AddToCalendar';
 
 class DiscoverMoments extends Component {
-  constructor (props) {
-    super(props);
-    // @TODO: since all is in store, use store here as well
-    this.state = {
-      event: {
-        title: 'Moments - Event name',
-        description: 'Moments - Event description',
-        location: 'Home',
-        startTime: '',
-        endTime: ''
-      }
-    };
-  }
   getDiscoverMomentsHeading (mode) {
     const {
       baseDate,
@@ -102,22 +88,6 @@ class DiscoverMoments extends Component {
     }
     return theMoment;
   }
-  renderAddToCalendarButton (date) {
-    const { event } = this.state; // @TODO: since all is in store, use store here as well
-    return (
-      <React.Fragment>
-        <ReactAddToCalendar
-          event={{
-            title: event.title,
-            description: event.description,
-            location: event.location,
-            startTime: formatDateToCalendar(date),
-            endTime: formatDateToCalendar(date),
-          }}
-        />
-      </React.Fragment>
-    )
-  }
   renderBaseDateName () {
     const {baseDateName} = this.props;
     let name = <span className="font-montserrat-regular-italic">'set date'</span>;
@@ -165,7 +135,7 @@ class DiscoverMoments extends Component {
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('year')}</h4>
                 <p className="font-montserrat-light m-t-15">{discoverMomentYear}</p>
                 {timePeriod(nowDailyDate, discoverMomentYear) === 'future' &&
-                  this.renderAddToCalendarButton(discoverMomentYear)
+                  <AddToCalendar date={discoverMomentYear}/>
                 }
               </>
               : null
@@ -180,7 +150,7 @@ class DiscoverMoments extends Component {
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('month')}</h4>
                 <p className="font-montserrat-light m-t-15">{discoverMomentMonth}</p>
                 {timePeriod(nowDailyDate, discoverMomentMonth) === 'future' &&
-                  this.renderAddToCalendarButton(discoverMomentMonth)
+                  <AddToCalendar date={discoverMomentMonth}/>
                 }
               </>
               : null
@@ -195,7 +165,7 @@ class DiscoverMoments extends Component {
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('week')}</h4>
                 <p className="font-montserrat-light m-t-15">{discoverMomentWeek}</p>
                 {timePeriod(nowDailyDate, discoverMomentWeek) === 'future' &&
-                  this.renderAddToCalendarButton(discoverMomentWeek)
+                  <AddToCalendar date={discoverMomentWeek}/>
                 }
               </>
               : null
@@ -210,7 +180,7 @@ class DiscoverMoments extends Component {
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('day')}</h4>
                 <p className="font-montserrat-light m-t-15">{discoverMomentDay}</p>
                 {timePeriod(nowDailyDate, discoverMomentDay) === 'future' &&
-                  this.renderAddToCalendarButton(discoverMomentDay)
+                  <AddToCalendar date={discoverMomentDay}/>
                 }
               </>
               : null
@@ -225,7 +195,7 @@ class DiscoverMoments extends Component {
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('hour')}</h4>
                 <p className="font-montserrat-light m-t-15">{discoverMomentHour}</p>
                 {timePeriod(nowDailyDate, discoverMomentHour) === 'future' &&
-                  this.renderAddToCalendarButton(discoverMomentHour)
+                  <AddToCalendar date={discoverMomentHour}/>
                 }
               </>
               : null
@@ -240,7 +210,7 @@ class DiscoverMoments extends Component {
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('minute')}</h4>
                 <p className="font-montserrat-light m-t-15">{discoverMomentMinute}</p>
                 {timePeriod(nowDailyDate, discoverMomentMinute) === 'future' &&
-                  this.renderAddToCalendarButton(discoverMomentMinute)
+                  <AddToCalendar date={discoverMomentMinute}/>
                 }
               </>
               : null
@@ -255,7 +225,7 @@ class DiscoverMoments extends Component {
                 <h4 className="m-t-15">{this.getDiscoverMomentsHeading('second')}</h4>
                 <p className="font-montserrat-light m-t-15">{discoverMomentSecond}</p>
                 {timePeriod(nowDailyDate, discoverMomentSecond) === 'future' &&
-                  this.renderAddToCalendarButton(discoverMomentSecond)
+                  <AddToCalendar date={discoverMomentSecond}/>
                 }
               </>
               : null

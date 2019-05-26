@@ -10,10 +10,14 @@ import DatePickerTargetDate from './../components/time/DatePickerTargetDate';
 import TimeDifference from './../components/time/TimeDifference';
 import SetDateFromUrl from './../components/time/SetDateFromUrl';
 
+// Import utils
+import { timePeriod } from './../utils/timePeriodUtil';
+
 class ModeBetweenTwoDates extends Component {
   render () {
     const {
       match,
+      nowDate,
       baseDate,
       baseDateIsInThePast,
       mode,
@@ -57,6 +61,7 @@ class ModeBetweenTwoDates extends Component {
                     <DateCard
                       heading = "Date B"
                       date = {targetDate}
+                      isInFuture = {timePeriod(nowDate, targetDate) === 'future'}
                       classes = "bl-purple"
                     />
                   </div>
@@ -64,6 +69,7 @@ class ModeBetweenTwoDates extends Component {
                     <DateCard
                       heading = "Date A"
                       date = {baseDate}
+                      isInFuture = {timePeriod(nowDate, baseDate) === 'future'}
                       classes = "bl-fav-orange-dark"
                     />
                   </div>
@@ -90,6 +96,7 @@ const mapStateToProps = ({main}) => {
     baseDate: main.baseDate,
     baseDateIsInThePast: main.baseDateIsInThePast,
     mode: main.mode,
+    nowDate: main.nowDate,
     targetDate: main.targetDate
   }
 }
@@ -102,6 +109,7 @@ ModeBetweenTwoDates.propTypes = {
   baseDate: PropTypes.string,
   baseDateIsInThePast: PropTypes.bool,
   mode: PropTypes.string,
+  nowDate: PropTypes.string,
   targetDate: PropTypes.string
 };
 

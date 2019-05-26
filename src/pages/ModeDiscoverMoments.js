@@ -10,6 +10,9 @@ import TimeDifference from './../components/time/TimeDifference';
 import DiscoverMoments from './../components/time/DiscoverMoments';
 import SetDateFromUrl from './../components/time/SetDateFromUrl';
 
+// Import utils
+import { timePeriod } from './../utils/timePeriodUtil';
+
 class ModeDiscoverMoments extends Component {
   render () {
     const {
@@ -32,6 +35,7 @@ class ModeDiscoverMoments extends Component {
                 <DateCard
                   heading = "Set date"
                   date = {baseDate}
+                  isInFuture = {timePeriod(nowDate, baseDate) === 'future'}
                   classes = "bl-fav-orange-dark"
                 />
               </div>

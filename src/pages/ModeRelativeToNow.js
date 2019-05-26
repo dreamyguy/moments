@@ -9,6 +9,9 @@ import DatePickerBaseDate from './../components/time/DatePickerBaseDate';
 import TimeDifference from './../components/time/TimeDifference';
 import SetDateFromUrl from './../components/time/SetDateFromUrl';
 
+// Import utils
+import { timePeriod } from './../utils/timePeriodUtil';
+
 class ModeRelativeToNow extends Component {
   render () {
     const {
@@ -49,6 +52,7 @@ class ModeRelativeToNow extends Component {
                     <DateCard
                       heading = "Set date"
                       date = {baseDate}
+                      isInFuture = {timePeriod(nowDate, baseDate) === 'future'}
                       classes = "bl-fav-orange-dark"
                     />
                   </div>

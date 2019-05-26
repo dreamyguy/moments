@@ -2,12 +2,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+// Import components
+import AddToCalendar from './AddToCalendar';
+
 class DateCard extends Component {
   render () {
     const {
       // Props passed down
       heading = '',
       date = '',
+      isInFuture = false,
       classes = '',
     } = this.props;
     return (
@@ -18,6 +22,11 @@ class DateCard extends Component {
         <div className="date__moment">
           {date}
         </div>
+        {isInFuture &&
+          <div className="date__calendar">
+            <AddToCalendar date={date} />
+          </div>
+        }
       </div>
     )
   }
@@ -27,6 +36,7 @@ DateCard.propTypes = {
   // Props passed down
   heading: PropTypes.string,
   date: PropTypes.string,
+  isInFuture: PropTypes.bool,
   classes: PropTypes.string,
 };
 
