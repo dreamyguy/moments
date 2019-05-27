@@ -20,3 +20,18 @@ const navigatorMock = {
   vendor: jest.fn()
 };
 global.navigator = navigatorMock;
+
+// Mock location
+const locationMock = {
+  ancestorOrigins: jest.fn(),
+  hash: jest.fn(),
+  host: jest.fn(),
+  hostname: jest.fn(),
+  href: jest.fn(),
+  origin: jest.fn(),
+  pathname: jest.fn(),
+  port: jest.fn(),
+  protocol: jest.fn(),
+  search: jest.fn(),
+};
+global.location = locationMock;

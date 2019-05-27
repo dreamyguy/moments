@@ -176,3 +176,35 @@ select {
     line-height: 1.8;
   }
 }
+
+.btn {
+  &__share-date {
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: $cl-graphite;
+    color: $cl-white;
+    text-shadow: 1px 1px $cl-void;
+    border: none;
+    border-radius: 0;
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-left-color: $cl-teal;
+    &:focus {
+      outline-color: $cl-teal;
+    }
+    &:hover {
+      background-color: $cl-carbon;
+      border-left-color: $cl-aqua;
+    }
+    &.disabled {
+      background-color: $cl-fav-green-dark;
+      border-left-color: $cl-fav-green-light;
+      color: $cl-white;
+      text-shadow: 1px 1px $cl-void;
+      cursor: initial;
+    }
+  }
+}
