@@ -6,9 +6,10 @@ import PropTypes from 'prop-types';
 // Import components
 import DateCard from './../components/time/DateCard';
 import DatePickerBaseDate from './../components/time/DatePickerBaseDate';
-import TimeDifference from './../components/time/TimeDifference';
 import DiscoverMoments from './../components/time/DiscoverMoments';
 import SetDateFromUrl from './../components/time/SetDateFromUrl';
+import ShareDate from './../components/time/ShareDate';
+import TimeDifference from './../components/time/TimeDifference';
 
 // Import utils
 import { timePeriod } from './../utils/timePeriodUtil';
@@ -30,16 +31,25 @@ class ModeDiscoverMoments extends Component {
             </div>
           </div>
           {baseDate &&
-            <div className="row">
-              <div className="col-12">
-                <DateCard
-                  heading = "Set date"
-                  date = {baseDate}
-                  isInFuture = {timePeriod(nowDate, baseDate) === 'future'}
-                  classes = "bl-fav-orange-dark"
-                />
+            <>
+              <div className="row">
+                <div className="col-12">
+                  <div className="container-flex">
+                    <ShareDate classes="m-b-40"/>
+                  </div>
+                </div>
               </div>
-            </div>
+              <div className="row">
+                <div className="col-12">
+                  <DateCard
+                    heading = "Set date"
+                    date = {baseDate}
+                    isInFuture = {timePeriod(nowDate, baseDate) === 'future'}
+                    classes = "bl-fav-orange-dark"
+                  />
+                </div>
+              </div>
+            </>
           }
           <div className="row">
             <div className="col-12">

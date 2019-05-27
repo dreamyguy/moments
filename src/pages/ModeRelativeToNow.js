@@ -6,8 +6,9 @@ import PropTypes from 'prop-types';
 // Import components
 import DateCard from './../components/time/DateCard';
 import DatePickerBaseDate from './../components/time/DatePickerBaseDate';
-import TimeDifference from './../components/time/TimeDifference';
 import SetDateFromUrl from './../components/time/SetDateFromUrl';
+import ShareDate from './../components/time/ShareDate';
+import TimeDifference from './../components/time/TimeDifference';
 
 // Import utils
 import { timePeriod } from './../utils/timePeriodUtil';
@@ -41,6 +42,13 @@ class ModeRelativeToNow extends Component {
             }
             {mode && baseDate &&
               <>
+                <div className="row">
+                  <div className="col-12">
+                    <div className="container-flex">
+                      <ShareDate classes="m-b-40"/>
+                    </div>
+                  </div>
+                </div>
                 <div className="row">
                   <div className={classesFrstRow}>
                     <DateCard

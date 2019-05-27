@@ -7,8 +7,9 @@ import PropTypes from 'prop-types';
 import DateCard from './../components/time/DateCard';
 import DatePickerBaseDate from './../components/time/DatePickerBaseDate';
 import DatePickerTargetDate from './../components/time/DatePickerTargetDate';
-import TimeDifference from './../components/time/TimeDifference';
 import SetDateFromUrl from './../components/time/SetDateFromUrl';
+import ShareDate from './../components/time/ShareDate';
+import TimeDifference from './../components/time/TimeDifference';
 
 // Import utils
 import { timePeriod } from './../utils/timePeriodUtil';
@@ -36,7 +37,7 @@ class ModeBetweenTwoDates extends Component {
           <>
             {mode &&
               <>
-                <div className="row m-b-20">
+                <div className="row">
                   <div className="col-12">
                     <DatePickerBaseDate
                       instructionStart = "Choose a year for Date A:"
@@ -44,7 +45,7 @@ class ModeBetweenTwoDates extends Component {
                     />
                   </div>
                 </div>
-                <div className="row m-b-20">
+                <div className="row">
                   <div className="col-12">
                     <DatePickerTargetDate
                       instructionStart = "Choose a year for Date B:"
@@ -56,6 +57,13 @@ class ModeBetweenTwoDates extends Component {
             }
             {mode && baseDate && targetDate &&
               <>
+                <div className="row">
+                  <div className="col-12">
+                    <div className="container-flex">
+                      <ShareDate classes="m-b-40"/>
+                    </div>
+                  </div>
+                </div>
                 <div className="row">
                   <div className={classesFrstRow}>
                     <DateCard

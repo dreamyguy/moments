@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 // Import components
 import SetMode from './SetMode';
-import ShareDate from './ShareDate';
 
 class ModePicker extends Component {
   render () {
@@ -24,13 +23,6 @@ class ModePicker extends Component {
             <div className="col-12">
               <div className="container-flex">
                 <p className="m-b-20">{instruction} {mode ? optional : ''}</p>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12">
-              <div className="container-flex">
-                <ShareDate classes="m-t-20 m-b-20"/>
               </div>
             </div>
           </div>
