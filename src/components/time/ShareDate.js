@@ -58,7 +58,7 @@ class ShareDate extends Component {
     return shareable;
   }
   getShareableUrl (url) {
-    return `${global.location.origin}/#/${url}`;
+    return `${global.location.origin}${global.location.pathname}#/${url}`;
   }
   render () {
     const {
