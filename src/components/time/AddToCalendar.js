@@ -30,15 +30,19 @@ class AddToCalendar extends Component {
       date = ''
     } = this.props;
     return (
-      <ReactAddToCalendar
-        event={{
-          title: event.title,
-          description: event.description,
-          location: event.location,
-          startTime: formatDateToCalendar(date),
-          endTime: formatDateToCalendar(date),
-        }}
-      />
+      <>
+        {date &&
+          <ReactAddToCalendar
+            event={{
+              title: event.title,
+              description: event.description,
+              location: event.location,
+              startTime: formatDateToCalendar(date),
+              endTime: formatDateToCalendar(date),
+            }}
+          />
+        }
+      </>
     )
   }
 }
