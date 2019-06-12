@@ -4,9 +4,11 @@
   - ~Create README logo~
   - ~Create header logo~
   - ~Include header logo~
-  - Create 'og-image'(s) logo
-  - Include 'og-image'(s) logo
+  - ~Create 'og-image'(s) logo~
+  - ~Include 'og-image'(s) logo~
+  - ~Favicons~
 - Introduce meta tags
+  - ~'og:' metatags~
 - Test EVERYTHING
   - ~Unit tests for utililies (called 'utils')~
   - ~Test Redux - Reducers and Actions~

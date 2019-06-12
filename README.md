@@ -48,7 +48,7 @@ https://dreamyguy.github.io/moments/#/3/discover-moment/
 
 ## Shareable URLs
 
-**1.** Link to the **Moments** website on Github, passing the expected time parameters.
+Link to the **Moments** website on Github, passing the expected time parameters. _The link can be copied to your clipboard by clicking on the button **Copy Moment to clipboard** (the button will only appear when it's click-able)_.
 
 #### 1.1. Moment relative to now
 
@@ -73,14 +73,6 @@ Ex.: https://dreamyguy.github.io/moments/#/2/between-two-dates/date-a/2017/May/2
 ```
 
 Ex.: https://dreamyguy.github.io/moments/#/3/discover-moment/date-a/1975/February/19/21/0/0/
-
-_Shareable URLs will eventually be provided from the application itself, but right now it can only be built manually._
-
-## API (Not available yet)
-
-**2.** Hit the **Moments** `API` directly to generate a `JSON` response with all the calculations made for the moment defined in the request. This can then be consumed by your own application.
-
-_Details on this are currently being refined_
 
 ## Development
 
@@ -124,7 +116,7 @@ It's recommended to keep tests running locally as one develops. Running tests on
 
 Tests can be written in different ways, but [Jest][4] _(for unit tests)_ and [Enzyme][5] _(for integration tests)_ are good starting points. At this point _Enzyme_ still needs to be implemented.
 
-### Gettings test coverage
+### Getting test coverage
 
 Test coverage won't ever hit 100%, but can be used as a way to trace exceptions/exclusions. If a file shouldn't be tested, [it should be ignored by tests](https://facebook.github.io/jest/docs/en/configuration.html#testpathignorepatterns-array-string). That way test coverage is kept at an acceptable level.
 
