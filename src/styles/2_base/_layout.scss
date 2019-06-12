@@ -59,7 +59,7 @@ footer {
 .logo {
   background-size: cover;
   background-image: url('../images/moments-logo-header.png');
-  width: 70.5px; // 141 / 2
+  width: 57px; // 114 / 2
   height: 36px; // 72 / 2
   @include media-breakpoint-up(sm) {
     margin-right: $gutter-size/2;
