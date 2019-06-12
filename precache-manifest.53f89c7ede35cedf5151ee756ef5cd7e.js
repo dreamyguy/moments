@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "37693b651ddbf2cdc09535409f1f56cd",
+    "revision": "d66fec3e85f37341becb0ef1dd78ba21",
     "url": "/moments/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/moments/static/css/2.99183fa4.chunk.css"
   },
   {
-    "revision": "fe8813fa30aa7408d50f",
+    "revision": "3d8d414f7ee738301675",
     "url": "/moments/static/css/main.194218ed.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/moments/static/js/2.b8ec38db.chunk.js"
   },
   {
-    "revision": "fe8813fa30aa7408d50f",
-    "url": "/moments/static/js/main.a47a1d04.chunk.js"
+    "revision": "3d8d414f7ee738301675",
+    "url": "/moments/static/js/main.6b73c6f8.chunk.js"
   },
   {
     "revision": "ccc33ad204c88f119456",
