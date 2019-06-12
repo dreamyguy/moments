@@ -40,7 +40,7 @@ class ModeBetweenTwoDates extends Component {
                 <div className="row">
                   <div className="col-12">
                     <DatePickerBaseDate
-                      instructionStart = "Choose a year for Date A:"
+                      instructionStart = "Enter a year for Date A:"
                       instructionYearDefined = "Refine Date A:"
                     />
                   </div>
@@ -48,7 +48,7 @@ class ModeBetweenTwoDates extends Component {
                 <div className="row">
                   <div className="col-12">
                     <DatePickerTargetDate
-                      instructionStart = "Choose a year for Date B:"
+                      instructionStart = "Enter a year for Date B:"
                       instructionYearDefined = "Refine Date B:"
                     />
                   </div>

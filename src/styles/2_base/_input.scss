@@ -10,3 +10,33 @@
   background-color: $cl-silver;
   border: 1px solid $cl-gray;
 }
+
+.input-year {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  width: 80px;
+  font-family: inherit;
+  font-size: 15px; // because at 16px it triggers a zoom on iOS Safari
+  line-height: 1.15;
+  background-color: $cl-white !important;
+  border-radius: 0;
+  border: 1px solid #85144b;
+  padding: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.input-empty,
+.input-invalid {
+  font-size: 14px;
+}
+
+.input-invalid {
+  // These colors are only used here
+  text-shadow: 1px 1px 1px orangered;
+  color: yellow;
+}

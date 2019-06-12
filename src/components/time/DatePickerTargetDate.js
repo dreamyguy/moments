@@ -10,6 +10,7 @@ import { numberRange } from './../../utils/rangeUtil';
 
 // Import components
 import DropdownTargetDate from './DropdownTargetDate';
+import InputYearTargetDate from './InputYearTargetDate';
 
 class DatePickerTargetDate extends Component {
   getTimeUnit (mode) {
@@ -43,7 +44,7 @@ class DatePickerTargetDate extends Component {
   renderInstructions () {
     const {
       // Props passed down
-      instructionStart = 'To get started, choose a year:',
+      instructionStart = 'To get started, enter a year:',
       instructionYearDefined = 'Refine your date:',
       // Props passed from store
       targetYearDefined = false,
@@ -77,11 +78,9 @@ class DatePickerTargetDate extends Component {
       <>
         {this.renderInstructions()}
         <div className="container-flex date-picker">
-          <DropdownTargetDate
+          <InputYearTargetDate
             tabIndex = "1"
-            options = {this.getTimeUnit('year')}
             value = {targetYear}
-            type = "year"
           />
           {targetYearDefined &&
             <DropdownTargetDate

@@ -26,9 +26,9 @@
     - baseDate and targetDate
   - Choice icons to the left of choice buttons (only seen when no choices have been selected)
   - Close icon to the right of the selected choice button
-- Let user write year through an input field
-  - It will need to validate against a four-digit year
-  - Year range might need to be limited (test and find out)
+- ~Let user write year through an input field~
+  - ~It will need to validate against a four-digit year~
+  - ~Year range might need to be limited (test and find out)~
 - User should be able to define 'baseDateName'.
 - Implement Next.js
 
