@@ -14,27 +14,11 @@
 
 ## PHASE II
 
-- Let user copy shareable urls
 - Let user clear the state
-- Make it possible to create a calendar event based on the resulting date, whenever it's in the future.
- - If possible, set two reminders:
-   - 24h before
-   -  1h before
-- Icons
-  - Put arrow between
-    - 'set date' (baseDate) and 'now' (nowDate)
-    - baseDate and targetDate
   - Choice icons to the left of choice buttons (only seen when no choices have been selected)
   - Close icon to the right of the selected choice button
-- ~Let user write year through an input field~
-  - ~It will need to validate against a four-digit year~
-  - ~Year range might need to be limited (test and find out)~
 - User should be able to define 'baseDateName'.
 - Implement Next.js
-
-## OPTIONAL
-
-- Consider introducing navigation through a nav in header
 
 ## DONE
 
@@ -67,3 +51,19 @@
 - ~Refine Header~
 - ~Refine Footer~
 - ~Ensure responsive behaves as expected~
+- ~Let user copy shareable urls~
+- ~Let user write year through an input field~
+  - ~It will need to validate against a four-digit year~
+  - ~Year range might need to be limited (test and find out)~
+
+## WON'T DO
+
+- ~Make it possible to create a calendar event based on the resulting date, whenever it's in the future.~
+ - ~If possible, set two reminders:~ (won't do: reminders are set differently depending on calendars)
+   - ~24h before~
+   -  `1h before~
+- ~Icons~ (won't do)
+  - ~Put arrow between~
+    - ~'set date' (baseDate) and 'now' (nowDate)~
+    - ~baseDate and targetDate~
+- ~Consider introducing navigation through a nav in header~ (won't do) [former optional]

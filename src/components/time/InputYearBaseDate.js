@@ -111,8 +111,8 @@ class InputYearBaseDate extends Component {
     const {
       yearInputIsValid
     } = this.state;
-    const spacingBottomInput = (yearInputIsValid && value === '' || !yearInputIsValid) ? ' m-b-5' : ' m-b-20';
-    const spacingBottomMessage = (yearInputIsValid && value === '' || !yearInputIsValid) ? ' m-b-20' : ' m-b-5';
+    const spacingBottomInput = ((yearInputIsValid && value === '') || !yearInputIsValid) ? ' m-b-5' : ' m-b-20';
+    const spacingBottomMessage = ((yearInputIsValid && value === '') || !yearInputIsValid) ? ' m-b-20' : ' m-b-5';
     return (
       <div className="input-year-wrapper">
         <input
