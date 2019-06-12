@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d4827db234b29f686f29dac25ee895bc",
+    "revision": "37693b651ddbf2cdc09535409f1f56cd",
     "url": "/moments/index.html"
   },
   {
@@ -8,15 +8,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/moments/static/css/2.99183fa4.chunk.css"
   },
   {
-    "revision": "53ca986f66e08b60f9dc",
-    "url": "/moments/static/css/main.e0e56c82.chunk.css"
+    "revision": "fe8813fa30aa7408d50f",
+    "url": "/moments/static/css/main.194218ed.chunk.css"
   },
   {
     "revision": "0b6da64cfcf79fc169fc",
     "url": "/moments/static/js/2.b8ec38db.chunk.js"
   },
   {
-    "revision": "53ca986f66e08b60f9dc",
+    "revision": "fe8813fa30aa7408d50f",
     "url": "/moments/static/js/main.a47a1d04.chunk.js"
   },
   {
@@ -98,9 +98,5 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "3758c64fcdbcac361329aa2c01068df4",
     "url": "/moments/static/media/chevron-down.3758c64f.svg"
-  },
-  {
-    "revision": "ef32dba00933f3c84f5c2b49ab611573",
-    "url": "/moments/static/media/moments-logo-header.ef32dba0.png"
   }
 ]);
