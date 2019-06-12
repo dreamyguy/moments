@@ -2,7 +2,7 @@
 
 # Moments
 
-> :calendar: :crystal_ball: :sparkles: Time calculation has never been so fun!
+> ⏳🔮✨ Time calculation has never been so fun!
 
 [![Build Status](https://travis-ci.org/dreamyguy/moments.svg?branch=master)](https://travis-ci.org/dreamyguy/moments) [![MIT Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/dreamyguy/moments/blob/master/LICENSE)
 

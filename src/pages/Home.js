@@ -30,7 +30,7 @@ class Home extends Component {
               <div className="col-12">
                 <div className="container-flex">
                   <p>
-                    <span role="img" aria-label="emoji calendar">📆</span>
+                    <span role="img" aria-label="emoji hourglass">⏳</span>
                     <span role="img" aria-label="emoji crystal ball">🔮</span>
                     <span role="img" aria-label="emoji sparkles">✨</span>
                   </p>
