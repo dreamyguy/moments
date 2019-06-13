@@ -1,24 +1,8 @@
-## MVP
-
-- ~Create logo~
-  - ~Create README logo~
-  - ~Create header logo~
-  - ~Include header logo~
-  - ~Create 'og-image'(s) logo~
-  - ~Include 'og-image'(s) logo~
-  - ~Favicons~
-- Introduce meta tags
-  - ~'og:' metatags~
-- Test EVERYTHING
-  - ~Unit tests for utililies (called 'utils')~
-  - ~Test Redux - Reducers and Actions~
-  - All components
-
 ## PHASE II
 
 - Let user clear the state
-  - Choice icons to the left of choice buttons (only seen when no choices have been selected)
-  - Close icon to the right of the selected choice button
+- Clear icon on input fields
+- Test all components
 - User should be able to define 'baseDateName'.
 - Implement Next.js
 
@@ -57,6 +41,17 @@
 - ~Let user write year through an input field~
   - ~It will need to validate against a four-digit year~
   - ~Year range might need to be limited (test and find out)~
+- ~Create logo~
+  - ~Create README logo~
+  - ~Create header logo~
+  - ~Include header logo~
+  - ~Create 'og-image'(s) logo~
+  - ~Include 'og-image'(s) logo~
+  - ~Favicons~
+- ~Introduce meta tags~
+  - ~'og:' metatags~
+- ~Unit tests for utililies (called 'utils')~
+- ~Test Redux - Reducers and Actions~
 
 ## WON'T DO
 

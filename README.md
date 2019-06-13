@@ -44,9 +44,9 @@ It can be accessed at:
 
 https://dreamyguy.github.io/moments/#/3/discover-moment/
 
-> Because results in **Moments** are presented in a structured way, one can use the application dynamically from somewhere else. One has two options:
-
 ## Shareable URLs
+
+> Thanks to the nature of dates, the output of **Moments** can be both presented and requested in a very structured way. One can set the date and time dynamically (ie. at another website) and link to **Moments**, triggering a render of what was entered through URL parameters. The resulting URLs reproduceable, and therefore shareable.
 
 Link to the **Moments** website on Github, passing the expected time parameters. _The link can be copied to your clipboard by clicking on the button **Copy Moment to clipboard** (the button will only appear when it's click-able)_.
 
@@ -73,6 +73,46 @@ Ex.: https://dreamyguy.github.io/moments/#/2/between-two-dates/date-a/2017/May/2
 ```
 
 Ex.: https://dreamyguy.github.io/moments/#/3/discover-moment/date-a/1975/February/19/21/0/0/
+
+#### Here are some examples, to get you started:
+
+All these dates are relative to **now**, _without the benefit of time zones_:
+
+**Cheeful moments**
+
+- [Jesus is born](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/0/December/25/21/33/37/) - 25 December 0000
+- [Eyeglasses invented in Italy](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1286/June/13/21/36/39/) - 1286
+- [Invention of the Printing Press](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1440/June/13/21/36/52/) - 1440
+- [The first photograph of Earth from space is taken](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1946/October/24/21/37/17/) - 24 October 1946
+- [First Beatles concert ever](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1961/February/9/21/41/01/) - 9 February 1961
+- [Martin Luther King Jr. gives his "I have a dream" speech](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1963/August/28/21/41/39/) - 28 August 1963
+- [Tim Berners-Lee invents the internet](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1989/March/12/21/42/02/) - 12 March 1989
+- [First episode of Friends is aired](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1994/September/22/20/30/40/) - 22 September 1994 20:30
+- [Malala Yousafzai delivers her speech at the United Nations Youth Assembly in New York (her 16th birthday)](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/2013/July/12/21/43/02/) - 12 July 2013
+
+**World wars:**
+
+_WW1_
+
+- [First event leading to WW1 (assassination of the Austrian archduke, Franz Ferdinand and his wife)](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1914/June/28/21/43/26/) - 28 June 1914
+- [Last event of WW1 (Treaty of Versailles)](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1919/June/28/21/43/43/) - 28 June 1919
+- [WW1 Duration](https://dreamyguy.github.io/moments/#/2/between-two-dates/date-a/1914/June/28/21/51/25/date-b/1919/June/28/21/51/25/) (between two dates)
+
+_WW2_
+
+- [First event of WW2 (invasion of Poland)](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1939/September/1/21/44/17/) - 1 September 1939
+- [Last event of WW2 (Japan formally surrenders)](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1945/August/14/21/44/37/) - 14 August 1945
+- [WW2 Duration](https://dreamyguy.github.io/moments/#/2/between-two-dates/date-a/1939/September/1/21/48/35/date-b/1945/August/14/21/48/35/) (between two dates)
+
+[Nr. days from 1st event of WW1 to last event WW2](https://dreamyguy.github.io/moments/#/2/between-two-dates/date-a/1914/June/28/21/50/50/date-b/1945/August/14/21/50/50/) (between two dates)
+
+**Major tragedies:**
+
+- [The Black Death pandemic starts](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1346/June/13/21/52/48/) - 1346
+- [Hiroshima explosion](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1945/August/6/8/16/20/) - 6 August 1945 08:16
+- [Chernobyl explosion](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1986/April/26/1/23/45/) - 26 April 1986 01:23:45
+- [First plane crashes on WTC, NY](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/2001/September/11/8/46/40/) - 11 September 2001 08:46:40
+- [Trump's presidency starts](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/2017/January/20/12/59/37/) - 20 January 2017 12:00:00
 
 ## Development
 
