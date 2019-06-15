@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6af38da770a9f014984c7ed3087f9dff",
+    "revision": "3a80fd6aabfb0e78c9d9a7b8f5162fb2",
     "url": "/moments/index.html"
   },
   {
-    "revision": "31296ea4c8ba850f9de8",
+    "revision": "1e004eada44a9cf6f84a",
     "url": "/moments/static/css/2.99183fa4.chunk.css"
   },
   {
-    "revision": "536f21cdce5ad46d1f31",
-    "url": "/moments/static/css/main.905c67b0.chunk.css"
+    "revision": "5fb350a1fa0eadde2034",
+    "url": "/moments/static/css/main.fc0888d7.chunk.css"
   },
   {
-    "revision": "31296ea4c8ba850f9de8",
-    "url": "/moments/static/js/2.4744d430.chunk.js"
+    "revision": "1e004eada44a9cf6f84a",
+    "url": "/moments/static/js/2.6d4e39ab.chunk.js"
   },
   {
-    "revision": "536f21cdce5ad46d1f31",
-    "url": "/moments/static/js/main.cc4769bf.chunk.js"
+    "revision": "5fb350a1fa0eadde2034",
+    "url": "/moments/static/js/main.c6fd9c65.chunk.js"
   },
   {
     "revision": "ccc33ad204c88f119456",
