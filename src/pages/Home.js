@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Emoji from 'react-emojis';
 import { setIntroAction } from '../store/duck/ducks';
 
 class Home extends Component {
@@ -30,9 +31,9 @@ class Home extends Component {
               <div className="col-12">
                 <div className="container-flex">
                   <p>
-                    <span role="img" aria-label="emoji hourglass">⏳</span>
-                    <span role="img" aria-label="emoji crystal ball">🔮</span>
-                    <span role="img" aria-label="emoji sparkles">✨</span>
+                    <Emoji emoji="hourglass-not-done"/>
+                    <Emoji emoji="crystal-ball"/>
+                    <Emoji emoji="sparkles"/>
                   </p>
                 </div>
               </div>
@@ -46,7 +47,7 @@ class Home extends Component {
                     <p className="m-b-20">You will be asked to define the moment relative to either <strong>now</strong> or a second moment that you will have to define as well, depending of the chosen <em>mode</em>.</p>
                     <p className="m-b-20">All modes require that you define at the least the year. From there you can refine your moment, but that's optional.</p>
                     <p className="m-b-40">To save time when changing from one <em>mode</em> to another, chosen dates are temporarily stored and used for further calculations. You can always change them.</p>
-                    <p className="align-center m-b-20"><span role="img" aria-label="warning">⚠️</span><br/><strong>Important note about privacy</strong></p>
+                    <p className="align-center m-b-20"><Emoji emoji="warning"/><br/><strong>Important note about privacy</strong></p>
                     <p className="m-b-20">We do not store any entered information, nor send it anywhere. All the temporary information is stored on your browser's temporary cache and is removed upon closing the tab/window or refreshing.</p>
                     {this.renderIntroButton()}
                   </div>
