@@ -86,6 +86,8 @@ All these dates are relative to **now**, _without the benefit of time zones_:
 - [The first photograph of Earth from space is taken](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1946/October/24/21/37/17/) - 24 October 1946
 - [First Beatles concert ever](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1961/February/9/21/41/01/) - 9 February 1961
 - [Martin Luther King Jr. gives his "I have a dream" speech](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1963/August/28/21/41/39/) - 28 August 1963
+- [Apollo 11 lands on Moon](http://localhost:9876/#/1/relative-to-now/date-a/1969/July/20/20/17/40/) - 20 July 1969 20:17:40
+- [Neil Armstrong steps on the Moon's surface](http://localhost:9876/#/1/relative-to-now/date-a/1969/July/21/2/56/15/) - 21 July 1969 02:56:15
 - [Tim Berners-Lee invents the internet](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1989/March/12/21/42/02/) - 12 March 1989
 - [First episode of Friends is aired](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1994/September/22/20/30/40/) - 22 September 1994 20:30
 - [Malala Yousafzai delivers her speech at the United Nations Youth Assembly in New York (her 16th birthday)](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/2013/July/12/21/43/02/) - 12 July 2013
