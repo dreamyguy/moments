@@ -86,8 +86,8 @@ All these dates are relative to **now**, _without the benefit of time zones_:
 - [The first photograph of Earth from space is taken](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1946/October/24/21/37/17/) - 24 October 1946
 - [First Beatles concert ever](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1961/February/9/21/41/01/) - 9 February 1961
 - [Martin Luther King Jr. gives his "I have a dream" speech](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1963/August/28/21/41/39/) - 28 August 1963
-- [Apollo 11 lands on Moon](http://localhost:9876/#/1/relative-to-now/date-a/1969/July/20/20/17/40/) - 20 July 1969 20:17:40
-- [Neil Armstrong steps on the Moon's surface](http://localhost:9876/#/1/relative-to-now/date-a/1969/July/21/2/56/15/) - 21 July 1969 02:56:15
+- [Apollo 11 lands on Moon](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1969/July/20/20/17/40/) - 20 July 1969 20:17:40
+- [Neil Armstrong steps on the Moon's surface](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1969/July/21/2/56/15/) - 21 July 1969 02:56:15
 - [Tim Berners-Lee invents the internet](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1989/March/12/21/42/02/) - 12 March 1989
 - [First episode of Friends is aired](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1994/September/22/20/30/40/) - 22 September 1994 20:30
 - [Malala Yousafzai delivers her speech at the United Nations Youth Assembly in New York (her 16th birthday)](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/2013/July/12/21/43/02/) - 12 July 2013
@@ -115,6 +115,16 @@ _WW2_
 - [Chernobyl explosion](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/1986/April/26/1/23/45/) - 26 April 1986 01:23:45
 - [First plane crashes on WTC, NY](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/2001/September/11/8/46/40/) - 11 September 2001 08:46:40
 - [Trump's presidency starts](https://dreamyguy.github.io/moments/#/1/relative-to-now/date-a/2017/January/20/12/59/37/) - 20 January 2017 12:00:00
+
+## Note on Timezones
+
+Timezones would add a lot of complexity to this application, for little benefit (as 100% accuracy would require a tremendous job). There are so many not-so-obvious caveats and edge-cases that in the end of the day it is simply better to let the end the user take responsibility to set it right (if at all necessary) to compensate for the time difference.
+
+For instance, **if you're born in _Brazil_ but currently live in _Australia_**.
+
+While creating a calendar event to be notified of your 1,111,111,111st second since your birth at 6:50 PM, you would want to set an event on the next day at 7:50 AM - as in Australia you'd be 13 hours ahead of Brazil.
+
+_Remember to check for Daylight Time Saving in both areas._
 
 ## Development
 
